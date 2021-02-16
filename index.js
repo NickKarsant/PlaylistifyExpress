@@ -7,6 +7,7 @@ const ejsMate = require("ejs-mate");
 const User = require("./models/user");
 const Playlist = require("./models/playlist");
 const Song = require("./models/song");
+const Artist = require("./models/artist");
 const catchAsync = require('./utils/catchAsync');
 
 
@@ -40,8 +41,9 @@ app.get("/browse", catchAsync( async (req, res) => {
 
   const allPlaylists = await Playlist.find({});
   const allSongs = await Song.find({});
+  const allArtists = await Artist.find({});
 
-  res.render("browse/index", { allPlaylists, allSongs });
+  res.render("browse/index", { allPlaylists, allSongs, allArtists });
 }));
 
 app.get("/playlist/new", (req, res) => {

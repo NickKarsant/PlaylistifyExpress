@@ -9,7 +9,7 @@ var SongSchema = new mongoose.Schema({
     unique: false,
     sparse: false
   },
-  images: Array,
+  images: String,
   liked: false
 });
 

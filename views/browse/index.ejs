@@ -7,8 +7,8 @@
     <p>Search through our database of music for the right songs and artists and become a playlist god!</p>
 
     <p>
-      <a class="btn btn-lg btn-primary" href="/playlists/new">Create a New Playlist </a>
-      <a class="btn btn-lg btn-primary" href="/playlists">MyPlaylists</a>
+      <a class="btn btn-lg btn-primary" href="/playlist/new">Create a New Playlist </a>
+      <a class="btn btn-lg btn-primary" href="/playlist">MyPlaylists</a>
     </p>
     <form>
 
@@ -23,58 +23,22 @@
 
 
 <div id="playlists" class="ui container mb-5">
-    <h1 class="mt-5 mb-5">Playlists</h1>
-    <div class="ui grid mb-3 row text-center">
-      <% allPlaylists.forEach(function(playlist) {%>
-      <div id="playlists" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
-  
-        <div class="thumbnail">
-          <div class="preview">
-            <% if (playlist.image) {%>
-            <img class="img-thumbnail card-fluid" src="<%=playlist.image%>" alt="">
-            <% } else {%>
-            <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/100" alt="">
-            <%}%>
+  <h1 class="mt-5 mb-5">Playlists</h1>
+  <div class="ui grid mb-3 row text-center">
+    <% allPlaylists.forEach(function(playlist) {%>
+    <div id="playlists" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
+
+      <div class="thumbnail">
+        <div class="preview">
+          <% if (playlist.image) {%>
+          <img class="img-thumbnail card-fluid" src="<%=playlist.image%>" alt="">
+          <% } else {%>
+          <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/100" alt="">
+          <%}%>
                 </div>
                 <div class="card-body">
                   <div class="caption">
                     <h5 class="card-title"> <%= playlist.name %> </h5>
-          </div>
-          <p class="more">
-  
-            <a class="button" href=""><button class="btn btn-primary"> More
-                Info</button></a>
-  
-          </p>
-        </div>
-      </div>
-  
-    </div>
-  
-  
-    <%});%>
-  </div>
-  
-  </div>
-
-
-<div id="songs" class="ui container">
-  <h1 class="mb-5">Songs</h1>
-  <div class="ui grid mb-3 row text-center">
-    <% allSongs.forEach(function(song) {%>
-    <div id="songs" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
-
-      <div class="thumbnail">
-        <div class="preview">
-          <% if (song.image) {%>
-          <img class="img-thumbnail card-fluid" src="<%=song.image%>" alt="">
-          <% } else {%>
-          <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/200" alt="">
-          <%}%>
-              </div>
-              <div class="card-body">
-                <div class="caption">
-                  <h5 class="card-title"> <%= song.name %> </h5>
         </div>
         <p class="more">
 
@@ -90,40 +54,81 @@
 
   <%});%>
 </div>
+
+</div>
+
+
+<div id="songs" class="ui container">
+  <h1 class="mb-5">Songs</h1>
+  <div class="ui grid mb-3 row text-center">
+    <% allSongs.forEach(function(song) {%>
+    <div id="songs" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
+
+      <div class="thumbnail">
+        <% if (song.image) {%>
+        <img class="img-thumbnail card-fluid" src="<%=song.image%>" alt="">
+        <% } else {%>
+        <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/150" alt="">
+        <%}%>
+      </div>
+
+      <div class="card-body">
+        <div class="caption">
+          <h8 class="card-title"> <%= song.name %> </h8>
+          <p class="card-content"> <%= song.artist %></p>
+
+        <div class="row">
+          <div class="col-6"><i class="far fa-heart like"></i></div>
+          <div class="col-6">
+            <a class="btn btn-md btn-success" href="">
+              <i id="play" class="fas fa-play"></i>
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <%});%>
+</div>
 </div>
 
 
 <div id="playlists" class="ui container mb-5">
-    <h1 class="mt-5 mb-5">Playlists</h1>
-    <div class="ui grid mb-3 row text-center">
-      <% allArtists.forEach(function(artist) {%>
-      <div id="artists" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
-  
-        <div class="thumbnail">
-          <div class="preview">
-            <% if (artist.image) {%>
-            <img class="img-thumbnail card-fluid" src="<%=artist.image%>" alt="">
-            <% } else {%>
-            <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/200" alt="">
-            <%}%>
+  <h1 class="mt-5 mb-5">Artists</h1>
+  <div class="ui grid mb-3 row text-center">
+    <% allArtists.forEach(function(artist) {%>
+    <div id="artists" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
+
+      <div class="thumbnail">
+        <div class="preview">
+          <% if (artist.image) {%>
+          <img class="img-thumbnail card-fluid" src="<%=artist.image%>" alt="">
+          <% } else {%>
+          <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/200" alt="">
+          <%}%>
                 </div>
                 <div class="card-body">
                   <div class="caption">
                     <h5 class="card-title"> <%= artist.name %> </h5>
-          </div>
-          <p class="more">
-  
-            <a class="button" href=""><button class="btn btn-primary"> More
-                Info</button></a>
-  
-          </p>
         </div>
+        <p class="more">
+
+          <a class="button" href=""><button class="btn btn-primary"> More
+              Info</button></a>
+
+        </p>
       </div>
-  
     </div>
-  
-  
-    <%});%>
+
   </div>
-  
-  </div>
+
+
+  <%});%>
+</div>
+
+</div>

@@ -1,11 +1,16 @@
-
+// toggle Hamgburger menu
+$("#navbarText").on("show.bs.collapse", function() {
+  $("a.nav-link").click(function() {
+    $("#navbarText").collapse("hide");
+  });
+});
 
 $("span#hamburger").click(function() {
-  toggleHamburger();
+  toggleHamburger
 });
 
 function toggleHamburger() {
-  var menu = document.getElementById("navbarText");
+  var menu = document.getElementById("hamburger");
   if (menu.style.display === "none") {
     menu.style.display = "block";
   } else {

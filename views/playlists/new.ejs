@@ -1,19 +1,21 @@
 <% layout('layouts/boilerplate') %>
-
+<br>
 
 <div class="top ui stackable center aligned page grid container">
   <div class="column 12 wide card shadow mt-5">
     <h2 style="text-align:center">Create a New Playlist</h2>
     <div class="form" style="width: 40%; margin: 25px auto;">
 
-      <form action="/playlist" method="POST">
+      <form action="/playlists" method="POST">
 
         <div class="form-group">
-          <input class="form-control" type="text" placeholder="Name" name="name">
+          <label style="display:flex" class="ui left floated" for="name">Playlist Title</label>
+          <input class="form-control" type="text" placeholder="Name" id="name" name="name">
         </div>
 
         <div class="form-group">
-          <input class="form-control" type="text" placeholder="Image url" name="image">
+          <label style="display:flex" class="ui left floated" for="image">Playlist Image</label>
+          <input class="form-control" type="text" placeholder="Image url" id="image" name="image">
         </div>
 
         <div class="form-group">
@@ -21,8 +23,9 @@
         </div>
 
       </form>
-      <a href="/browse" class="btn btn-primary">Go Back</a>
     </div>
-
+    
   </div>
 </div>
+<br>
+<a href="/browse" class="btn btn-primary">Go Back</a>

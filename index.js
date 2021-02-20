@@ -33,6 +33,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
+
+
+
 app.get("/", (req, res) => {
   res.render("landing");
 });
@@ -46,37 +49,29 @@ app.get("/browse", catchAsync( async (req, res) => {
   res.render("browse/index", { allPlaylists, allSongs, allArtists });
 }));
 
-app.get("/playlist/new", (req, res) => {
-  res.render("playlist/new");
+app.get("/playlists/new", (req, res) => {
+  res.render("playlists/new");
 });
 
-// app.post('/campgrounds', async (req, res) => {
-//     const campground = new Campground(req.body.campground);
-//     await campground.save();
-//     res.redirect(`/campgrounds/${campground._id}`)
-// })
+app.post('/playlists', catchAsync (async (req, res) => {
+  const playlist = new Playlist(req.body);
+  await playlist.save();
+  res.redirect(`/playlists/${playlist._id}`)
+}));
 
-// app.get('/campgrounds/:id', async (req, res,) => {
-//     const campground = await Campground.findById(req.params.id)
-//     res.render('campgrounds/show', { campground });
-// });
+app.get('/playlists/:id', catchAsync (async (req, res,) => {
+    const playlist = await Playlist.findById(req.params.id)
+    res.render('playlists/show', { playlist });
+}));
 
-// app.get('/campgrounds/:id/edit', async (req, res) => {
-//     const campground = await Campground.findById(req.params.id)
-//     res.render('campgrounds/edit', { campground });
-// })
 
-// app.put('/campgrounds/:id', async (req, res) => {
-//     const { id } = req.params;
-//     const campground = await Campground.findByIdAndUpdate(id, { ...req.body.campground });
-//     res.redirect(`/campgrounds/${campground._id}`)
-// });
 
-// app.delete('/campgrounds/:id', async (req, res) => {
-//     const { id } = req.params;
-//     await Campground.findByIdAndDelete(id);
-//     res.redirect('/campgrounds');
-// })
+
+app.delete('/playlists/:id', catchAsync (async (req, res) => {
+    const { id } = req.params;
+    await Playlist.findByIdAndDelete(id);
+    res.redirect('/playlists');
+}));
 
 // Auth login/regster
 app.get("/auth/login", (req, res) => {

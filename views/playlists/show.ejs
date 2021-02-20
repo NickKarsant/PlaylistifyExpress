@@ -1,0 +1,57 @@
+<% layout('layouts/boilerplate') %>
+
+
+<div class="container">
+  <div class="text-center">
+    <h1 class="playlistTitle"><%= playlist.name %></h1>
+  </div>
+
+  <div class="row text-center">
+    <img id="pic" src="<%= playlist.image %>" class="mx-auto d-block img-fluid">
+  </div>
+</div>
+
+<div class="container">
+  <table>
+    <tr>
+      <td class="space">
+      <td id="adjustment" class="title">Title</td>
+      <td class="artist">Artist</td>
+    </tr>
+
+    <% playlist.songs.forEach(function(song){ %>
+    <tr class="list">
+      <!-- MAKE ICON CHANGE COLOR AND ADDED TO "LIKED SONGS" PLAYLIST  WHEN CLICKED-->
+      <td id="heart"><i class="far fa-heart like"></i></td>
+
+
+      <td id="playbutton">
+        <a class="btn btn-sm btn-success" href="/<%= song._id %>">Play</a>
+      </td>
+
+      <td class="title">
+        <%= song.name %>
+      </td>
+
+      <td class="artist">
+        <%= song.artist %>
+      </td>
+
+      <td class="more extended">
+        <i class="fas fa-ellipsis-h"></i>
+      </td>
+    </tr>
+
+    <% }); %>
+
+  </table>
+
+  <div class="container"></div>
+
+
+</div>
+<form action="/playlists/<%= playlist._id %>?_method=DELETE" method="POST">
+  <a class="ui button red right floated" href="">Delete</a>
+</form>
+
+<a class="btn btn-primary" href="/browse">Go Back</a>

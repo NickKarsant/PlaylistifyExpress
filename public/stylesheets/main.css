@@ -1,4 +1,7 @@
-
+main.container {
+  padding-bottom:5em;
+  clear: both;
+}
 
 .like{
   font-size: 1.8em;
@@ -8,5 +11,15 @@
   font-weight: bold;
   font-size: 2em;
   color: green;
+}
+
+
+#footer {
+  margin-top: auto;
+}
+
+#pic {
+  width: 60%;
+  height: 60%;
 }
 

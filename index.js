@@ -66,6 +66,12 @@ app.get('/playlists/:id', catchAsync (async (req, res,) => {
 
 }));
 
+// if click heart icon update "Liked Songs playlist" by adding song to playlists' song array
+app.patch('/playlists/:id', catchAsync (async (req, res,) => {
+  const song = await Song.findById(req.params.id)
+  
+  res.render('playlists/show', { playlist });
+}));
 
 
 

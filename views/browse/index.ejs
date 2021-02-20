@@ -74,22 +74,20 @@
         <div class="caption">
           <h8 class="card-title"> <%= song.name %> </h8>
         <p class="card-content"> <%= song.artist %></p>
-        <p class="card-content"> <%= song.id %></p>
+        <p class="card-content"> Song ID: <%= song.id %></p>
 
         <div class="row">
-          
-          <form action="">
-            <div class="col-4"><i class="far fa-heart like"></i></div>
+
+          <form class="col-4" action="">
+            <i class="fas fa-heart like"></i>
           </form>
-          <form action="">
-            <div class="col-4"><i class="fas fa-plus-square add"></i></div>
+          <form class="col-4" action="">
+            <i class="fas fa-plus-square add"></i>
           </form>
 
 
           <div class="col-4">
-            <a class="btn btn-md btn-success" href="">
-              <i id="play" class="fas fa-play"></i>
-            </a>
+            <i id="play" class="btn btn-md btn-success fas fa-play"></i>
           </div>
         </div>
 

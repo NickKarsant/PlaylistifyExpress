@@ -6,18 +6,27 @@ main.container {
 .like{
   font-size: 1.8em;
 }
-
-
-.add {
-  font-size: 1.8em;
-}
-
-
 .like:hover{
   font-weight: bold;
   font-size: 2em;
   color: green;
 }
+
+
+.add {
+  font-size: 1.8em;
+}
+.add:hover {
+  color:green
+}
+
+#play{
+  background-color:green;
+}
+
+
+
+
 
 
 #footer {

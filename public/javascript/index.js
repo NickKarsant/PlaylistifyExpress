@@ -1,22 +1,23 @@
 // toggle Hamgburger menu
-$("#navbarText").on("show.bs.collapse", function() {
-  $("a.nav-link").click(function() {
-    $("#navbarText").collapse("hide");
-  });
-});
-
 $("span#hamburger").click(function() {
-  toggleHamburger
+  toggleHamburger();
 });
 
 function toggleHamburger() {
-  var menu = document.getElementById("hamburger");
+  var menu = document.getElementById("navbarText");
   if (menu.style.display === "none") {
     menu.style.display = "block";
   } else {
     menu.style.display = "none";
   }
 }
+
+// click menu link 
+$("#navbarText").on('click', function() {
+  $("a.nav-link").click(function() {
+    $("#navbarText").css("display", "none");
+  });
+});
 
 
 

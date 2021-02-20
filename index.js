@@ -61,7 +61,9 @@ app.post('/playlists', catchAsync (async (req, res) => {
 
 app.get('/playlists/:id', catchAsync (async (req, res,) => {
     const playlist = await Playlist.findById(req.params.id)
+    console.log(req.params);
     res.render('playlists/show', { playlist });
+
 }));
 
 
@@ -70,8 +72,10 @@ app.get('/playlists/:id', catchAsync (async (req, res,) => {
 app.delete('/playlists/:id', catchAsync (async (req, res) => {
     const { id } = req.params;
     await Playlist.findByIdAndDelete(id);
-    res.redirect('/playlists');
+    res.redirect('/browse');
 }));
+
+
 
 // Auth login/regster
 app.get("/auth/login", (req, res) => {

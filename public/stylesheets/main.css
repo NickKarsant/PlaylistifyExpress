@@ -7,6 +7,12 @@ main.container {
   font-size: 1.8em;
 }
 
+
+.add {
+  font-size: 1.8em;
+}
+
+
 .like:hover{
   font-weight: bold;
   font-size: 2em;
@@ -21,5 +27,11 @@ main.container {
 #pic {
   width: 60%;
   height: 60%;
+}
+
+.glimpse{
+  min-width: 100px;
+  min-height: 100px;
+  object-fit: contain;
 }
 

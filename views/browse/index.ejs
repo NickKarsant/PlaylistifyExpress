@@ -30,30 +30,28 @@
 
       <div class="thumbnail">
         <div class="preview">
-          <% if (playlist.image) {%>
-          <img class="img-thumbnail card-fluid" src="<%=playlist.image%>" alt="">
-          <% } else {%>
-          <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/100" alt="">
-          <%}%>
-                </div>
-                <div class="card-body">
-                  <div class="caption">
-                    <h5 class="card-title"> <%= playlist.name %> </h5>
+
+          <img class="img-thumbnail card-fluid glimpse" src="<%=playlist.image%>" alt="">
         </div>
-        <p class="more">
 
-          <a class="button" href="/playlists/<%= playlist._id %>"><button class="btn btn-primary"> More
-              Info</button></a>
+        <div class="card-body">
+          <div class="caption">
+            <h5 class="card-title mb-2"> <%= playlist.name %> </h5>
+          </div>
+          <p class="more">
 
-        </p>
+            <a class="button" href="/playlists/<%= playlist._id %>"><button class="btn btn-primary">View
+                Playlist</button></a>
+
+          </p>
+        </div>
       </div>
+
     </div>
 
+
+    <%});%>
   </div>
-
-
-  <%});%>
-</div>
 
 </div>
 
@@ -75,11 +73,12 @@
       <div class="card-body">
         <div class="caption">
           <h8 class="card-title"> <%= song.name %> </h8>
-          <p class="card-content"> <%= song.artist %></p>
+        <p class="card-content"> <%= song.artist %></p>
 
         <div class="row">
-          <div class="col-6"><i class="far fa-heart like"></i></div>
-          <div class="col-6">
+          <div class="col-4"><i class="far fa-heart like"></i></div>
+          <div class="col-4"><i class="fas fa-plus-square add"></i></div>
+          <div class="col-4">
             <a class="btn btn-md btn-success" href="">
               <i id="play" class="fas fa-play"></i>
             </a>
@@ -118,8 +117,7 @@
         </div>
         <p class="more">
 
-          <a class="button" href=""><button class="btn btn-primary"> More
-              Info</button></a>
+          <a class="button" href=""><button class="btn btn-primary"> Discography</button></a>
 
         </p>
       </div>

@@ -14,6 +14,8 @@ const ExpressError = require("./utils/ExpressError");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const session = require("express-session");
+const seedDB = require("./seeds");
+
 
 mongoose.connect("mongodb://localhost:27017/playlistify", {
   useNewUrlParser: true,
@@ -47,6 +49,7 @@ const sessionConfig = {
     maxAge: 1000 * 60 * 60 * 24 * 7 * 30
   }
 };
+seedDB();
 
 app.use(session(sessionConfig));
 app.use(flash());
@@ -58,6 +61,13 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use((req,res, next) => {
+  res.locals.currentUser = req.user;
+  res.locals.success = req.flash('success');
+  res.locals.error = req.flash('error');
+  next();
+})
+
 
 
 const isLoggedIn = (req,res,next) => {
@@ -65,6 +75,7 @@ const isLoggedIn = (req,res,next) => {
     req.flash('error', "You must be signed in first");
     return res.redirect('/login');
   }
+  next();
 }
 
 
@@ -84,7 +95,7 @@ app.get(
   })
 );
 
-app.get("/playlists", (req, res) => {
+app.get("/playlists", isLoggedIn, (req, res) => {
   res.render("playlists/index");
 });
 
@@ -113,7 +124,7 @@ app.get(
 
 // if click heart icon update "Liked Songs playlist" by adding song to playlists' song array
 app.patch(
-  "/playlists/:id",
+  "/playlists/:id", isLoggedIn,
   catchAsync(async (req, res) => {
     console.log("hit patch route");
     // const song = await Song.findById(req.params.id)
@@ -147,7 +158,6 @@ app.post(
   passport.authenticate("local", {
     failureFlash: true,
     failureRedirect: "/login",
-    successRedirect: "/playlists"
   }),
   (req, res) => {
     // req.flash('success', "Welcome back!");

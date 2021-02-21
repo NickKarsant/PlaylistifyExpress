@@ -7,7 +7,11 @@
     <p>Search through our database of music for the right songs and artists and become a playlist god!</p>
 
     <p>
+      <!-- if not logged in CreatePlaylist button leads to login page -->
+      <!-- else lead to new playlist form -->
       <a class="btn btn-lg btn-primary" href="/playlists/new">Create a New Playlist </a>
+
+      <!-- if not logged in MyPlaylists isnt displayed -->
       <a class="btn btn-lg btn-primary" href="/myplaylists">MyPlaylists</a>
     </p>
     <form>
@@ -78,10 +82,11 @@
 
         <div class="row">
 
-          <form class="col-4" action="">
+          <form class="col-4" action="/playlists/" method="PATCH">
             <i class="fas fa-heart like"></i>
           </form>
-          <form class="col-4" action="">
+
+          <form class="col-4" action="" method="PATCH">
             <i class="fas fa-plus-square add"></i>
           </form>
 

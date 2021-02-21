@@ -178,8 +178,13 @@ app.post(
       
 
 
-      // req.flash("success", "Welcome to Playlist-ify");
-      res.redirect("/playlists");
+      req.logIn(registeredUser, err => {
+        if (err){
+          next()
+        }
+        // req.flash("success", "Welcome to Playlist-ify");
+        res.redirect("/playlists");
+      })
     } catch (e) {
       // req.flash("error", e.message);
       res.redirect("/register");

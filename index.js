@@ -58,6 +58,17 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
+
+const isLoggedIn = (req,res,next) => {
+  if (!req.isAuthenticated()){
+    req.flash('error', "You must be signed in first");
+    return res.redirect('/login');
+  }
+}
+
+
+
 app.get("/", (req, res) => {
   res.render("landing");
 });
@@ -77,8 +88,10 @@ app.get("/playlists", (req, res) => {
   res.render("playlists/index");
 });
 
-app.get("/playlists/new", (req, res) => {
-  res.render("playlists/new");
+app.get("/playlists/new", isLoggedIn, (req, res) => {
+
+    res.render("playlists/new");
+
 });
 
 app.post(
@@ -111,7 +124,7 @@ app.patch(
 );
 
 app.delete(
-  "/playlists/:id",
+  "/playlists/:id", isLoggedIn,
   catchAsync(async (req, res) => {
     const { id } = req.params;
     await Playlist.findByIdAndDelete(id);
@@ -147,18 +160,60 @@ app.post(
   catchAsync(async (req, res) => {
     try {
       const { username, email, password } = req.body;
-      const newUser = new User({ username: username, email: email });
+      const newUser = new User({ username: username, email: email, });
 
       const registeredUser = await User.register(newUser, password);
       console.log(registeredUser);
+      // making LIked Songs playist should happene here
+      
+
+
       // req.flash("success", "Welcome to Playlist-ify");
       res.redirect("/playlists");
     } catch (e) {
       // req.flash("error", e.message);
       res.redirect("/register");
     }
-  })
-);
+  
+
+    // const LikedSongs = {
+    //   name: "Liked Songs",
+    //   username: registeredUser.username,
+    //   image:
+    //     "http://4.bp.blogspot.com/-OAFqpDO7Igg/Uns5RBhVroI/AAAAAAAAZpQ/K1Izf_yUWCI/s1600/Green+Heart+Wallpapers.jpg",
+    //   songs: [],
+    //   author: userId
+    // };
+
+  // const playlist = new Playlist(LikedSongs);
+  // await playlist.save();
+
+
+
+  // Playlist.create(LikedSongs, function(err, newlyCreated) {
+  //   if (err) {
+  //     console.log(err);
+  //   } else {
+  //     newlyCreated.save(function(err, playlist) {
+  //       if (err) {
+  //         console.log("Something whent wrong");
+  //       } else {
+  //         console.log(playlist.name + " saved");
+  //       }
+  //     });
+
+  //   }
+  // });
+
+
+}));
+
+app.get('/auth/logout', (req,res) => {
+  req.logout();
+  req.flash('success', "Bye! Come back soon")
+  res.redirect('/browse')
+})
+
 
 app.listen(3000, () => {
   console.log("Serving on port 3000");

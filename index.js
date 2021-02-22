@@ -14,6 +14,10 @@ const ExpressError = require("./utils/ExpressError");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const session = require("express-session");
+
+const playlistRoutes = require('./routes/playlists');
+const userRoutes = require('./routes/users');
+
 const seedDB = require("./seeds");
 
 
@@ -68,16 +72,12 @@ app.use((req,res, next) => {
   next();
 })
 
+app.use('/playlists', playlistRoutes)
+app.use('/', userRoutes)
 
 
-const isLoggedIn = (req,res,next) => {
-  if (!req.isAuthenticated()){
-    req.session.returnTo = req.originalUrl;
-    req.flash('error', "You must be signed in first");
-    return res.redirect('/login');
-  }
-  next();
-}
+
+
 
 
 
@@ -96,150 +96,12 @@ app.get(
   })
 );
 
-app.get("/playlists", isLoggedIn, (req, res) => {
-  res.render("playlists/index");
-});
-
-app.get("/playlists/new", isLoggedIn, (req, res) => {
-
-    res.render("playlists/new");
-
-});
-
-app.post(
-  "/playlists", isLoggedIn,
-  catchAsync(async (req, res) => {
-    const playlist = new Playlist(req.body);
-    playlist.author = req.user._id;
-    await playlist.save();
-    res.redirect(`/playlists/${playlist._id}`);
-  })
-);
-
-// playlist SHOW route
-app.get(
-  "/playlists/:id",
-  catchAsync(async (req, res) => {
-    const playlist = await Playlist.findById(req.params.id).populate('song').populate('author');
-    if (!playlist) {
-      req.flash('error', 'Playlist not found');
-      return res.redirect('/browse');
-    }
-    res.render("playlists/show", { playlist });
-  })
-);
-
-// if click heart icon update "Liked Songs playlist" by adding song to playlists' song array
-app.patch(
-  "/playlists/:id", isLoggedIn,
-  catchAsync(async (req, res) => {
-    console.log("hit patch route");
-    // const song = await Song.findById(req.params.id)
-    // const likedPlaylist = await Playlist.find({name: "Liked Songs"})
-
-    res.render();
-  })
-);
-
-app.delete(
-  "/playlists/:id", isLoggedIn,
-  catchAsync(async (req, res) => {
-    const { id } = req.params;
-    await Playlist.findByIdAndDelete(id);
-    res.redirect("/browse");
-  })
-);
-
-// Auth display login/regster
-app.get("/login", (req, res) => {
-  res.render("auth/login");
-});
-
-app.get("/register", (req, res) => {
-  res.render("auth/register");
-});
-
-// auth
-app.post(
-  "/auth/login",
-  passport.authenticate("local", {
-    failureFlash: true,
-    failureRedirect: "/login",
-  }),
-  (req, res) => {
-    // req.flash('success', "Welcome back!");
-    if (req.session.returnTo) {
-      res.redirect(req.session.returnTo)
-      delete req.session.returnTo
-      return
-    }
-    res.redirect('/playlists')
-  }
-);
-
-app.post(
-  "/auth/register",
-  catchAsync(async (req, res) => {
-    try {
-      const { username, email, password } = req.body;
-      const newUser = new User({ username: username, email: email, });
-
-      const registeredUser = await User.register(newUser, password);
-      console.log(registeredUser);
-      // making LIked Songs playist should happene here
-      
-
-
-      req.logIn(registeredUser, err => {
-        if (err){
-          next()
-        }
-        // req.flash("success", "Welcome to Playlist-ify");
-        res.redirect("/playlists");
-      })
-    } catch (e) {
-      // req.flash("error", e.message);
-      res.redirect("/register");
-    }
-  
-
-    // const LikedSongs = {
-    //   name: "Liked Songs",
-    //   username: registeredUser.username,
-    //   image:
-    //     "http://4.bp.blogspot.com/-OAFqpDO7Igg/Uns5RBhVroI/AAAAAAAAZpQ/K1Izf_yUWCI/s1600/Green+Heart+Wallpapers.jpg",
-    //   songs: [],
-    //   author: userId
-    // };
-
-  // const playlist = new Playlist(LikedSongs);
-  // await playlist.save();
 
 
 
-  // Playlist.create(LikedSongs, function(err, newlyCreated) {
-  //   if (err) {
-  //     console.log(err);
-  //   } else {
-  //     newlyCreated.save(function(err, playlist) {
-  //       if (err) {
-  //         console.log("Something whent wrong");
-  //       } else {
-  //         console.log(playlist.name + " saved");
-  //       }
-  //     });
-
-  //   }
-  // });
 
 
-}));
 
-app.get('/auth/logout', (req,res) => {
-  req.logout();
-  req.flash('success', "Bye! Come back soon")
-  res.redirect('/browse')
-})
 
 
 app.listen(3000, () => {

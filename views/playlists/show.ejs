@@ -4,6 +4,7 @@
 <div class="container">
   <div class="text-center">
     <h1 class="playlistTitle mt-3 mb-3"><%= playlist.name %></h1>
+    <caption>playlist created by : <%= playlist.author.username %></caption>
   </div>
 
   <div class="row text-center">
@@ -19,10 +20,17 @@
       <td class="artist">Artist</td>
     </tr>
 
+<!-- REPLACE TR TABLE WITH BOOTSTRAP GRID SYSTEM -->
     <% playlist.songs.forEach(function(song){ %>
-    <tr class="list">
+    <tr class="list" style="border-top: 1px solid black; border-bottom:1px solid black;">
       <!-- MAKE ICON CHANGE COLOR AND ADDED TO "LIKED SONGS" PLAYLIST  WHEN CLICKED-->
-      <td id="heart"><i class="far fa-heart like"></i></td>
+      <td id="heart">
+        <form class="col-2" action="/playlists/" method="PATCH">
+          <i class="fas fa-heart like"></i>
+        </form>
+      </td>
+
+      <%= song %>
 
 
       <td id="playbutton">
@@ -38,7 +46,9 @@
       </td>
 
       <td class="more extended">
-        <i class="fas fa-ellipsis-h"></i>
+        <form class="col-2" action="" method="PATCH">
+          <i class="fas fa-plus-square add"></i>
+        </form>
       </td>
     </tr>
 

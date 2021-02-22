@@ -12,6 +12,12 @@ main.container {
   color: green;
 }
 
+#home {
+  color: rgba(255,255,255,.5);
+}
+#home:hover {
+  color: rgba(255,255,255,.75);
+}
 
 .add {
   font-size: 1.8em;

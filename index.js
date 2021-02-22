@@ -72,6 +72,7 @@ app.use((req,res, next) => {
 
 const isLoggedIn = (req,res,next) => {
   if (!req.isAuthenticated()){
+    req.session.returnTo = req.originalUrl;
     req.flash('error', "You must be signed in first");
     return res.redirect('/login');
   }
@@ -114,10 +115,15 @@ app.post(
   })
 );
 
+// playlist SHOW route
 app.get(
   "/playlists/:id",
   catchAsync(async (req, res) => {
-    const playlist = await Playlist.findById(req.params.id);
+    const playlist = await Playlist.findById(req.params.id).populate('song').populate('author');
+    if (!playlist) {
+      req.flash('error', 'Playlist not found');
+      return res.redirect('/browse');
+    }
     res.render("playlists/show", { playlist });
   })
 );
@@ -161,7 +167,12 @@ app.post(
   }),
   (req, res) => {
     // req.flash('success', "Welcome back!");
-    res.redirect('/playlists');
+    if (req.session.returnTo) {
+      res.redirect(req.session.returnTo)
+      delete req.session.returnTo
+      return
+    }
+    res.redirect('/playlists')
   }
 );
 

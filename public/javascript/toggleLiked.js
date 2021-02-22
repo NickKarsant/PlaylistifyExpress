@@ -1,5 +1,6 @@
 // heart/like button toggle
 function toggleLiked() {
+  console.log("clicked");
   if (this.style.color === "") {
     this.style.color = "green";
     var isLiked = true

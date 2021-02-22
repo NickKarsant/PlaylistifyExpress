@@ -107,9 +107,10 @@ app.get("/playlists/new", isLoggedIn, (req, res) => {
 });
 
 app.post(
-  "/playlists",
+  "/playlists", isLoggedIn,
   catchAsync(async (req, res) => {
     const playlist = new Playlist(req.body);
+    playlist.author = req.user._id;
     await playlist.save();
     res.redirect(`/playlists/${playlist._id}`);
   })

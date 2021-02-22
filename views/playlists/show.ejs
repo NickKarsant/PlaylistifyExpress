@@ -60,8 +60,10 @@
 
 
 </div>
+
+<% if (currentUser && playlist.author.equals(currentUser._id)) { %>
 <form action="/playlists/<%=playlist._id%>?_method=DELETE" method="POST">
   <button class="ui button red right floated">Delete</button>
 </form>
-
+<%}%>
 <a class="btn btn-primary" href="/browse">Go Back</a>

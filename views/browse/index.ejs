@@ -80,7 +80,8 @@
         <!-- <p class="card-content"> Song ID: <%= song.id %></p> -->
 
         <div class="row">
-
+          
+          <% if (currentUser) {%>
 
           <i class="col-4 fas fa-heart like">
             <form action="/playlists/" method="PATCH"></form>
@@ -92,10 +93,12 @@
           </i>
 
 
-
+          
           <div class="col-4">
             <i id="play" class="btn btn-md btn-success fas fa-play"></i>
           </div>
+          
+          <%}%>
         </div>
 
 

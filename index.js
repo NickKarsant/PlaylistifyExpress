@@ -1,9 +1,10 @@
 const express = require("express");
+const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
-const flash = require("flash");
+const flash = require("connect-flash");
 
 const User = require("./models/user");
 const Playlist = require("./models/playlist");
@@ -33,8 +34,6 @@ db.once("open", () => {
   console.log("Database connected");
 });
 
-const app = express();
-
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -50,13 +49,19 @@ const sessionConfig = {
   cookie: {
     httpOnly: true,
     expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
-    maxAge: 1000 * 60 * 60 * 24 * 7 * 30
+    maxAge: 1000 * 60 * 60 * 24 * 7 * 4
   }
 };
 seedDB();
 
 app.use(session(sessionConfig));
 app.use(flash());
+
+app.use((req, res, next) => {
+  res.locals.success = req.flash('success');
+  res.locals.error = req.flash('error');
+  next();
+});
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -95,11 +100,6 @@ app.get(
     res.render("browse/index", { allPlaylists, allSongs, allArtists });
   })
 );
-
-
-
-
-
 
 
 

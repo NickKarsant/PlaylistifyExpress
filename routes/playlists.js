@@ -22,6 +22,8 @@ router.post(
     const playlist = new Playlist(req.body);
     playlist.author = req.user._id;
     await playlist.save();
+    req.flash('succes', 'New playlist created!');
+    console.log(req.flash('success', 'New playlist created!'));
     res.redirect(`/playlists/${playlist._id}`);
   })
 );
@@ -56,6 +58,8 @@ router.delete(
   catchAsync(async (req, res) => {
     const { id } = req.params;
     await Playlist.findByIdAndDelete(id);
+    req.flash('success', 'Playlist deleted');
+
     res.redirect("/browse");
   })
 );

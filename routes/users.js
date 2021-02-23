@@ -23,7 +23,7 @@ router.post(
     failureRedirect: "/login"
   }),
   (req, res) => {
-    // req.flash('success', "Welcome back!");
+    req.flash('success', "Welcome back!");
     if (req.session.returnTo) {
       res.redirect(req.session.returnTo);
       delete req.session.returnTo;
@@ -73,11 +73,11 @@ router.post(
         if (err) {
           next();
         }
-        // req.flash("success", "Welcome to Playlist-ify");
+        req.flash("success", "Welcome to Playlist-ify");
         res.redirect("/playlists");
       });
     } catch (e) {
-      // req.flash("error", e.message);
+      req.flash("error", e.message);
       res.redirect("/register");
     }
   })

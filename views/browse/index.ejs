@@ -25,7 +25,7 @@
   </header>
 </div>
 
-
+<!-- PLAYLISTS -->
 <div id="playlists" class="ui container mb-5">
   <h1 class="mt-5 mb-5">Playlists</h1>
   <div class="ui grid mb-3 row text-center">
@@ -52,18 +52,17 @@
 
     </div>
 
-
     <%});%>
   </div>
 
 </div>
 
-
+<!-- SONGS -->
 <div id="songs" class="ui container">
   <h1 class="mb-5">Songs</h1>
   <div class="ui grid mb-3 row text-center">
     <% allSongs.forEach(function(song) {%>
-    <div id="songs" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
+    <div id="songs" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-3">
 
       <div class="thumbnail">
         <% if (song.image) {%>
@@ -75,9 +74,9 @@
 
       <div class="card-body">
         <div class="caption">
-          <h8 class="card-title"> <%= song.name %> </h8>
+          <h8 class="card-title"> <strong><%= song.name %></strong> </h8>
         <p class="card-content"> <%= song.artist %></p>
-        <p class="card-content"> Song ID: <%= song.id %></p>
+        <!-- <p class="card-content"> Song ID: <%= song.id %></p> -->
 
         <div class="row">
 
@@ -106,8 +105,8 @@
 </div>
 </div>
 
-
-<div id="playlists" class="ui container mb-5">
+<!-- ARTISTS -->
+<div id="artists" class="ui container mb-5">
   <h1 class="mt-5 mb-5">Artists</h1>
   <div class="ui grid mb-3 row text-center">
     <% allArtists.forEach(function(artist) {%>
@@ -116,14 +115,14 @@
       <div class="thumbnail">
         <div class="preview">
           <% if (artist.image) {%>
-          <img class="img-thumbnail card-fluid" src="<%=artist.image%>" alt="">
+          <img style="max-width:150px; height:150px" class="img-thumbnail card-fluid" src="<%=artist.image%>" alt="">
           <% } else {%>
           <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/200" alt="">
           <%}%>
                 </div>
                 <div class="card-body">
                   <div class="caption">
-                    <h5 class="card-title"> <%= artist.name %> </h5>
+                    <h5 class="card-title mb-2"> <strong><%= artist.name %> </strong></h5>
         </div>
         <p class="more">
 

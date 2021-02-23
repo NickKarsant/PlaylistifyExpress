@@ -23,12 +23,12 @@ router.post(
     failureRedirect: "/login"
   }),
   (req, res) => {
-    req.flash('success', "Welcome back!");
     if (req.session.returnTo) {
       res.redirect(req.session.returnTo);
       delete req.session.returnTo;
       return;
     }
+    // req.flash('success', "Welcome back!");
     res.redirect("/playlists");
   }
 );
@@ -48,9 +48,6 @@ const createLikedSongsPlaylist = async (newUser) => {
   const playlist = new Playlist(LikedSongs);
   console.log(playlist);
   await playlist.save();
-
-
-
 
 }
 

@@ -30,30 +30,31 @@
   <h1 class="mt-5 mb-5">Playlists</h1>
   <div class="ui grid mb-3 row text-center">
     <% allPlaylists.forEach(function(playlist) {%>
-    <div id="playlists" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
+      <div id="playlists" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
 
-      <div class="thumbnail">
-        <div class="preview">
-          <img style="max-width:150px; height:150px" class="img-thumbnail card-fluid glimpse" src="<%=playlist.image%>" alt="">
-        </div>
-
-        <div class="card-body">
-          <div class="caption">
-            <h5 class="card-title mb-2"> <%= playlist.name %> </h5>
+        <div class="thumbnail">
+          <div class="preview">
+            <img style="max-width:150px; height:150px" class="img-thumbnail card-fluid glimpse"
+              src="<%=playlist.image%>" alt="">
           </div>
-          <p class="more">
 
-            <a class="button" href="/playlists/<%= playlist._id %>"><button class="btn btn-primary">View
-                Playlist</button></a>
+          <div class="card-body">
+            <div class="caption">
+              <h5 class="card-title mb-2"> <%= playlist.name %> </h5>
+            </div>
+            <p class="more">
 
-          </p>
+              <a class="button" href="/playlists/<%= playlist._id %>"><button class="btn btn-primary">View
+                  Playlist</button></a>
+
+            </p>
+          </div>
         </div>
+
       </div>
 
-    </div>
-
-    <%});%>
-  </div>
+      <%});%>
+</div>
 
 </div>
 
@@ -80,13 +81,16 @@
 
         <div class="row">
 
-          <form class="col-4" action="/playlists/" method="PATCH">
-            <i class="fas fa-heart like"></i>
-          </form>
 
-          <form class="col-4" action="" method="PATCH">
-            <i class="fas fa-plus-square add"></i>
-          </form>
+          <i class="col-4 fas fa-heart like">
+            <form action="/playlists/" method="PATCH"></form>
+          </i>
+
+
+          <i class="col-4 fas fa-plus-square add">
+            <form action="" method="PATCH"></form>
+          </i>
+
 
 
           <div class="col-4">

@@ -44,10 +44,16 @@ const createLikedSongsPlaylist = async (newUser) => {
     author: newUser.id
   };
 
-
   const playlist = new Playlist(LikedSongs);
-  console.log(playlist);
   await playlist.save();
+  newUser.playlists = [];
+  console.log("newUser.playlists BEFORE: " + newUser.playlists);
+  console.log("newUser.playlists BEFORE: " + typeof(newUser.playlists));
+  
+  newUser.playlists.push(playlist);
+  await newUser.save();
+  console.log("newUser.playlists AFTER: " + newUser.playlists);
+  console.log("newUser.playlists AFTER: " + typeof(newUser.playlists));
 
 }
 
@@ -59,8 +65,6 @@ router.post(
       const newUser = new User({ username: username, email: email });
 
       const registeredUser = await User.register(newUser, password);
-      // console.log(registeredUser);
-      // making Liked Songs playist should happene here
       
 
       createLikedSongsPlaylist(registeredUser);

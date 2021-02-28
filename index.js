@@ -11,7 +11,6 @@ const Playlist = require("./models/playlist");
 const Song = require("./models/song");
 const Artist = require("./models/artist");
 const catchAsync = require("./utils/catchAsync");
-const ExpressError = require("./utils/ExpressError");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const session = require("express-session");
@@ -20,7 +19,7 @@ const playlistRoutes = require('./routes/playlists');
 const userRoutes = require('./routes/users');
 
 const seedDB = require("./seeds");
-
+seedDB();
 
 mongoose.connect("mongodb://localhost:27017/playlistify", {
   useNewUrlParser: true,
@@ -52,7 +51,6 @@ const sessionConfig = {
     maxAge: 1000 * 60 * 60 * 24 * 7 * 4
   }
 };
-seedDB();
 
 app.use(session(sessionConfig));
 app.use(flash());

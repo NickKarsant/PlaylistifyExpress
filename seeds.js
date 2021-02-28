@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 var Song = require("./models/song");
 var Artist = require("./models/artist");
 var Playlist = require("./models/playlist");
+var User = require("./models/user");
 
 var artists = [
   {
@@ -57,7 +58,7 @@ var playlists = [
     name: "tester1",
     image:
       "https://images0.bluebeat.com/playlist/1/6/9/8/2/600_playlist_28961.jpg",
-    author: "6031c43bb25f4cf8d42eb78b",
+    author: {_id: "603addc9a4c03651bf1f5374"},
     songs: [{"_id": "60340adc27f0a60a6a35e336"}, {"_id": "60340adc27f0a60a6a35e337"}, {"_id": "60340adc27f0a60a6a35e338"}]
   }
 ];
@@ -171,47 +172,36 @@ function seedDB() {
     if (err) {
       console.log(err);
     } else {
-      console.log("removed artists!");
+      // console.log("removed artists!");
       artists.forEach(function(seed) {
         Artist.create(seed, function(err, artist) {
           if (err) {
             console.log(err);
           } else {
-            console.log("added an artist");
+            // console.log("added an artist");
           }
         });
       });
     }
   });
 
-  Playlist.deleteMany({}, function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("removed playlist!");
-      playlists.forEach(function(seed) {
-        Playlist.create(seed, function(err, playlist) {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log("added an playlist");
-          }
-        });
-      });
-    }
-  });
+  // Playlist.deleteMany({}, function(err) {
+  //   if (err) {
+  //     console.log(err);
+  //   } 
+  // });
 
   Song.deleteMany({}, function(err) {
     if (err) {
       console.log(err);
     } else {
-      console.log("removed songs!");
+      // console.log("removed songs!");
       songs.forEach(function(seed) {
         Song.create(seed, function(err, song) {
           if (err) {
             // console.log(err)
           } else {
-            console.log("added a song");
+            // console.log("added a song");
           }
         });
       });
@@ -219,5 +209,6 @@ function seedDB() {
   });
   console.log("seedDB finsihed");
 }
+
 
 module.exports = seedDB;

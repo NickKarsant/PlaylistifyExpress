@@ -17,7 +17,9 @@ router.get(
     });
 
     console.log("user: " + user);
+    console.log("user: " + Array.isArray(user));
     const userObject = user[0];
+    console.log("userObject array? " + Array.isArray(user));
     console.log("userObject: " + userObject)
     const usersPlaylists = userObject.playlists
 

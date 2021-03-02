@@ -3,7 +3,8 @@ var passportLocalMongoose = require("passport-local-mongoose");
 
 var UserSchema = new mongoose.Schema({
   email: { type: String, trim: true, unique: true, required: true },
-  playlists: Array
+  playlists:  Array
+  // playlists:  [{type: mongoose.Schema.Types.ObjectId, ref: 'Playlist' }]
 });
 
 UserSchema.plugin(passportLocalMongoose);

@@ -11,7 +11,7 @@ var PlaylistSchema = new mongoose.Schema({
   },
   // username: {type: String, required: true, index: true, unique: false, sparse: false},
   image: String,
-  author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  author: {type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   songs: [{type: mongoose.Schema.Types.ObjectId, ref: 'Song'}]
 });
 

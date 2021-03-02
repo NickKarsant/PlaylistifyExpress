@@ -15,10 +15,16 @@ router.get(
     const user = await User.find({
       "_id": req.user._id
     });
-    const usersPlaylists = user.playlists
 
-    console.log("type of user.playlists: " + typeof(user.playlists));
-    console.log("Users Playlists: " + user.playlists)
+    console.log("user: " + user);
+    const userObject = user[0];
+    console.log("userObject: " + userObject)
+    const usersPlaylists = userObject.playlists
+
+    // USER IS AN ARRAY with an the user object inside.  WHY??
+    console.log(userObject.playlists);
+    // console.log("type of user.playlists: " + Array.isArray(usersPlaylists));
+    // console.log("Users Playlists: " + user.playlists)
 
     res.render("playlists/index", { usersPlaylists });
   })

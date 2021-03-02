@@ -46,14 +46,14 @@ const createLikedSongsPlaylist = async (newUser) => {
 
   const playlist = new Playlist(LikedSongs);
   await playlist.save();
-  newUser.playlists = [];
+
   console.log("newUser.playlists BEFORE: " + newUser.playlists);
-  console.log("newUser.playlists BEFORE: " + typeof(newUser.playlists));
+  console.log("newUser.playlists BEFORE: " + Array.isArray(newUser.playlists));
   
   newUser.playlists.push(playlist);
   await newUser.save();
   console.log("newUser.playlists AFTER: " + newUser.playlists);
-  console.log("newUser.playlists AFTER: " + typeof(newUser.playlists));
+  console.log("newUser.playlists AFTER: " + Array.isArray(newUser.playlists));
 
 }
 

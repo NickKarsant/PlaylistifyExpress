@@ -6,7 +6,7 @@
   <div class="ui grid mb-3">
     <% for(let playlist of usersPlaylists) {%>
     <div id="playlists" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
-      <a href="/playlists/<%= playlist._id %>">
+      <a class="playlists" href="/playlists/<%= playlist._id %>">
 
         <h2 class="text-center mt-1"><%= playlist.name%> </h2>
         <img style="max-width:100%" src="<%= playlist.image%>" class="mb-3" alt="">

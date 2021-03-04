@@ -1,44 +1,47 @@
 main.container {
-  padding-bottom:5em;
+  padding-bottom: 5em;
   clear: both;
 }
 
-.like{
+.like {
   font-size: 1.8em;
 }
-.like:hover{
+.like:hover {
   font-weight: bold;
   font-size: 2em;
   color: green;
 }
 
 #home {
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 #home:hover {
-  color: rgba(255,255,255,.75);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .add {
   font-size: 1.8em;
 }
 .add:hover {
-  color:green
-}
-
-#play{
-  background-color:green;
-}
-
-
-.playlists{
-  color: black
-}
-.playlists:hover{
   color: green;
 }
 
+#play {
+  background-color: green;
+}
 
+.img-responsive{
+  width:100%;
+  height: 200px;
+}
+
+.playlists {
+  /* height: 200px; */
+  color: black;
+}
+.playlists:hover {
+  color: green;
+}
 
 #footer {
   margin-top: auto;
@@ -49,9 +52,8 @@ main.container {
   height: 60%;
 }
 
-.glimpse{
+.glimpse {
   min-width: 100px;
   min-height: 100px;
   object-fit: contain;
 }
-

@@ -5,6 +5,7 @@ const ExpressError = require("../utils/ExpressError");
 const Playlist = require("../models/playlist");
 const User = require("../models/user");
 const { isLoggedIn } = require("../middleware.js");
+const mongoose = require("mongoose");
 
 
 // show users Home page, all playlists
@@ -16,23 +17,19 @@ router.get(
       "_id": req.user._id
     });
 
-    console.log("user: " + user);
-    console.log("user: " + Array.isArray(user));
+
     const userObject = user[0];
-    console.log("userObject array? " + Array.isArray(user));
-    console.log("userObject: " + userObject)
+
     const usersPlaylists = userObject.playlists
 
-    // USER IS AN ARRAY with an the user object inside.  WHY??
-    console.log(userObject.playlists);
-    // console.log("type of user.playlists: " + Array.isArray(usersPlaylists));
-    // console.log("Users Playlists: " + user.playlists)
+    console.log(userObject);
 
     res.render("playlists/index", { usersPlaylists });
   })
 );
 
 router.get("/new", isLoggedIn, (req, res) => {
+  console.log(req.body)
   res.render("playlists/new");
 });
 
@@ -45,11 +42,25 @@ router.post(
     playlist.author = req.user._id;
     const savedPlaylist = await playlist.save();
 
-    console.log("TYPE OF: " + typeof(savedPlaylist));
-    console.log("POST ROUTE USER: " + req.user)
-    
-    req.user.playlists.push(savedPlaylist)
-    console.log("POST ROUTE PLAYLISTS: " + req.user.playlists)
+    // playlist created
+    console.log(savedPlaylist);
+    const foundUsers = await User.find({
+      "_id": req.user._id
+    });
+    // console.log(user)
+    // console.log(user[0].playlists)
+    // update mongodb
+    const desiredUser = foundUsers[0];
+    desiredUser.playlists.push(savedPlaylist);
+
+    await desiredUser.save()
+    console.log(desiredUser);
+
+
+
+
+
+
 
     req.flash("succes", "New playlist created!");
     res.redirect(`/playlists/${playlist._id}`);

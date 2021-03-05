@@ -22,22 +22,37 @@ main.container {
 
 .aside{
   list-style: none;
+  margin-top: 1em;
 }
 
 .aside li{
+  margin:1em 0;
+}
+
+#home{
+  padding-top:1em;
+  margin-right:1em;
+  margin-bottom:0.5em;
+  border: 1px solid red;
+}
+
+#browse{
+  border: 1px solid red;
 
 }
+
 
 #sideAdd{
   font-size:1.5em;
 }
 
-#home {
-color: black
-
+.navigation {
+  font-size: 1.5em;
+  color: black
 }
-#home:hover {
-  color: rgba(255, 255, 255, 0.75);
+
+.navigation:hover {
+ color: green;
 }
 
 .add {

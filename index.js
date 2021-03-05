@@ -90,6 +90,9 @@ app.get(
     const allSongs = await Song.find({});
     const allArtists = await Artist.find({});
 
+    console.log(req.user)
+
+
     res.render("browse/index", { allPlaylists, allSongs, allArtists });
   })
 );

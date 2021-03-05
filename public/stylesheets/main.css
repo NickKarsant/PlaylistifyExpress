@@ -1,7 +1,15 @@
+body{
+  margin:0;
+  padding: 0;
+}
 main.container {
-  padding-bottom: 5em;
+  margin: 0;
+  padding: 0 0 5em 0;
+  /* padding-bottom: 5em; */
   clear: both;
 }
+
+
 
 .like {
   font-size: 1.8em;
@@ -12,8 +20,21 @@ main.container {
   color: green;
 }
 
+.aside{
+  list-style: none;
+}
+
+.aside li{
+
+}
+
+#sideAdd{
+  font-size:1.5em;
+}
+
 #home {
-  color: rgba(255, 255, 255, 0.5);
+color: black
+
 }
 #home:hover {
   color: rgba(255, 255, 255, 0.75);

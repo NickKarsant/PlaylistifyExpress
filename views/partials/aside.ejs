@@ -29,7 +29,7 @@
         </li>
         <% allPlaylists.forEach(function(playlist) {%>
         <li>
-          <a class="sidePlaylist btn btn-sm " href="/playlists/new"> <img class="sideImage" src="<%= playlist.image%>" alt=""> <%= playlist.name %></a>
+          <a class="sidePlaylist btn btn-sm " href="/playlists/<%=playlist._id%>"> <img class="sideImage" src="<%= playlist.image%>" alt=""> <%= playlist.name %></a>
         </li>
         <%})%>
       </ul>

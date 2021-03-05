@@ -20,14 +20,7 @@ main.container {
   color: green;
 }
 
-.aside{
-  list-style: none;
-  margin-top: 1em;
-}
 
-.aside li{
-  margin:1em 0;
-}
 
 #home{
   padding-top:1em;
@@ -41,9 +34,34 @@ main.container {
 
 }
 
+h4#list{
+  font-size:1.5em;
+}
+
+.aside{
+  list-style: none;
+  margin-top: 1em;
+}
+
+.aside li{
+  margin:1em 0;
+}
+
+.aside li a.sidePlaylist{
+  font-size:1.5em;
+}
 
 #sideAdd{
-  font-size:1.5em;
+  font-size:2em;
+}
+
+.sidePlaylist{
+  font-size: 2em;
+}
+
+.sideImage{
+  width:35px;
+  height:35px;
 }
 
 .navigation {

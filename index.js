@@ -96,6 +96,14 @@ app.get(
     res.render("browse/index", { allPlaylists, allSongs, allArtists });
   })
 );
+app.get(
+  "/search",
+  catchAsync(async (req, res) => {
+
+
+    res.render("browse/search", { });
+  })
+);
 
 
 

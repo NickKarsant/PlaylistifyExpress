@@ -3,11 +3,11 @@
     <ul class="aside">
       <% if(currentUser) {%>
       <li>
-        <a id="home" class="navigation" href="/playlists"><span><i class="fas fa-home"></i></span>Home</a>
+        <a id="home" class="navigation" href="/playlists"><span><i class="fas fa-home"></i></span> Home</a>
       </li>
       <li>
         <a id="browse" styl="margin-top:1em;" class="navigation" href="/browse"><span><i
-              class="fas fa-eye"></i></span>Browse</a>
+              class="fas fa-eye"></i> </span> Browse</a>
       </li>
       <%} else {%>
       <li>
@@ -16,7 +16,7 @@
       <%}%>
         </li>
         <li>
-            <a id="browse" class="navigation" href="/search"><span><i class="fas fa-search"></i></span>Search</a>
+            <a id="browse" class="navigation" href="/search"><span><i class="fas fa-search"> </i></span>Search</a>
 
         </li>
       </ul>
@@ -31,7 +31,7 @@
       <li>
         <a class="btn btn-sm " href="/playlists/new"><i id="sideAdd" class="far fa-plus-square">Create Playlist</i> </a>
       </li>
-      <% allPlaylists.forEach(function(playlist) {%>
+      <% usersPlaylists.forEach(function(playlist) {%>
       <li>
         <a class="sidePlaylist btn btn-sm " href="/playlists/<%=playlist._id%>"> <img class="sideImage"
             src="<%= playlist.image%>" alt=""> <%= playlist.name %></a>

@@ -108,6 +108,7 @@ router.delete(
   catchAsync(async (req, res) => {
     const { id } = req.params;
     await Playlist.findByIdAndDelete(id);
+    req.user._id
     req.flash("success", "Playlist deleted");
 
     res.redirect("/browse");

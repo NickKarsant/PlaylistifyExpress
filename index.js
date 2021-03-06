@@ -94,7 +94,7 @@ app.get(
       usersPlaylists = userObject.playlists;
     }
 
-    console.log(req.user);
+    console.log(usersPlaylists);
 
     res.render("browse/index", {
       allPlaylists,

@@ -107,7 +107,18 @@ app.get(
 app.get(
   "/search",
   catchAsync(async (req, res) => {
-    res.render("browse/search", {});
+    var usersPlaylists
+    if (typeof req.user === 'undefined') {
+      usersPlaylists = [];
+    } else {
+      const user = await User.find({
+        _id: req.user._id
+      });
+      const userObject = user[0];
+      usersPlaylists = userObject.playlists;
+    }
+    
+    res.render("browse/search", { usersPlaylists });
   })
 );
 

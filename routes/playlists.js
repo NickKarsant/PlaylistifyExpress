@@ -28,9 +28,16 @@ router.get(
   })
 );
 
-router.get("/new", isLoggedIn, (req, res) => {
-  console.log(req.body)
-  res.render("playlists/new");
+router.get("/new", isLoggedIn, async (req, res) => {
+  const user = await User.find({
+    "_id": req.user._id
+  });
+
+
+  const userObject = user[0];
+
+  const usersPlaylists = userObject.playlists
+  res.render("playlists/new", { usersPlaylists });
 });
 
 // make new playlist

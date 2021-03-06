@@ -23,15 +23,21 @@
 
       <ul class="aside pt-3">
         <h4 id="list">PLAYLISTS</h4>
-
-        <li>
-          <a class="btn btn-sm " href="/playlists/new"><i id="sideAdd" class="far fa-plus-square">Create Playlist</i> </a>
-        </li>
-        <% allPlaylists.forEach(function(playlist) {%>
-        <li>
-          <a class="sidePlaylist btn btn-sm " href="/playlists/<%=playlist._id%>"> <img class="sideImage" src="<%= playlist.image%>" alt=""> <%= playlist.name %></a>
-        </li>
-        <%})%>
-      </ul>
-    </div>
+        <% if(!currentUser) {%>
+      <li>
+        <a class="btn btn-sm " href="/playlists/new"><i id="sideAdd" class="far fa-plus-square">Create Playlist</i> </a>
+      </li>
+      <%} else {%>
+      <li>
+        <a class="btn btn-sm " href="/playlists/new"><i id="sideAdd" class="far fa-plus-square">Create Playlist</i> </a>
+      </li>
+      <% allPlaylists.forEach(function(playlist) {%>
+      <li>
+        <a class="sidePlaylist btn btn-sm " href="/playlists/<%=playlist._id%>"> <img class="sideImage"
+            src="<%= playlist.image%>" alt=""> <%= playlist.name %></a>
+      </li>
+      <%})%>
+      <%}%>
+    </ul>
   </div>
+</div>

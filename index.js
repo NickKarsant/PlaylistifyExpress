@@ -15,8 +15,8 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const session = require("express-session");
 
-const playlistRoutes = require('./routes/playlists');
-const userRoutes = require('./routes/users');
+const playlistRoutes = require("./routes/playlists");
+const userRoutes = require("./routes/users");
 
 const seedDB = require("./seeds");
 seedDB();
@@ -55,7 +55,6 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
-
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -63,21 +62,15 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use((req,res, next) => {
+app.use((req, res, next) => {
   res.locals.currentUser = req.user;
-  res.locals.success = req.flash('success');
-  res.locals.error = req.flash('error');
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
   next();
-})
+});
 
-app.use('/playlists', playlistRoutes)
-app.use('/', userRoutes)
-
-
-
-
-
-
+app.use("/playlists", playlistRoutes);
+app.use("/", userRoutes);
 
 app.get("/", (req, res) => {
   res.render("landing");
@@ -89,24 +82,34 @@ app.get(
     const allPlaylists = await Playlist.find({});
     const allSongs = await Song.find({});
     const allArtists = await Artist.find({});
+    
+    var usersPlaylists
+    if (typeof req.user === 'undefined') {
+      usersPlaylists = [];
+    } else {
+      const user = await User.find({
+        _id: req.user._id
+      });
+      const userObject = user[0];
+      usersPlaylists = userObject.playlists;
+    }
 
-    console.log(req.user)
+    console.log(req.user);
 
-
-    res.render("browse/index", { allPlaylists, allSongs, allArtists });
+    res.render("browse/index", {
+      allPlaylists,
+      allSongs,
+      allArtists,
+      usersPlaylists
+    });
   })
 );
 app.get(
   "/search",
   catchAsync(async (req, res) => {
-
-
-    res.render("browse/search", { });
+    res.render("browse/search", {});
   })
 );
-
-
-
 
 app.listen(3000, () => {
   console.log("Serving on port 3000");

@@ -28,7 +28,7 @@ router.post(
       delete req.session.returnTo;
       return;
     }
-    // req.flash('success', "Welcome back!");
+    req.flash('success', "Welcome back!");
     res.redirect("/playlists");
   }
 );

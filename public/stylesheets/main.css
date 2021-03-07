@@ -24,6 +24,9 @@ main.container {
   margin-bottom: 0.5em;
   /* border: 1px solid red; */
 }
+#browse, #search, #library {
+  margin-top:0.8em;
+}
 
 h4#list {
   font-size: 1.5em;
@@ -62,14 +65,17 @@ img.sideImage {
 
 .sidePlaylistWord {
   display: flex;
-  font-size: 1.5em;
+  justify-content: space-between;
+  font-size: 1.3em;
   height: auto;
   margin-top:2px;
+  padding: 0 1em;
 }
 
 .navigation {
   font-size: 1.5em;
   color: black;
+  padding: 0.5em 0;
 }
 
 .navigation:hover {

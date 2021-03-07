@@ -76,6 +76,19 @@ app.get("/", (req, res) => {
   res.render("landing");
 });
 
+app.get("/artist/:id",  catchAsync(async (req, res) => {
+  var artist = await Artist.findById(req.params.id)
+      .populate("song")
+    if (!artist) {
+      req.flash("error", "Artist not found");
+      return res.redirect("/browse");
+    }
+    var songs = artist.songs;
+
+  res.render("artists/show", { artist, songs })
+  })
+);
+
 app.get(
   "/browse",
   catchAsync(async (req, res) => {
@@ -93,8 +106,6 @@ app.get(
       const userObject = user[0];
       usersPlaylists = userObject.playlists;
     }
-
-    console.log(usersPlaylists);
 
     res.render("browse/index", {
       allPlaylists,

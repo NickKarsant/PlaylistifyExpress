@@ -1,4 +1,4 @@
-<div class="col-xs-2 col-sm-2 col-md-3 col-lg-2" style="padding: 0; width:auto;height:auto; border: 1px solid red;">
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-2" style="padding: 0; width:auto;height:auto; background-color: grey;">
   <div>
     <ul class="aside">
       <% if(currentUser) {%>
@@ -6,8 +6,8 @@
         <a id="home" class="navigation" href="/playlists"><span><i class="fas fa-home"></i></span> Home</a>
       </li>
       <li>
-        <a id="browse" styl="margin-top:1em;" class="navigation" href="/browse"><span><i
-              class="fas fa-eye"></i> </span> Browse</a>
+        <a id="browse" styl="margin-top:1em;" class="navigation" href="/browse"><span><i class="fas fa-eye"></i> </span>
+          Browse</a>
       </li>
       <%} else {%>
       <li>
@@ -25,19 +25,26 @@
         <h4 id="list">PLAYLISTS</h4>
         <% if(!currentUser) {%>
       <li>
-        <a class="btn btn-sm " href="/playlists/new"><i id="sideAdd" class="far fa-plus-square">Create Playlist</i> </a>
+        <a class="btn btn-sm " href="/playlists/new"><i id="sideAdd" class="far fa-plus-square"></i>Create Playlist</a>
       </li>
       <%} else {%>
       <li>
-        <a class="btn btn-sm " href="/playlists/new"><i id="sideAdd" class="far fa-plus-square">Create Playlist</i> </a>
+        <a style="display: flex;" class="btn btn-sm " href="/playlists/new"><i id="sideAdd"
+            class="far fa-plus-square"></i>
+          <div id="sideAddWord"> Create Playlist</div>
+        </a>
       </li>
       <% usersPlaylists.forEach(function(playlist) {%>
-      <li>
-        <a class="sidePlaylist btn btn-sm " href="/playlists/<%=playlist._id%>"> <img class="sideImage"
-            src="<%= playlist.image%>" alt=""> <%= playlist.name %></a>
+      <li class="row">
+        <a class="sidePlaylistLink btn btn-sm" href="/playlists/<%=playlist._id%>">
+          <img class="col-xs-3 col-sm-3 col-md-3 col-lg-3 sideImage" 
+            src="<%= playlist.image%>" alt="" />
+          <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 sidePlaylistWord">
+            <%= playlist.name %> </div>
+        </a>
       </li>
       <%})%>
       <%}%>
     </ul>
   </div>
-</div>
+  </div>

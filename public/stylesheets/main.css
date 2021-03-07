@@ -1,5 +1,5 @@
-body{
-  margin:0;
+body {
+  margin: 0;
   padding: 0;
 }
 main.container {
@@ -8,8 +8,6 @@ main.container {
   /* padding-bottom: 5em; */
   clear: both;
 }
-
-
 
 .like {
   font-size: 1.8em;
@@ -20,57 +18,62 @@ main.container {
   color: green;
 }
 
-
-
-#home{
-  padding-top:1em;
-  margin-right:1em;
-  margin-bottom:0.5em;
-  border: 1px solid red;
+#home {
+  padding-top: 1em;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+  /* border: 1px solid red; */
 }
 
-#browse{
-  border: 1px solid red;
-
+h4#list {
+  font-size: 1.5em;
 }
 
-h4#list{
-  font-size:1.5em;
-}
-
-.aside{
+.aside {
   list-style: none;
   margin-top: 1em;
 }
 
-.aside li{
-  margin:1em 0;
+i#sideAdd {
+  padding-right: 0.2em;
+  font-size: 3em;
+  display: flex;
+  width: 20%;
+  margin: 5px;
+  margin-left: -2px;
 }
 
-.aside li a.sidePlaylist{
-  font-size:1.5em;
+#sideAddWord {
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
 }
 
-#sideAdd{
-  font-size:2em;
-}
-
-.sidePlaylist{
+.sidePlaylistLink {
   font-size: 2em;
+  width: 90%;
 }
 
-.sideImage{
-  width:35px;
-  height:35px;
+img.sideImage {
+  padding: 0;
+  /* display:flex; */
+  float:left;
+}
+
+.sidePlaylistWord {
+  display: flex;
+  font-size: 1.5em;
+  height: auto;
+  margin-top:2px;
 }
 
 .navigation {
   font-size: 1.5em;
-  color: black
+  color: black;
 }
 
 .navigation:hover {
- color: green;
+  color: green;
 }
 
 .add {
@@ -84,16 +87,16 @@ h4#list{
   background-color: green;
 }
 
-.fas{
+.fas {
   padding-right: 0.3em;
 }
-.img-responsive{
-  width:100%;
+.img-responsive {
+  width: 100%;
   height: 200px;
 }
 
 .preview img.resize {
-  max-width: 100%
+  max-width: 100%;
 }
 
 .playlists {

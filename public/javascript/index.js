@@ -28,8 +28,6 @@ $(document).ready(function() {
   // heart/like button toggle
 function toggleLiked() {
   console.log("clicked");
-  console.log(this.classList);
-  console.log(this.classList.value);
   if (this.classList.contains("far")) {
     console.log("contains");
     this.classList.remove("far");

@@ -20,8 +20,9 @@ const userRoutes = require("./routes/users");
 
 const seedDB = require("./seeds");
 seedDB();
+require('dotenv').config();
 
-mongoose.connect("mongodb://localhost:27017/playlistify", {
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost:27017/playlistify", {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true

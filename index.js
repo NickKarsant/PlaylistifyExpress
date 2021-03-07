@@ -83,9 +83,21 @@ app.get("/artist/:id",  catchAsync(async (req, res) => {
       req.flash("error", "Artist not found");
       return res.redirect("/browse");
     }
+
+    var usersPlaylists
+    if (typeof req.user === 'undefined') {
+      usersPlaylists = [];
+    } else {
+      const user = await User.find({
+        _id: req.user._id
+      });
+      const userObject = user[0];
+      usersPlaylists = userObject.playlists;
+    }
+
     var songs = artist.songs;
 
-  res.render("artists/show", { artist, songs })
+  res.render("artists/show", { artist, songs, usersPlaylists })
   })
 );
 

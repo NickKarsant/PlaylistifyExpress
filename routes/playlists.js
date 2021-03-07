@@ -22,8 +22,6 @@ router.get(
 
     const usersPlaylists = userObject.playlists
 
-    console.log(userObject);
-
     res.render("playlists/index", { usersPlaylists });
   })
 );
@@ -61,12 +59,6 @@ router.post(
     desiredUser.playlists.push(savedPlaylist);
 
     await desiredUser.save()
-    console.log(desiredUser);
-
-
-
-
-
 
 
     req.flash("succes", "New playlist created!");

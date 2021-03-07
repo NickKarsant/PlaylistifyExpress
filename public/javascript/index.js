@@ -28,11 +28,13 @@ $(document).ready(function() {
   // heart/like button toggle
 function toggleLiked() {
   console.log("clicked");
-  if (this.style.color === "") {
-    this.style.color = "green";
+  if (this.classList.contains === "far") {
+    this.classList.remove("far");
+    this.classList.add("fas");
     var isLiked = true
   } else {
-    this.style.color = "";
+    this.classList.remove("fas");
+    this.classList.add("far");
     var isLiked= false
   }
   return isLiked;

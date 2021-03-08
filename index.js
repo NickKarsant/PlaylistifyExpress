@@ -17,12 +17,13 @@ const session = require("express-session");
 
 const playlistRoutes = require("./routes/playlists");
 const userRoutes = require("./routes/users");
+require('dotenv').config();
 
 const seedDB = require("./seeds");
 seedDB();
-require('dotenv').config();
 
-mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost:27017/playlistify", {
+// process.env.MONGODB_URI ||
+mongoose.connect( "mongodb://localhost:27017/playlistify", {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true
@@ -108,6 +109,17 @@ app.get(
     const allPlaylists = await Playlist.find({});
     const allSongs = await Song.find({});
     const allArtists = await Artist.find({});
+
+    // restrict "Liked Songs" plsylists from being displayed
+    console.log(allPlaylists);
+    const removedLiked = [];
+    allPlaylists.forEach(function(playlist) {
+      if (playlist.name !== 'Liked Songs') {
+        removedLiked.push(playlist);
+      }
+    });
+
+
     
     var usersPlaylists
     if (typeof req.user === 'undefined') {
@@ -121,7 +133,7 @@ app.get(
     }
 
     res.render("browse/index", {
-      allPlaylists,
+      removedLiked,
       allSongs,
       allArtists,
       usersPlaylists

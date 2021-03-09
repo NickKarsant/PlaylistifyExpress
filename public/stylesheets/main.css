@@ -126,3 +126,12 @@ img.sideImage {
   background-size: cover;
   object-fit: scale-up;
 }
+
+
+/* modals */
+.optionsChoice:hover{
+  background-color: lightgrey;
+}
+.modalPlaylistList:hover{
+  background-color: lightgrey;
+}

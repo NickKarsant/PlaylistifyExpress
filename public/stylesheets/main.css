@@ -119,7 +119,6 @@ img.sideImage {
   height: 60%;
 }
 
-
 .glimpse {
   width: 125px;
   min-height: 125px;
@@ -127,11 +126,51 @@ img.sideImage {
   object-fit: scale-up;
 }
 
-
 /* modals */
-.optionsChoice:hover{
+.optionsChoice:hover {
   background-color: lightgrey;
 }
-.modalPlaylistList:hover{
+.modalPlaylistList:hover {
   background-color: lightgrey;
+}
+
+.modal-header {
+  cursor: move;
+}
+
+/* .modal {
+  position: absolute;
+  top: 10px;
+  right: 100px;
+  bottom: 0;
+  left: 0;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+} */
+
+/* .modal.right .modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 320px;
+  height: 100%;
+  -webkit-transform: translate3d(0%, 0, 0);
+  -ms-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+} */
+
+.modal.right.fade .modal-dialog {
+  right: -320px;
+  -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+  transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+.modal.center.fade .modal-dialog {
+  right: -191px;
+  -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+  transition: opacity 0.3s linear, right 0.3s ease-out;
 }

@@ -38,7 +38,8 @@
                   </div>
                   <p class="more">
 
-                    <a class="button" href="/playlists/<%= playlist._id %>"><button class="btn btn-primary">View</button></a>
+                    <a class="button" href="/playlists/<%= playlist._id %>"><button
+                        class="btn btn-primary">View</button></a>
 
                   </p>
                 </div>
@@ -69,7 +70,8 @@
                   </div>
                   <p class="more">
 
-                    <a class="button" href="/playlists/<%= playlist._id %>"><button class="btn btn-primary">View</button></a>
+                    <a class="button" href="/playlists/<%= playlist._id %>"><button
+                        class="btn btn-primary">View</button></a>
 
                   </p>
                 </div>
@@ -146,8 +148,8 @@
             <div class="card-body" style="padding: 0 0 1em 0;">
               <div class="caption" style="min-height:70px; margin-top:0; margin-bottom:1em; width: inherit;">
                 <h8 class="card-title"> <strong><%= song.name %></strong> </h8>
-                <p class="card-content"> <%= song.artist %></p>
-              </div>
+              <p class="card-content"> <%= song.artist %></p>
+            </div>
             <!-- <p class="card-content"> Song ID: <%= song.id %></p> -->
 
             <div class="row d-flex justify-content-around">
@@ -156,9 +158,13 @@
                 <form action="/playlists/<%= currentUser.playlists[0]._id %>" method="PATCH"></form>
               </i>
 
-              <i class=" fas fa-plus-square add">
-                <form action="" method="PATCH"></form>
+              <i class="fas fa-plus-square add" type="button" data-toggle="modal"
+            data-target="#playlistChoices">
+                
               </i>
+
+              <!-- <i class="fas fa-ellipsis-h options btn btn-xs" style="margin-left:-1.5em;" ></i> -->
+
 
               <div class="">
                 <i id="play" class="btn btn-md btn-success fas fa-play"></i>
@@ -173,6 +179,36 @@
           
           
         <%});%>
+            </div>
+          </div>
+
+
+
+          <!-- playlistChoices modal -->
+          <div class="modal center fade" id="playlistChoices" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content" style="width: 50%;">
+                <div class="modal-header">
+                  Add to:
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <ul style="list-style-type: none; padding:0; margin:0 1em;">
+                    <% usersPlaylists.forEach(function(playlist) {%>
+                    <li class="modalPlaylistList row optionsChoice btn d-flex justify-content-left" type="button"
+                      data-toggle="modal">
+                      <p>
+                        <%= playlist.name %>
+                        <!-- <%= playlist._id %> -->
+                      </p>
+                    </li>
+                    <%})%>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
 

@@ -19,7 +19,7 @@
 
 
       <% if (currentUser) {%>
-        <!-- show uniquelu yours playlists and then below that ALL playlists -->
+        <!-- show uniquely yours playlists and then below that ALL playlists -->
         <div class="ui container mb-5">
           <h1 class=" mb-5">Uniquely Yours</h1>
           <div class="ui grid mb-3 row text-center">
@@ -27,7 +27,7 @@
             <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
 
               <div class="thumbnail">
-                <div style="max-height: 150px;
+                <div style="max-height: 125px; min-height:125px;
                     overflow: hidden;" class="preview">
                   <img class="img-thumbnail card-fluid glimpse resize" src="<%=playlist.image%>" alt="">
                 </div>
@@ -100,7 +100,7 @@
               <div class="thumbnail">
                 <div style="max-height: 150px;
                     overflow: hidden;" class="preview">
-                  <img style="height:100px;" class="img-thumbnail card-fluid glimpse resize" src="<%=playlist.image%>" alt="">
+                  <img class="img-thumbnail card-fluid glimpse resize" src="<%=playlist.image%>" alt="">
                 </div>
 
                 <div class="card-body">
@@ -134,7 +134,7 @@
 
           <div class="thumbnail">
             <% if (song.image) {%>
-            <img class="img-thumbnail card-fluid" src="<%=song.image%>" alt="">
+            <img class="img-thumbnail card-fluid glimpse resize" src="<%=song.image%>" alt="">
             <% } else {%>
             <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/150" alt="">
             <%}%>
@@ -192,7 +192,7 @@
                     <img style="max-width:150px; height:150px" class="img-thumbnail card-fluid" src="<%=artist.image%>"
                       alt="">
                     <% } else {%>
-                    <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/200" alt="">
+                    <img class="img-thumbnail card-fluid glimpse resize" src="https://via.placeholder.com/200" alt="">
                     <%}%>
                           </div>
                           <div class="card-body">

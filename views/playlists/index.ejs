@@ -1,25 +1,49 @@
 <% layout('layouts/boilerplate') %>
 
 <div class="row">
-    <%- include('../partials/aside') %>
-    
-    <div class="col-xs-10 col-sm-10 col-md-9 col-lg-10">
+  <%- include('../partials/aside') %>
+
+  <div class="col-xs-10 col-sm-10 col-md-9 col-lg-10 pl-4 pr-4">
     <!-- list of all your playlists -->
-    <h1 class="mb-3">My Playlists</h1>
-    <a class="btn btn-lg btn-primary mb-5" href="/playlists/new">Create a New Playlist </a>
-    <div class="ui container">
-      <div class="ui grid mb-3">
+    <h1 style="margin-left: -15px;" class="mb-3">My Playlists</h1>
+    <a style="margin-left: -15px;" class="btn btn-lg btn-primary mb-5" href="/playlists/new">Create a New Playlist </a>
+    <!-- <div class="ui container"> -->
+      <div class="ui grid mb-3 text-center pr-3 mb-5">
         <% for(let playlist of usersPlaylists) {%>
-        <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2 pb-3">
+        <!-- <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2 pb-3">
           <a class="playlists" href="/playlists/<%= playlist._id %>">
 
             <h2 class="text-center mt-1"><%= playlist.name%> </h2>
             <img class="img-responsive rounded" src="<%= playlist.image%>" alt="">
 
-          </a>
+          </a> -->
+
+
+        <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 mb-3">
+
+          <div class="thumbnail">
+            <div style="max-height: 150px;
+                    overflow: hidden;" class="preview">
+              <img class="img-thumbnail card-fluid glimpse resize" src="<%=playlist.image%>" alt="">
+            </div>
+
+            <div class="card-body">
+              <div class="caption">
+                <h5 class="card-title mb-2"> <%= playlist.name %> </h5>
+              </div>
+              <p class="more">
+
+                <a class="button" href="/playlists/<%= playlist._id %>"><button class="btn btn-primary">View
+                    Playlist</button></a>
+
+              </p>
+            </div>
+          </div>
+
         </div>
         <%}%> 
-  </div>
+      </div>
+  <!-- </div> -->
 </div>
 
 

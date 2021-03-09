@@ -22,8 +22,10 @@ main.container {
   margin-bottom: 0.5em;
   /* border: 1px solid red; */
 }
-#browse, #search, #library {
-  margin-top:0.8em;
+#browse,
+#search,
+#library {
+  margin-top: 0.8em;
 }
 
 h4#list {
@@ -58,7 +60,7 @@ i#sideAdd {
 img.sideImage {
   padding: 0;
   /* display:flex; */
-  float:left;
+  float: left;
 }
 
 .sidePlaylistWord {
@@ -66,7 +68,7 @@ img.sideImage {
   justify-content: space-between;
   font-size: 1.3em;
   height: auto;
-  margin-top:2px;
+  margin-top: 2px;
   padding: 0 1em;
 }
 
@@ -99,10 +101,6 @@ img.sideImage {
   height: 200px;
 }
 
-.preview img.resize {
-  max-width: 100%;
-}
-
 .playlists {
   /* height: 200px; */
   color: black;
@@ -120,8 +118,12 @@ img.sideImage {
   height: 60%;
 }
 
+.preview img.resize {
+}
+
 .glimpse {
-  min-width: 100px;
-  min-height: 100px;
-  object-fit: contain;
+  width: 125px;
+  min-height: 125px;
+  background-size: cover;
+  object-fit: scale-up;
 }

@@ -77,6 +77,8 @@ router.get(
       req.flash("error", "Playlist not found");
       return res.redirect("/browse");
     }
+    console.log(playlist.songs);
+    console.log(playlist);
     res.render("playlists/show", { playlist });
   })
 );

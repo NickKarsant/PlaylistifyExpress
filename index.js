@@ -111,7 +111,7 @@ app.get(
     const allArtists = await Artist.find({});
 
     // restrict "Liked Songs" plsylists from being displayed
-    console.log(allPlaylists);
+    // console.log(allPlaylists);
     const removedLiked = [];
     allPlaylists.forEach(function(playlist) {
       if (playlist.name !== 'Liked Songs') {

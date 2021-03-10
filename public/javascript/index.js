@@ -29,7 +29,6 @@ $(document).ready(function() {
 function toggleLiked() {
   console.log("clicked");
   if (this.classList.contains("far")) {
-    console.log("contains");
     this.classList.remove("far");
     this.classList.add("fas");
     this.style.color = "green";
@@ -46,6 +45,38 @@ function toggleLiked() {
 $("i.like").on('click', toggleLiked);
 
 
+
+function hoverShowOptions(song) {  
+  let optionsIcon = song.getElementsByClassName("options")[0];
+
+  console.log(optionsIcon);
+    optionsIcon.style.display = "block";
+
+}
+
+function hoverHideOptions(song) {  
+  let optionsIcon = song.getElementsByClassName("options")[0];
+
+  console.log(optionsIcon);
+    optionsIcon.style.display = "none";
+
+}
+
+let songs = document.querySelectorAll('.songRow')
+
+songs.forEach(song => {
+  song.addEventListener('mouseover', e => {
+    // console.log(song);
+    hoverShowOptions(song);
+  })
+})
+
+songs.forEach(song => {
+  song.addEventListener('mouseout', e => {
+    // console.log(song);
+    hoverHideOptions(song);
+  })
+})
 
 
 

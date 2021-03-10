@@ -48,7 +48,7 @@ router.post(
     const savedPlaylist = await playlist.save();
 
     // playlist created
-    console.log(savedPlaylist);
+    // console.log(savedPlaylist);
     const foundUsers = await User.find({
       "_id": req.user._id
     });

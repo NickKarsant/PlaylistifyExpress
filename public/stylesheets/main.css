@@ -126,6 +126,25 @@ img.sideImage {
   object-fit: scale-up;
 }
 
+
+#list{
+  display: grid;
+  /* grid-gap: 5px; */
+}
+
+.options{
+  display: none;
+}
+.meatball{
+  margin-left:0.5em;
+}
+
+.songRow:hover {
+  background-color: rgb(240, 240, 240)
+
+}
+
+
 /* modals */
 .optionsChoice:hover {
   background-color: lightgrey;
@@ -137,28 +156,6 @@ img.sideImage {
 .modal-header {
   cursor: move;
 }
-
-/* .modal {
-  position: absolute;
-  top: 10px;
-  right: 100px;
-  bottom: 0;
-  left: 0;
-  z-index: 10040;
-  overflow: auto;
-  overflow-y: auto;
-} */
-
-/* .modal.right .modal-dialog {
-  position: fixed;
-  margin: auto;
-  width: 320px;
-  height: 100%;
-  -webkit-transform: translate3d(0%, 0, 0);
-  -ms-transform: translate3d(0%, 0, 0);
-  -o-transform: translate3d(0%, 0, 0);
-  transform: translate3d(0%, 0, 0);
-} */
 
 .modal.right.fade .modal-dialog {
   right: -320px;

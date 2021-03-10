@@ -12,52 +12,34 @@
   </div>
 </div>
 
-<div class="container">
-  <table>
-    <tr>
-      <td class="space">
-      <td id="adjustment" class="title">Title</td>
-      <td class="artist">Artist</td>
-    </tr>
+<div class="ui">
+  <div class="row">
+    <div class="col-sm-1 col-md-1 col-lg-1 text-center">#</div>
+    <div class="col-sm-2 col-md-1 col-lg-1 text-center"></div>
+    <div class="col-sm-1 col-md-1 col-lg-1 text-center">Liked</div>
+    <div class="col-sm-6 col-md-7 col-lg-7">Title</div>
+    <div class="col-sm-1 col-md-1 col-lg-1"><i class="far fa-clock"></i></div>
+    <div class="col-sm-1 col-md-1 col-lg-1">Options</div>
+  </div>
 
-<!-- REPLACE TR TABLE WITH BOOTSTRAP GRID SYSTEM -->
-    <% playlist.songs.forEach(function(song){ %>
-    <tr class="list" style="border-top: 1px solid black; border-bottom:1px solid black;">
-      <!-- MAKE ICON CHANGE COLOR AND ADDED TO "LIKED SONGS" PLAYLIST  WHEN CLICKED-->
-      <td id="heart">
-        <form class="col-2" action="/playlists/" method="PATCH">
-          <i class="fas fa-heart like"></i>
-        </form>
-      </td>
+  <%  %>
+  <div class="row" style="border-top: 1px solid grey; border-bottom: 1px solid grey; padding: 0.5em 0">
+    <div class="col-sm-1 col-md-1 col-lg-1 text-center"><%= index + 1 %></div>
+    <div class="col-sm-2 col-md-1 col-lg-1 text-center"><i id="play" class="btn btn-md btn-success fas fa-play"></i>
+    </div>
+    <div class="col-sm-1 col-md-1 col-lg-1 text-center"><i class="far fa-heart like"></i></div>
+    <div class="col-sm-6 col-md-7 col-lg-7"><%= song.name %></div>
+    <div class="col-sm-1 col-md-1 col-lg-1"><%= song.length %></div>
+    <div class="col-sm-1 col-md-1 col-lg-1 text-center">
+      <i class="fas fa-ellipsis-h options btn btn-xs" style="margin-left:-1.5em;" type="button" data-toggle="modal"
+        data-target="#optionsMenu"></i>
+    </div>
 
-      <%= song %>
 
 
-      <td id="playbutton">
-        <a class="btn btn-sm btn-success" href="/<%= song._id %>">Play</a>
-      </td>
-
-      <td class="title">
-        <%= song.name %>
-      </td>
-
-      <td class="artist">
-        <%= song.artist %>
-      </td>
-
-      <td class="more extended">
-        <form class="col-2" action="" method="PATCH">
-          <i class="fas fa-plus-square add"></i>
-        </form>
-      </td>
-    </tr>
-
-    <% }); %>
-
-  </table>
-
-</div
->
+  </div>
+  <%  %>
+</div>
 <br>
 
 <% if (currentUser && playlist.author.equals(currentUser._id)) { %>

@@ -16,12 +16,16 @@
       <div class="row" style="margin-right:1.1em;">
         <div class="col-sm-1 col-md-1 col-lg-1 text-center">#</div>
         <div class="col-sm-1 col-md-1 col-lg-1 text-center"></div>
-
+        <%if (currentUser){ %>
         <div class="col-sm-1 col-md-1 col-lg-1 text-center">Liked</div>
+        <% } %>
 
         <div class="col-sm-7 col-md-7 col-lg-7">Title</div>
         <div class="col-sm-1 col-md-1 col-lg-1"><i class="far fa-clock"></i></div>
+        <%if (currentUser){ %>
         <div class="col-sm-1 col-md-1 col-lg-1">Options</div>
+        <% } %>
+
       </div>
 
       <% songs.forEach(function(song, index) { %>
@@ -30,18 +34,18 @@
         <div class="col-sm-1 col-md-1 col-lg-1 text-center">
           <i id="play" class="btn btn-md btn-success fas fa-play"></i>
         </div>
-
+        <%if (currentUser){ %>
         <div class="col-sm-1 col-md-1 col-lg-1 text-center"><i class="far fa-heart like"></i></div>
+        <% } %>
 
         <div class="col-sm-7 col-md-7 col-lg-7"><%= song.name %></div>
         <div class="col-sm-1 col-md-1 col-lg-1"><%= song.length %></div>
-
+        <%if (currentUser){ %>
         <div class="col-sm-1 col-md-1 col-lg-1 text-center options">
           <i class="fas fa-ellipsis-h meatball btn btn-xs text-center" type="button" data-toggle="modal"
             data-target="#optionsMenu"></i>
         </div>
-
-
+        <% } %>
 
       </div>
       <% }) %>

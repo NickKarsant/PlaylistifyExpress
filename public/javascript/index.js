@@ -3,7 +3,6 @@ $(document).ready(function() {
 
   // toggle Hamgburger menu
   $("span#hamburger").click(function() {
-    console.log("click");
     toggleHamburger();
   });
 
@@ -47,37 +46,46 @@ $("i.like").on('click', toggleLiked);
 
 
 function hoverShowOptions(song) {  
-  let optionsIcon = song.getElementsByClassName("options")[0];
-
-  console.log(optionsIcon);
-    optionsIcon.style.display = "block";
-
+  var optionsIcon = song.getElementsByClassName("options")[0];
+  optionsIcon.style.display = "block";
 }
 
 function hoverHideOptions(song) {  
-  let optionsIcon = song.getElementsByClassName("options")[0];
-
-  console.log(optionsIcon);
+  var optionsIcon = song.getElementsByClassName("options")[0];
     optionsIcon.style.display = "none";
-
 }
 
 let songs = document.querySelectorAll('.songRow')
 
 songs.forEach(song => {
   song.addEventListener('mouseover', e => {
-    // console.log(song);
     hoverShowOptions(song);
-  })
+  });
 })
 
 songs.forEach(song => {
   song.addEventListener('mouseout', e => {
-    // console.log(song);
     hoverHideOptions(song);
   })
 })
 
+
+
+// add song to a playlist
+var playlistChoices = document.querySelectorAll("li p.playlistChoice");
+
+playlistChoices.forEach(choice => {
+  choice.addEventListener('click', e => {
+  console.log("clicked")
+  })
+})
+var meatballs = document.querySelectorAll(".meatball");
+
+meatballs.forEach(menu => {
+  menu.addEventListener('click', e => {
+  console.log("clicked")
+  })
+})
 
 
 

@@ -22,6 +22,11 @@ $(document).ready(function() {
   });
 
 
+  function goBack() {
+    window.history.back();
+  }
+
+
 
 
   // heart/like button toggle

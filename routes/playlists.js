@@ -77,9 +77,15 @@ router.get(
       req.flash("error", "Playlist not found");
       return res.redirect("/browse");
     }
-    console.log(playlist.songs);
-    console.log(playlist);
-    res.render("playlists/show", { playlist });
+    const user = await User.find({
+      "_id": req.user._id
+    });
+  
+  
+    const userObject = user[0];
+  
+    const usersPlaylists = userObject.playlists
+    res.render("playlists/show", { playlist, usersPlaylists });
   })
 );
 

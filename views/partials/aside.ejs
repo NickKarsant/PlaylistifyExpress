@@ -1,4 +1,5 @@
-<div class="col-xs-3 col-sm-3 col-md-3 col-lg-2" style="padding: 0; width:auto; background-color: grey; min-height:100%;">
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-2"
+  style="padding: 0; width:auto; background-color: grey; min-height:100%;">
   <div style="height:100vh;">
     <ul class="aside">
       <% if(currentUser) {%>
@@ -46,13 +47,24 @@
       <% usersPlaylists.forEach(function(playlist) {%>
       <li class="row">
         <a class="sidePlaylistLink btn btn-sm" href="/playlists/<%=playlist._id%>">
-          <img class="col-xs-3 col-sm-3 col-md-3 col-lg-3 sideImage" src="<%= playlist.image%>" alt="" />
+          <% if (playlist.image.length > 30) {%>
+            
+            <img class="col-xs-3 col-sm-3 col-md-3 col-lg-3 sideImage" src="<%= playlist.image%>" alt="" />
+            <% }else { %>
+              <img class="col-xs-3 col-sm-3 col-md-3 col-lg-3 sideImage" src="https://via.placeholder.com/300" alt="" />
+          <!-- <img id="pic" src="https://via.placeholder.com/100" class="mx-auto d-block img-fluid"> -->
+
+          <%}%>
+
+
+
           <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 sidePlaylistWord">
-            <%= playlist.name %> </div>
-        </a>
-      </li>
-      <%})%>
-      <%}%>
+            <%= playlist.name %>
+  </div>
+  </a>
+  </li>
+  <%})%>
+  <%}%>
     </ul>
   </div>
   </div>

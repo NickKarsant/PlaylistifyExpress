@@ -59,46 +59,7 @@
             <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
 
               <div class="thumbnail">
-                <div style="max-height: 150px;
-                    overflow: hidden;" class="preview">
-                  <img class="img-thumbnail card-fluid glimpse" src="<%=playlist.image%>" alt="">
-                </div>
-
-                <div class="card-body">
-                  <div class="caption">
-                    <h5 class="card-title mb-2"> <%= playlist.name %> </h5>
-                  </div>
-                  <p class="more">
-
-                    <a class="button" href="/playlists/<%= playlist._id %>"><button
-                        class="btn btn-primary">View</button></a>
-
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-            <%});%>
-          </div>
-        </div>
-
-
-        <%} else {%>
-        <!-- dont show uniquely yours -->
-
-
-        <!-- PLAYLISTS -->
-
-        <!-- ALL Playlists -->
-        <div class="ui container mb-5">
-          <h1 class=" mb-5">Playlists</h1>
-          <div class="ui grid mb-3 row text-center">
-            <% removedLiked.forEach(function(playlist) {%>
-            <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
-
-              <div class="thumbnail">
-                <div style="max-height: 150px;
+                <div style="max-height: 120px;
                     overflow: hidden;" class="preview">
 
                   <% if (playlist.image.length > 30) {%>
@@ -109,19 +70,16 @@
                 </div>
 
                 <div class="card-body">
-
                   <div class="caption">
                     <h5 class="card-title mb-2"> <%= playlist.name %> </h5>
                 </div>
-
                 <p class="more">
+
                   <a class="button" href="/playlists/<%= playlist._id %>"><button
                       class="btn btn-primary">View</button></a>
+
                 </p>
-
               </div>
-
-              <!-- closing VVV div.thumbnail class -->
             </div>
 
           </div>
@@ -129,7 +87,53 @@
           <%});%>
         </div>
     </div>
-    <%}%>
+
+
+    <%} else {%>
+    <!-- dont show uniquely yours -->
+
+
+    <!-- PLAYLISTS -->
+
+    <!-- ALL Playlists -->
+    <div class="ui container mb-5">
+      <h1 class=" mb-5">Playlists</h1>
+      <div class="ui grid mb-3 row text-center">
+        <% removedLiked.forEach(function(playlist) {%>
+        <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
+
+          <div class="thumbnail">
+            <div style="max-height: 150px;
+                    overflow: hidden;" class="preview">
+
+              <% if (playlist.image.length > 30) {%>
+              <img class="img-thumbnail card-fluid glimpse" src="<%=playlist.image%>" alt="">
+              <% }else { %>
+              <img class="img-thumbnail card-fluid glimpse" src="https://via.placeholder.com/100" alt="">
+              <%}%>
+                </div>
+
+                <div class="card-body">
+
+                  <div class="caption">
+                    <h5 class="card-title mb-2"> <%= playlist.name %> </h5>
+            </div>
+
+            <p class="more">
+              <a class="button" href="/playlists/<%= playlist._id %>"><button class="btn btn-primary">View</button></a>
+            </p>
+
+          </div>
+
+          <!-- closing VVV div.thumbnail class -->
+        </div>
+
+      </div>
+
+      <%});%>
+    </div>
+  </div>
+  <%}%>
 
 
 
@@ -138,56 +142,56 @@
       <h1 class="mb-5">Songs</h1>
       <div class="ui grid mb-3 row text-center">
         <% allSongs.forEach(function(song) {%>
-    <div id="songs" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-3">
+  <div id="songs" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-3">
 
-      <div class="thumbnail">
-        <div style="max-height: 150px;
+    <div class="thumbnail">
+      <div style="max-height: 150px;
               overflow: hidden;" class="preview">
-          <% if (song.image) {%>
-          <img class="img-thumbnail card-fluid glimpse" src="<%=song.image%>" alt="">
-          <% } else {%>
-          <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/150" alt="">
-          <%}%>
+        <% if (song.image) {%>
+        <img class="img-thumbnail card-fluid glimpse" src="<%=song.image%>" alt="">
+        <% } else {%>
+        <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/150" alt="">
+        <%}%>
             </div>
           
             <div class="card-body" style="padding: 0 0 1em 0;">
               <div class="caption" style="min-height:70px; margin-top:0; margin-bottom:1em; width: inherit;">
                 <h8 class="card-title"> <strong><%= song.name %></strong> </h8>
-          <p class="card-content"> <%= song.artist %></p>
+        <p class="card-content"> <%= song.artist %></p>
+      </div>
+      <!-- <p class="card-content"> Song ID: <%= song.id %></p> -->
+
+      <div class="row d-flex justify-content-around">
+        <% if (currentUser) {%>
+        <i class="far fa-heart like">
+          <form action="/playlists/<%= currentUser.playlists[0]._id %>" method="PATCH"></form>
+        </i>
+
+        <i class="fas fa-plus-square add" type="button" data-toggle="modal" data-target="#playlistChoices">
+
+        </i>
+
+        <!-- <i class="fas fa-ellipsis-h options btn btn-xs" style="margin-left:-1.5em;" ></i> -->
+
+
+        <div class="">
+          <i id="play" class="btn btn-md btn-success fas fa-play"></i>
         </div>
-        <!-- <p class="card-content"> Song ID: <%= song.id %></p> -->
-
-        <div class="row d-flex justify-content-around">
-          <% if (currentUser) {%>
-          <i class="far fa-heart like">
-            <form action="/playlists/<%= currentUser.playlists[0]._id %>" method="PATCH"></form>
-          </i>
-
-          <i class="fas fa-plus-square add" type="button" data-toggle="modal" data-target="#playlistChoices">
-
-          </i>
-
-          <!-- <i class="fas fa-ellipsis-h options btn btn-xs" style="margin-left:-1.5em;" ></i> -->
-
-
-          <div class="">
-            <i id="play" class="btn btn-md btn-success fas fa-play"></i>
-          </div>
-          <%} else {%>
-            <div class="" style="width: 50%; border: 1px solid red;">
-                <i id="play" class="btn btn-md btn-success fas fa-play"></i>
-            </div>
-          <% }%>
-
+        <%} else {%>
+        <div class="" style="width: 50%;">
+          <i id="play" class="btn btn-md btn-success fas fa-play"></i>
         </div>
+        <% }%>
 
       </div>
 
     </div>
+
   </div>
+</div>
 
 
-  <%});%>
+<%});%>
 </div>
 </div>
 

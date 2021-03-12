@@ -43,7 +43,7 @@ i#sideAdd {
   display: flex;
   width: 20%;
   margin: 5px;
-  margin-left: -2px;
+  margin-left: -15px;
 }
 
 #sideAddWord {
@@ -61,6 +61,7 @@ img.sideImage {
   padding: 0;
   /* display:flex; */
   float: left;
+  max-height: 100px;
 }
 
 .sidePlaylistWord {

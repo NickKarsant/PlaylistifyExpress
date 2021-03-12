@@ -127,6 +127,19 @@ img.sideImage {
   object-fit: scale-up;
 }
 
+a.card {
+  color: black;
+}
+
+a.card:hover{
+  color: black;
+  background-color: green;
+}
+
+a.card:visted{
+  color: black;
+}
+
 
 #list{
   display: grid;

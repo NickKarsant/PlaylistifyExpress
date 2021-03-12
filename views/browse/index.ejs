@@ -17,6 +17,7 @@
         </header>
     </div>
 
+  
 
       <% if (currentUser) {%>
         <!-- show uniquely yours playlists and then below that ALL playlists -->
@@ -24,71 +25,75 @@
           <h1 class=" mb-5">Uniquely Yours</h1>
           <div class="ui grid mb-3 row text-center">
             <% usersPlaylists.forEach(function(playlist) {%>
-            <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
-
-              <div class="thumbnail">
-                <div style="max-height: 125px; min-height:125px;
-                    overflow: hidden;" class="preview">
-                  <img class="img-thumbnail card-fluid glimpse" src="<%=playlist.image%>" alt="">
-                </div>
-
-                <div class="card-body">
-                  <div class="caption">
-                    <h5 class="card-title mb-2"> <%= playlist.name %> </h5>
+              <a class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2" href="/playlists/<%= playlist._id %>">
+                <div class="thumbnail">
+                  <div style="max-height: 150px;
+                            overflow: hidden;" class="preview">
+                    <% if (playlist.image.length > 30) {%>
+                    <img class="img-thumbnail card-fluid glimpse" src="<%=playlist.image%>" alt="">
+                    <% }else { %>
+                    <img class="img-thumbnail card-fluid glimpse" src="https://via.placeholder.com/100" alt="">
+                    <%}%>
                   </div>
-                  <p class="more">
-
-                    <a class="button" href="/playlists/<%= playlist._id %>"><button
-                        class="btn btn-primary">View</button></a>
-
-                  </p>
+                    <div class="card-body">
+                      <div class="caption">
+                        <h4 class="card-title mb-2"> <%= playlist.name %> </h4>
+                  </div>
                 </div>
-              </div>
-
+                <!-- closing VVV div.thumbnail class -->
             </div>
+            </a>
 
             <%});%>
           </div>
         </div>
+
+
+
+
+
 
         <!-- ALL Playlists -->
         <div class="ui container mb-5">
           <h1 class=" mb-5">Playlists</h1>
           <div class="ui grid mb-3 row text-center">
             <% removedLiked.forEach(function(playlist) {%>
-            <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
-
+            <!-- <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2"> -->
+            <a class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2" href="/playlists/<%= playlist._id %>">
               <div class="thumbnail">
-                <div style="max-height: 120px;
-                    overflow: hidden;" class="preview">
-
+                <div style="max-height: 150px;
+                          overflow: hidden;" class="preview">
                   <% if (playlist.image.length > 30) {%>
                   <img class="img-thumbnail card-fluid glimpse" src="<%=playlist.image%>" alt="">
                   <% }else { %>
                   <img class="img-thumbnail card-fluid glimpse" src="https://via.placeholder.com/100" alt="">
                   <%}%>
                 </div>
-
-                <div class="card-body">
-                  <div class="caption">
-                    <h5 class="card-title mb-2"> <%= playlist.name %> </h5>
+                  <div class="card-body">
+                    <div class="caption">
+                      <h4 class="card-title mb-2"> <%= playlist.name %> </h4>
                 </div>
-                <p class="more">
-
-                  <a class="button" href="/playlists/<%= playlist._id %>"><button
-                      class="btn btn-primary">View</button></a>
-
-                </p>
               </div>
-            </div>
-
+              <!-- closing VVV div.thumbnail class -->
           </div>
-
+          </a>
+          <!-- </div> -->
           <%});%>
         </div>
     </div>
 
 
+
+
+
+
+
+
+
+
+
+
+    <!-- USER NOT LOGGED IN RENDER -->
     <%} else {%>
     <!-- dont show uniquely yours -->
 
@@ -100,10 +105,11 @@
       <h1 class=" mb-5">Playlists</h1>
       <div class="ui grid mb-3 row text-center">
         <% removedLiked.forEach(function(playlist) {%>
-        <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
+        <!-- <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2"> -->
+        <a class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2" href="/playlists/<%= playlist._id %>">
 
           <div class="thumbnail">
-            <div style="max-height: 150px;
+            <div style="max-height: 120px;
                     overflow: hidden;" class="preview">
 
               <% if (playlist.image.length > 30) {%>
@@ -116,19 +122,22 @@
                 <div class="card-body">
 
                   <div class="caption">
-                    <h5 class="card-title mb-2"> <%= playlist.name %> </h5>
+                    <h4 class="card-title mb-2"> <%= playlist.name %> </h4>
             </div>
 
-            <p class="more">
+            <!-- <p class="more">
               <a class="button" href="/playlists/<%= playlist._id %>"><button class="btn btn-primary">View</button></a>
-            </p>
+            </p> -->
 
           </div>
 
           <!-- closing VVV div.thumbnail class -->
-        </div>
-
       </div>
+
+
+
+      </a>
+      <!-- </div> -->
 
       <%});%>
     </div>
@@ -145,18 +154,18 @@
   <div id="songs" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-3">
 
     <div class="thumbnail">
-      <div style="max-height: 150px;
+      <div style="max-height: 160px;
               overflow: hidden;" class="preview">
         <% if (song.image) {%>
         <img class="img-thumbnail card-fluid glimpse" src="<%=song.image%>" alt="">
         <% } else {%>
         <img class="img-thumbnail card-fluid" src="https://via.placeholder.com/150" alt="">
         <%}%>
-            </div>
+      </div>
           
-            <div class="card-body" style="padding: 0 0 1em 0;">
-              <div class="caption" style="min-height:70px; margin-top:0; margin-bottom:1em; width: inherit;">
-                <h8 class="card-title"> <strong><%= song.name %></strong> </h8>
+      <div class="card-body" style="padding: 0 0 1em 0;">
+        <div class="caption" style="min-height:70px; margin-top:1em; margin-bottom:1em; width: inherit;">
+          <h8 class="card-title"> <strong><%= song.name %></strong> </h8>
         <p class="card-content"> <%= song.artist %></p>
       </div>
       <!-- <p class="card-content"> Song ID: <%= song.id %></p> -->
@@ -168,11 +177,8 @@
         </i>
 
         <i class="fas fa-plus-square add" type="button" data-toggle="modal" data-target="#playlistChoices">
-
         </i>
-
         <!-- <i class="fas fa-ellipsis-h options btn btn-xs" style="margin-left:-1.5em;" ></i> -->
-
 
         <div class="">
           <i id="play" class="btn btn-md btn-success fas fa-play"></i>
@@ -182,9 +188,7 @@
           <i id="play" class="btn btn-md btn-success fas fa-play"></i>
         </div>
         <% }%>
-
       </div>
-
     </div>
 
   </div>
@@ -225,37 +229,34 @@
   </div>
 </div>
 
+
+
+
 <!-- ARTISTS -->
 <div id="artists" class="ui container mb-5">
   <h1 class="mt-5 mb-5">Artists</h1>
   <div class="ui grid mb-3 row text-center">
     <% allArtists.forEach(function(artist) {%>
-    <div id="artists" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2">
-
+    <!-- <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2"> -->
+    <a class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2" href="/artist/<%= artist._id %>">
       <div class="thumbnail">
-        <div class="preview">
-          <% if (artist.image) {%>
+        <div style="max-height: 160px;
+                  overflow: hidden;" class="preview">
+          <% if (artist.image.length > 30) {%>
           <img class="img-thumbnail card-fluid glimpse" src="<%=artist.image%>" alt="">
-          <% } else {%>
-          <img class="img-thumbnail card-fluid glimpse" src="https://via.placeholder.com/200" alt="">
+          <% }else { %>
+          <img class="img-thumbnail card-fluid glimpse" src="https://via.placeholder.com/100" alt="">
           <%}%>
-                          </div>
-                          <div class="card-body">
-                            <div class="caption">
-                              <h5 class="card-title mb-2"> <strong><%= artist.name %> </strong></h5>
         </div>
-        <p class="more">
-
-          <a class="button" href="/artist/<%= artist._id %>"><button class="btn btn-primary">
-              Discography</button></a>
-
-        </p>
+          <div class="card-body">
+            <div class="caption">
+              <h4 class="card-title mb-2"> <%= artist.name %> </h4>
+        </div>
       </div>
-    </div>
-
+      <!-- closing VVV div.thumbnail class -->
   </div>
-
-
+  </a>
+  <!-- </div> -->
   <%});%>
 </div>
 

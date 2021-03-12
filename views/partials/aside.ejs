@@ -38,6 +38,7 @@
         </a>
       </li>
       <%} else {%>
+        <!-- IF CURRENT USER EXISTS -->
       <li>
         <a class="btn btn-sm" style="width:100%;" href="/playlists/new"><i style="float: left;" id="sideAdd"
             class="far fa-plus-square"></i>
@@ -48,10 +49,10 @@
       <li class="row">
         <a class="sidePlaylistLink btn btn-sm" href="/playlists/<%=playlist._id%>">
           <% if (playlist.image.length > 30) {%>
-          <img style="max-height: 30px; min-height: 30px;" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 sideImage"
+          <img style="max-height: 40PX; min-height: 40PX;" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 sideImage"
             src="<%= playlist.image%>" alt="" />
           <% }else { %>
-          <img class="col-xs-3 col-sm-3 col-md-3 col-lg-3 sideImage" src="https://via.placeholder.com/300" alt="" />
+          <img class="col-xs-3 col-sm-3 col-md-3 col-lg-3 sideImage" style="max-height: 40PX; min-height: 40PX;" src="https://via.placeholder.com/300" alt="" />
           <%}%>
 
 

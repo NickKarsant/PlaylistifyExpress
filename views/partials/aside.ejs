@@ -1,4 +1,4 @@
-<div class="col-xs-3 col-sm-3 col-md-3 col-lg-2"
+<div class="col-xs-3 col-sm-4 col-md-4 col-lg-2"
   style="padding: 0; width:auto; background-color: grey; min-height:100%;">
   <div style="height:100vh;">
     <ul class="aside">
@@ -38,7 +38,7 @@
         </a>
       </li>
       <%} else {%>
-        <!-- IF CURRENT USER EXISTS -->
+      <!-- IF CURRENT USER EXISTS -->
       <li>
         <a class="btn btn-sm" style="width:100%;" href="/playlists/new"><i style="float: left;" id="sideAdd"
             class="far fa-plus-square"></i>
@@ -52,17 +52,18 @@
           <img style="max-height: 40PX; min-height: 40PX;" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 sideImage"
             src="<%= playlist.image%>" alt="" />
           <% }else { %>
-          <img class="col-xs-3 col-sm-3 col-md-3 col-lg-3 sideImage" style="max-height: 40PX; min-height: 40PX;" src="https://via.placeholder.com/300" alt="" />
+          <img class="col-xs-3 col-sm-3 col-md-3 col-lg-3 sideImage" style="max-height: 40PX; min-height: 40PX;"
+            src="https://via.placeholder.com/300" alt="" />
           <%}%>
 
 
 
           <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 sidePlaylistWord">
             <%= playlist.name %>
-  </div>
-  </a>
-  </li>
-  <%})%>
+          </div>
+        </a>
+      </li>
+    <%})%>
   <%}%>
     </ul>
   </div>

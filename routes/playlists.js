@@ -7,20 +7,18 @@ const User = require("../models/user");
 const { isLoggedIn } = require("../middleware.js");
 const mongoose = require("mongoose");
 
-
 // show users Home page, all playlists
 router.get(
   "/",
   isLoggedIn,
   catchAsync(async (req, res) => {
     const user = await User.find({
-      "_id": req.user._id
+      _id: req.user._id
     });
-
 
     const userObject = user[0];
 
-    const usersPlaylists = userObject.playlists
+    const usersPlaylists = userObject.playlists;
 
     res.render("playlists/index", { usersPlaylists });
   })
@@ -28,13 +26,12 @@ router.get(
 
 router.get("/new", isLoggedIn, async (req, res) => {
   const user = await User.find({
-    "_id": req.user._id
+    _id: req.user._id
   });
-
 
   const userObject = user[0];
 
-  const usersPlaylists = userObject.playlists
+  const usersPlaylists = userObject.playlists;
   res.render("playlists/new", { usersPlaylists });
 });
 
@@ -50,7 +47,7 @@ router.post(
     // playlist created
     // console.log(savedPlaylist);
     const foundUsers = await User.find({
-      "_id": req.user._id
+      _id: req.user._id
     });
     // console.log(user)
     // console.log(user[0].playlists)
@@ -58,8 +55,7 @@ router.post(
     const desiredUser = foundUsers[0];
     desiredUser.playlists.push(savedPlaylist);
 
-    await desiredUser.save()
-
+    await desiredUser.save();
 
     req.flash("succes", "New playlist created!");
     res.redirect(`/playlists/${playlist._id}`);
@@ -77,14 +73,19 @@ router.get(
       req.flash("error", "Playlist not found");
       return res.redirect("/browse");
     }
-    const user = await User.find({
-      "_id": req.user._id
-    });
-  
-  
-    const userObject = user[0];
-  
-    const usersPlaylists = userObject.playlists
+
+    var usersPlaylists = [];
+    if (typeof req.user === "undefined") {
+      usersPlaylists
+    } else {
+      const user = await User.find({
+        _id: req.user._id
+      });
+      const userObject = user[0];
+      usersPlaylists = userObject.playlists;
+      usersPlaylists;
+    }
+
     res.render("playlists/show", { playlist, usersPlaylists });
   })
 );
@@ -108,7 +109,7 @@ router.delete(
   catchAsync(async (req, res) => {
     const { id } = req.params;
     await Playlist.findByIdAndDelete(id);
-    req.user._id
+    req.user._id;
     req.flash("success", "Playlist deleted");
 
     res.redirect("/browse");

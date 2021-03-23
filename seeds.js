@@ -336,8 +336,8 @@ const seedDB = async ( ) => {
       });
     }
   });
-  console.log("seedDB finsihed");
+  console.log("seedDB finished");
 }
-
+// seedDB();
 module.exports = seedDB;
 

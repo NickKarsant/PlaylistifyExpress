@@ -42,6 +42,8 @@ router.post(
   catchAsync(async (req, res) => {
     const playlist = new Playlist(req.body);
     playlist.author = req.user._id;
+
+
     const savedPlaylist = await playlist.save();
 
     // playlist created
@@ -49,12 +51,9 @@ router.post(
     const foundUsers = await User.find({
       _id: req.user._id
     });
-    // console.log(user)
-    // console.log(user[0].playlists)
     // update mongodb
-    const desiredUser = foundUsers[0];
+    // const desiredUser = foundUsers[0];
     desiredUser.playlists.push(savedPlaylist);
-
     await desiredUser.save();
 
     req.flash("succes", "New playlist created!");

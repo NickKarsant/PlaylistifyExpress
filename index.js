@@ -19,8 +19,8 @@ const playlistRoutes = require("./routes/playlists");
 const userRoutes = require("./routes/users");
 require('dotenv').config();
 
-// const seedDB = require("./seeds");
-// seedDB();
+const seedDB = require("./seeds");
+seedDB();
 
 // process.env.MONGODB_URI ||
 mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost:27017/playlistify", {

@@ -23,7 +23,7 @@ const seedDB = require("./seeds");
 seedDB();
 
 // process.env.MONGODB_URI ||
-mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost:27017/playlistify", {
+mongoose.connect("mongodb://localhost:27017/playlistify", {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true

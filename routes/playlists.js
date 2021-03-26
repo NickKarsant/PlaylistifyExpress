@@ -52,7 +52,7 @@ router.post(
       _id: req.user._id
     });
     // update mongodb
-    // const desiredUser = foundUsers[0];
+    const desiredUser = foundUsers[0];
     desiredUser.playlists.push(savedPlaylist);
     await desiredUser.save();
 

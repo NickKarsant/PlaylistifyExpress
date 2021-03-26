@@ -55,6 +55,9 @@ i#sideAdd {
 .sidePlaylistLink {
   font-size: 2em;
   width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 img.sideImage {
@@ -102,6 +105,26 @@ img.sideImage {
   width: 100%;
   height: 200px;
 }
+.usersPlaylists {
+  margin: 0 0.25em;
+  padding: 0;
+}
+/* add media query for usersPlaylists. remove margin when small screen */
+
+.allPlaylists {
+  margin: 0 0.5em;
+}
+
+.caption {
+  min-height: 50px;
+  margin-top: 0.5em;
+  width: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* media query when small play card-body for  Songs content centered */
+
 
 .playlists {
   /* height: 200px; */
@@ -131,33 +154,30 @@ a.card {
   color: black;
 }
 
-a.card:hover{
+a.card:hover {
   color: black;
   background-color: rgb(96, 187, 96);
 }
 
-a.card:visted{
+a.card:visted {
   color: black;
 }
 
-
-#list{
+#list {
   display: grid;
   /* grid-gap: 5px; */
 }
 
-.options{
+.options {
   display: none;
 }
-.meatball{
-  margin-left:0.5em;
+.meatball {
+  margin-left: 0.5em;
 }
 
 .songRow:hover {
-  background-color: rgb(240, 240, 240)
-
+  background-color: rgb(240, 240, 240);
 }
-
 
 /* modals */
 .optionsChoice:hover {

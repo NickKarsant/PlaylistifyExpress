@@ -18,14 +18,14 @@
     </div>
 
   
-
+    <!-- col-xs-6 col-sm-4 col-md-3 col-lg-3 -->
       <% if (currentUser) {%>
         <!-- show uniquely yours playlists and then below that ALL playlists -->
         <div class="ui container mb-5">
           <h1 class=" mb-5">Uniquely Yours</h1>
           <div class="ui grid mb-3 row text-center">
             <% usersPlaylists.forEach(function(playlist) {%>
-              <a class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2" href="/playlists/<%= playlist._id %>">
+              <a class="usersPlaylists card col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-2" href="/playlists/<%= playlist._id %>">
                   <div style="overflow: hidden;" class="preview">
                     <% if (playlist.image.length > 30) {%>
                     <img class="img-thumbnail card-fluid glimpse" src="<%=playlist.image%>" alt="">
@@ -33,7 +33,7 @@
                     <img class="img-thumbnail card-fluid glimpse" src="https://via.placeholder.com/100" alt="">
                     <%}%>
                   </div>
-                    <div class="card-body">
+                    <div class="card-body p-0">
                       <div class="caption">
                         <h4 class="card-title mb-2"> <%= playlist.name %> </h4>
                   </div>
@@ -51,7 +51,7 @@
           <div class="ui grid mb-3 row text-center">
             <% removedLiked.forEach(function(playlist) {%>
             <!-- <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2"> -->
-            <a class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2" href="/playlists/<%= playlist._id %>">
+            <a class="card col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-2" style="margin: 0 0.5em;" href="/playlists/<%= playlist._id %>">
               <!-- <div class="thumbnail"> -->
                 <div style="overflow: hidden;" class="preview">
                   <% if (playlist.image.length > 30) {%>
@@ -60,7 +60,7 @@
                   <img class="img-thumbnail card-fluid glimpse" src="https://via.placeholder.com/100" alt="">
                   <%}%>
                 </div>
-                  <div class="card-body">
+                  <div class="card-body p-0">
                     <div class="caption">
                       <h4 class="card-title mb-2"> <%= playlist.name %> </h4>
                 </div>
@@ -97,7 +97,7 @@
       <div class="ui grid mb-3 row text-center">
         <% removedLiked.forEach(function(playlist) {%>
         <!-- <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2"> -->
-        <a class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2" href="/playlists/<%= playlist._id %>">
+        <a class="allPlaylists card col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-2" href="/playlists/<%= playlist._id %>">
 
           <div class="thumbnail">
             <div style="overflow: hidden;" class="preview">
@@ -109,7 +109,7 @@
               <%}%>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body p-0">
 
                   <div class="caption">
                     <h4 class="card-title mb-2"> <%= playlist.name %> </h4>
@@ -127,7 +127,6 @@
 
 
       </a>
-      <!-- </div> -->
 
       <%});%>
     </div>
@@ -139,12 +138,12 @@
         <!-- SONGS -->
     <div id="songs" class="ui container">
       <h1 class="mb-5">Songs</h1>
-      <div class="ui grid mb-3 row text-center">
+      <div class="ui grid mb-3 row">
         <% allSongs.forEach(function(song) {%>
-  <div id="songs" class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-3">
+  <div id="songs" class="card col-xs-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
 
     <div class="thumbnail">
-      <div style="max-height: 160px;
+      <div class="text-center" style="max-height: 160px;
               overflow: hidden;" class="preview">
         <% if (song.image) {%>
         <img class="img-thumbnail card-fluid glimpse" src="<%=song.image%>" alt="">
@@ -153,14 +152,14 @@
         <%}%>
       </div>
           
-      <div class="card-body" style="padding: 0 0 1em 0;">
-        <div class="caption" style="min-height:70px; margin-top:1em; margin-bottom:1em; width: inherit;">
-          <h8 class="card-title"> <strong><%= song.name %></strong> </h8>
-        <p class="card-content"> <%= song.artist %></p>
-      </div>
+      <div class="card-body p-0">
+        <div class="caption">
+          <h8 class="card-title""> <strong><%= song.name %></strong> </h8>
+          <p class="card-content"> <%= song.artist %></p>
+        </div>
       <!-- <p class="card-content"> Song ID: <%= song.id %></p> -->
 
-      <div class="row d-flex justify-content-around">
+      <div class="row d-flex justify-content-around m-1">
         <% if (currentUser) {%>
         <i class="far fa-heart like">
           <form action="/playlists/<%= currentUser.playlists[0]._id %>" method="PATCH"></form>
@@ -174,7 +173,7 @@
           <i id="play" class="btn btn-md btn-success fas fa-play"></i>
         </div>
         <%} else {%>
-        <div class="" style="width: 50%;">
+        <div class="text-center" style="width: 50%;">
           <i id="play" class="btn btn-md btn-success fas fa-play"></i>
         </div>
         <% }%>
@@ -228,7 +227,7 @@
   <div class="ui grid mb-3 row text-center">
     <% allArtists.forEach(function(artist) {%>
     <!-- <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2"> -->
-    <a class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2" href="/artist/<%= artist._id %>">
+    <a class="card col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-2" href="/artist/<%= artist._id %>">
       <div class="thumbnail">
         <div style="max-height: 160px;
                   overflow: hidden;" class="preview">
@@ -238,7 +237,7 @@
           <img class="img-thumbnail card-fluid glimpse" src="https://via.placeholder.com/100" alt="">
           <%}%>
         </div>
-          <div class="card-body">
+          <div class="card-body p-0">
             <div class="caption">
               <h4 class="card-title mb-2"> <%= artist.name %> </h4>
         </div>

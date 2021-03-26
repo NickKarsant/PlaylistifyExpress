@@ -71,10 +71,11 @@ router.post(
 
 
       req.logIn(registeredUser, err => {
+        console.log(registeredUser);
         if (err) {
           next();
         }
-        req.flash("success", "Welcome to Playlist-ify");
+        req.flash("success", "Welcome to Playlist-ify, " + registeredUser.username + "!");
         res.redirect("/playlists");
       });
     } catch (e) {

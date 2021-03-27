@@ -105,11 +105,13 @@ img.sideImage {
   width: 100%;
   height: 200px;
 }
-.usersPlaylists {
+a.usersPlaylists {
   margin: 0 0.25em;
   padding: 0;
 }
 /* add media query for usersPlaylists. remove margin when small screen */
+
+
 
 .allPlaylists {
   margin: 0 0.5em;
@@ -162,6 +164,7 @@ a.card:hover {
 a.card:visted {
   color: black;
 }
+
 
 #list {
   display: grid;

@@ -134,6 +134,12 @@ main {
 }
 /* media query when small play card-body for  Songs content centered */
 
+.playbtn::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .playlists {
   /* height: 200px; */
   color: black;

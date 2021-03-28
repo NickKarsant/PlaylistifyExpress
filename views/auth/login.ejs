@@ -1,34 +1,42 @@
 <% layout('layouts/boilerplate')%>
-<br>
-<div class="d-flex flex-column">
-  <div class="top ui one column stackable center aligned page grid">
-    <div class="column six wide card shadow mt-5">
-      <h1>Login</h1>
-      <form action="auth/login" method="POST" class="validated-form" novalidate>
-        <div class="mb-3">
-          <label class="uncenter form-label" for="username">Username</label>
-          <input class="form-control" type="text" id="username" name="username" required autofocus>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">Required</div>
 
+<div class="row">
+  <%- include('../partials/aside') %>
+
+
+  <div class="col-xs-9 col-sm-8 col-md-8 col-lg-10 pb-3 mt-1" style="height:auto;">
+
+    <div class="d-flex flex-column">
+      <div class="top ui one column stackable center aligned page grid">
+        <div class="column six wide card shadow mt-5">
+          <h1>Login</h1>
+          <form action="auth/login" method="POST" class="validated-form" novalidate>
+            <div class="mb-3">
+              <label class="uncenter form-label" for="username">Username</label>
+              <input class="form-control" type="text" id="username" name="username" required autofocus>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">Required</div>
+
+            </div>
+
+            <div class="mb-3">
+              <label class="uncenter form-label" for="password">Password</label>
+              <input class="form-control" type="password" id="password" name="password" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">Required</div>
+
+
+            </div>
+            <button class="btn btn-block btn-success">Login</button>
+          </form>
         </div>
-
-        <div class="mb-3">
-          <label class="uncenter form-label" for="password">Password</label>
-          <input class="form-control" type="password" id="password" name="password" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">Required</div>
-
-
-        </div>
-        <button class="btn btn-block btn-success">Login</button>
-      </form>
+      </div>
+      <br>
     </div>
+    <!-- <a href="/browse" class="btn btn-primary">Back to Browse</a> -->
   </div>
-  <br>
 </div>
-<a href="/browse" class="btn btn-primary">Back to Browse</a>

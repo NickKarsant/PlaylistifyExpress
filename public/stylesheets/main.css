@@ -32,6 +32,11 @@ h4#list {
   font-size: 1.5em;
 }
 
+.jumbotron{
+  margin-left: -1em;
+  margin-top: -5px;
+}
+
 .aside {
   list-style: none;
   margin-top: 1em;
@@ -39,11 +44,11 @@ h4#list {
 
 i#sideAdd {
   padding-right: 0.2em;
-  font-size: 3em;
+  font-size: 2em;
   display: flex;
   width: 20%;
-  margin: 5px;
-  margin-left: -15px;
+  margin-top: 8px;
+
 }
 
 #sideAddWord {
@@ -111,10 +116,9 @@ a.usersPlaylists {
 }
 /* add media query for usersPlaylists. remove margin when small screen */
 
-main{
+main {
   background-color: black;
 }
-
 
 .allPlaylists {
   margin: 0 0.5em;
@@ -129,7 +133,6 @@ main{
   text-overflow: ellipsis;
 }
 /* media query when small play card-body for  Songs content centered */
-
 
 .playlists {
   /* height: 200px; */
@@ -164,7 +167,6 @@ a.card:hover {
 a.card:visted {
   color: black;
 }
-
 
 #list {
   display: grid;
@@ -208,3 +210,13 @@ a.card:visted {
   -o-transition: opacity 0.3s linear, right 0.3s ease-out;
   transition: opacity 0.3s linear, right 0.3s ease-out;
 }
+
+
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+.jumbotron{
+  width: 116% !important;
+}
+}
+

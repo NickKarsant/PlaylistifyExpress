@@ -106,16 +106,18 @@ img.sideImage {
   padding-right: 0.3em;
 }
 
-.img-responsive {
-  width: 100%;
-  height: 200px;
-}
+
 a.usersPlaylists {
   margin: 0 0.25em;
   padding: 0;
 }
 /* add media query for usersPlaylists. remove margin when small screen */
 
+
+.card-fluid{
+  width:auto !important;
+  height: 150px !important;
+}
 main {
   background-color: black;
 }

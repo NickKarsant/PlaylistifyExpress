@@ -25,7 +25,7 @@
           <h1 class="text-white mb-5">Uniquely Yours</h1>
           <div class="ui grid mb-3 row text-center">
             <% usersPlaylists.forEach(function(playlist) {%>
-            <a class="bg-dark card col-xs-2 col-sm-6 col-md-3 col-lg-2 col-xl-2 my-3 mx-4"
+            <a class="bg-dark card col-xs-2 col-sm-6 col-md-3 col-lg-2 col-xl-2 my-3 mx-4 pt-2"
               href="/playlists/<%= playlist._id %>">
               <% if (playlist.image.length > 30) {%>
               <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;"
@@ -54,7 +54,7 @@
       <div class="ui grid mb-3 row text-center">
         <% removedLiked.forEach(function(playlist) {%>
     <!-- <div class="card col-xs-6 col-sm-4 col-md-3 col-lg-3 mb-2"> -->
-    <a class="bg-dark card col-sm-6 col-md-3 col-lg-2 col-xl-2 my-3 mx-4" href="/playlists/<%= playlist._id %>">
+    <a class="bg-dark card col-sm-6 col-md-3 col-lg-2 col-xl-2 my-3 mx-4 pt-2" href="/playlists/<%= playlist._id %>">
       <% if (playlist.image.length > 30) {%>
       <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;" src="<%=playlist.image%>"
         alt="">
@@ -77,7 +77,7 @@
   <h1 class="text-white mb-5">Songs</h1>
   <div class="ui grid mb-3 row">
     <% allSongs.forEach(function(song) {%>
-    <div id="songs" class=" bg-dark card col-xs-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-3">
+    <div id="songs" class=" bg-dark card col-xs-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-3 pt-2">
 
 
       <!-- <div class="thumbnail"> -->
@@ -168,7 +168,7 @@
   <h1 class="text-white mb-5">Uniquely Yours</h1>
   <div class="ui grid mb-3 row text-center">
     <% allArtists.forEach(function(artist) {%>
-    <a class="bg-dark card col-xs-2 col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-2 mx-4" href="/artists/<%= artist._id %>">
+    <a class="bg-dark card col-xs-2 col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-2 mx-4 pt-2" href="/artists/<%= artist._id %>">
       <% if (artist.image.length > 30) {%>
       <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;" src="<%=artist.image%>"
         alt="">

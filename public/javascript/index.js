@@ -26,6 +26,10 @@ $(document).ready(function() {
     window.history.back();
   }
 
+  function goForward() {
+    window.history.forward();
+  }
+
 
 
 

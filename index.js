@@ -143,6 +143,9 @@ app.get(
 app.get(
   "/search",
   catchAsync(async (req, res) => {
+
+
+
     var usersPlaylists
     if (typeof req.user === 'undefined') {
       usersPlaylists = [];
@@ -157,6 +160,8 @@ app.get(
     res.render("browse/search", { usersPlaylists });
   })
 );
+
+
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Serving on port 3000");

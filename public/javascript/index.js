@@ -98,6 +98,16 @@ meatballs.forEach(menu => {
 
 
 
+searchBar = document.getElementById('searchBar');
+
+
+$("#searchBar").submit(function(e){
+  e.preventDefault();
+});
+
+searchBar.addEventListener('keyup', (e) => {
+    console.log(e.target.value)
+})
 
 
 

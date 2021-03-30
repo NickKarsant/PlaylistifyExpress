@@ -3,19 +3,28 @@
 <div class="row">
   <%- include('../partials/aside') %>
 
-
   <div class="col-xs-10 col-sm-10 col-md-9 col-lg-10 pl-4 pr-4 mt-0">
-      <a class="btn mb-5 mt-2 backAndNext text-white" style="height: 32px;
-      width: 32px;
-      border-radius: 50%;
-      background-color: green;
-      color: #fff;" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
-      <a class="btn mb-5 mx-3 mt-2 backAndNext" style="height: 32px;
-      width: 32px;
-      border-radius: 50%;
-      background-color: green;
-      color: #fff;" onclick="goForward()"><i class="fas fa-chevron-right"></i></a>
-  
+      <div class="row align-items-center">
+          <div class="col-md-2" >
+            <a class="btn mb-3 mt-2 backAndNext text-white" style="height: 32px;
+          width: 32px;
+          border-radius: 50%;
+          background-color: green;
+          color: #fff;" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
+            <a id="forward" class="btn mb-3 mx-3 mt-2 backAndNext" style="height: 32px;
+          width: 32px;
+          border-radius: 50%;
+          background-color: green;
+          color: #fff;" onclick="goForward()"><i id="forward" class="fas fa-chevron-right"></i></a>
+          </div>
+    
+          <div class="col-md-10">
+            <form action="/search?" id=searchBarForm >
+              <input id="searchBar" autofocus type="search" placeholder="Search for artists or songs"
+                aria-describedby="button-addon3" class="form-control bg-none border-1">
+            </form>
+          </div>
+        </div>
 
     <div class="ui container mb-5">
       <h1 class="text-white">Uniquely Yours</h1>

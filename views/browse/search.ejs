@@ -18,11 +18,11 @@
       width: 32px;
       border-radius: 50%;
       background-color: green;
-      color: #fff;" onclick="goForward()"><i class="fas fa-chevron-right"></i></a>
+      color: #fff;" onclick="goForward()"><i id="forward" class="fas fa-chevron-right"></i></a>
       </div>
 
-      <div class="col-md-9">
-        <form action="/search?" style="width:50%; margin-left: -5em;">
+      <div class="col-md-10">
+        <form action="/search?" id=searchBarForm >
           <input id="searchBar" autofocus type="search" placeholder="Search for artists or songs"
             aria-describedby="button-addon3" class="form-control bg-none border-1">
         </form>

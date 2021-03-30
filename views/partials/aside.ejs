@@ -29,19 +29,19 @@
     </div>
 
     
-    <% if(currentUser) {%>
-
-      <ul class="aside pt-3">
-        <h4 id="list">PLAYLISTS</h4>
-
-        <div class="scrollable">
-          <li id="createPlaylist">
-            <a id="sideAddWord" class="btn btn-sm" href="/playlists/new"><i style="float: left;" id="sideAdd"
-                class="far fa-plus-square"></i>
-              <!-- <p id="sideAddWord">Create Playlist</p> -->
-               Create Playlist
-            </a>
-          </li>
+    
+    <ul class="aside pt-3">
+      <h4 id="list">PLAYLISTS</h4>
+      
+      <div class="scrollable">
+        <li id="createPlaylist">
+          <a id="sideAddWord" class="btn btn-sm" href="/playlists/new"><i style="float: left;" id="sideAdd"
+            class="far fa-plus-square"></i>
+            <!-- <p id="sideAddWord">Create Playlist</p> -->
+              Create Playlist
+          </a>
+        </li>
+        <% if(currentUser) {%>
           <% usersPlaylists.forEach(function(playlist) {%>
           <li class="row">
             <a class="sidePlaylistLink btn btn-sm" href="/playlists/<%=playlist._id%>">

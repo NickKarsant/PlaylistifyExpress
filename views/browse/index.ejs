@@ -60,7 +60,7 @@
   <div class="ui container mb-5">
       <h1 class="text-white mb-5">Playlists</h1>
       <div class="ui grid mb-3 row text-center">
-          <% usersPlaylists.forEach(function(playlist) {%>
+          <% removedLiked.forEach(function(playlist) {%>
             <a class="usersPlaylists bg-dark card col-xs-2 col-sm-3 col-md-3 col-lg-2 col-xl-2 my-3 mx-4 pt-2"
               href="/playlists/<%= playlist._id %>">
               <% if (playlist.image.length > 30) {%>

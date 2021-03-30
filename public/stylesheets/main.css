@@ -66,6 +66,7 @@ i#sideAdd {
   display: flex;
   align-items: center;
   margin-left: 5%;
+  margin-top: 10px;
 }
 
 .sidePlaylistLink {
@@ -185,9 +186,49 @@ a.card {
   color: black;
 }
 
-a.card:hover {
-  color: black;
-  background-color: rgb(96, 187, 96);
+.genres {
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+#container
+{
+    height:200px;
+    width:200px;
+    position:relative;
+}
+
+#image
+{    
+  max-height: 175px;
+  min-height: 175px;
+  max-width: 175px;
+  min-width: 175px;
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+#icon
+{
+    z-index:100;
+    position:absolute;    
+    color:white;
+    height: 100%;
+    width: 100%;
+    left:50px;
+    top:40px;
+
+}
+#text
+{
+    z-index:100;
+    position:absolute;    
+    color:white;
+    font-size:1em;
+    left:70px;
+    top:110px;
 }
 
 a.card:visted {

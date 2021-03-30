@@ -226,9 +226,11 @@ a.card {
     z-index:100;
     position:absolute;    
     color:white;
+    margin:auto;
     font-size:1em;
     left:70px;
     top:110px;
+    /* border:1px solid red; */
 }
 
 a.card:visted {

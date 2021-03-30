@@ -35,7 +35,7 @@
       
       <div class="scrollable">
         <li id="createPlaylist">
-          <a id="sideAddWord" class="btn btn-sm" href="/playlists/new"><i style="float: left;" id="sideAdd"
+          <a id="sideAddWord" class="btn btn-sm text-white" href="/playlists/new"><i style="float: left;" id="sideAdd"
             class="far fa-plus-square"></i>
             <!-- <p id="sideAddWord">Create Playlist</p> -->
               Create Playlist
@@ -44,7 +44,7 @@
         <% if(currentUser) {%>
           <% usersPlaylists.forEach(function(playlist) {%>
           <li class="row">
-            <a class="sidePlaylistLink btn btn-sm" href="/playlists/<%=playlist._id%>">
+            <a class="sidePlaylistLink btn btn-sm text-white" href="/playlists/<%=playlist._id%>">
               <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 sidePlaylistWord">
                 <%= playlist.name %>
               </div>

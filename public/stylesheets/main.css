@@ -38,8 +38,8 @@ h4#list {
 #aside {
   padding: 0;
   width: auto;
-  background-color: grey;
-  height: auto;
+  background-color: black;
+    height: auto;
   min-height: 100vh;
 }
 .asideList {
@@ -94,7 +94,7 @@ img.sideImage {
 
 .navigation {
   font-size: 1.5em;
-  color: black;
+  color: white;
   padding: 0.5em 0;
 }
 
@@ -119,6 +119,7 @@ img.sideImage {
 
 #list {
   margin: 0;
+  color: white;
 }
 
 .scrollable {
@@ -138,7 +139,7 @@ a.usersPlaylists {
   height: 150px !important;
 }
 main {
-  background-color: black;
+  background-color: rgb(34, 33, 33);
 }
 
 .allPlaylists {

@@ -6,9 +6,21 @@
 
 
   <div class="col-xs-9 col-sm-8 col-md-8 col-lg-10 pb-3 mt-1" style="height:auto;">
+      <a class="btn mb-2 mt-2 backAndNext text-white" style="height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      background-color: green;
+      color: #fff;" alt="Go back" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
+      <a class="btn mb-2 mx-3 mt-2 backAndNext" style="height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      background-color: green;
+      color: #fff;" alt="Go forward" onclick="goForward()"><i class="fas fa-chevron-right"></i></a>
+  
     <div>
       <% if (!currentUser) {%>
-      <header class="jumbotron bg-dark text-white">
+      <header class="jumbotron text-white" style="  background-color: rgb(34, 33, 33);
+      ">
         <h1><i class="fas fa-music"></i> Welcome to Playlist-ify</h1>
         <p>Search through our database of music for the right songs and artists and become a playlist god! <br>
           Feel free to browse our database of music, playlists, and artists. <br>

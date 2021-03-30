@@ -70,7 +70,7 @@ router.get(
       .populate("author");
     if (!playlist) {
       req.flash("error", "Playlist not found");
-      return res.redirect("/browse");
+      return res.redirect("/playlists");
     }
 
     var usersPlaylists = [];
@@ -111,7 +111,7 @@ router.delete(
     req.user._id;
     req.flash("success", "Playlist deleted");
 
-    res.redirect("/browse");
+    res.redirect("/playlists");
   })
 );
 

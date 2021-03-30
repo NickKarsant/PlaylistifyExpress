@@ -20,7 +20,6 @@ main.container {
   padding-top: 0.5em;
   margin-right: 1em;
   margin-bottom: 0.5em;
-  /* border: 1px solid red; */
 }
 #browse,
 #search,
@@ -32,29 +31,41 @@ h4#list {
   font-size: 1.5em;
 }
 
-.jumbotron{
+.jumbotron {
   margin-left: -1em;
   margin-top: -5px;
 }
-
-.aside {
+#aside {
+  padding: 0;
+  width: auto;
+  background-color: grey;
+  height: auto;
+  min-height: 100vh;
+}
+.asideList {
   list-style: none;
   margin-top: 1em;
 }
 
-i#sideAdd {
-  padding-right: 0.2em;
-  font-size: 2em;
-  display: flex;
-  width: 20%;
-  margin-top: 8px;
+div.scrollable li {
+  margin-left: 0.5%;
+}
 
+i#sideAdd {
+  margin-top: 0;
+  font-size: 1.5em;
 }
 
 #sideAddWord {
   font-size: 1.3em;
+  display: inline;
+}
+
+#createPlaylist {
+  width: 200px;
   display: flex;
   align-items: center;
+  margin-left: 5%;
 }
 
 .sidePlaylistLink {
@@ -67,7 +78,6 @@ i#sideAdd {
 
 img.sideImage {
   padding: 0;
-  /* display:flex; */
   float: left;
   max-height: 100px;
 }
@@ -106,6 +116,15 @@ img.sideImage {
   padding-right: 0.3em;
 }
 
+#list {
+  margin: 0;
+}
+
+.scrollable {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-left: -10%;
+}
 
 a.usersPlaylists {
   margin: 0 0.25em;
@@ -113,9 +132,8 @@ a.usersPlaylists {
 }
 /* add media query for usersPlaylists. remove margin when small screen */
 
-
-.card-fluid{
-  width:auto !important;
+.card-fluid {
+  width: auto !important;
   height: 150px !important;
 }
 main {
@@ -136,7 +154,7 @@ main {
 }
 /* media query when small play card-body for  Songs content centered */
 
-.playbtn::after{
+.playbtn::after {
   content: "";
   clear: both;
   display: table;
@@ -219,12 +237,8 @@ a.card:visted {
   transition: opacity 0.3s linear, right 0.3s ease-out;
 }
 
-
-
-
 @media screen and (min-width: 768px) and (max-width: 991px) {
-.jumbotron{
-  width: 116% !important;
+  .jumbotron {
+    width: 116% !important;
+  }
 }
-}
-

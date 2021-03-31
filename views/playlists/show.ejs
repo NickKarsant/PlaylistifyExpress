@@ -4,7 +4,7 @@
   <%- include('../partials/aside') %>
 
 
-  <div class="col-sm-7 col-md-8 col-lg-10 mb-5 text-white">
+  <div id="showWrapper" class="col-sm-7 col-md-8 col-lg-10 mb-5 text-white">
     <div id="gradient">
 
       <div class="row align-items-center">
@@ -14,27 +14,27 @@
               class="fas fa-chevron-right"></i></a>
         </div>
       </div>
-      <div class="container">
-      <div class="text-center">
-        <h1 class="playlistTitle mt-3 mb-3"><%= playlist.name %></h1>
-        <caption>playlist created by : <%= playlist.author.username %></caption>
-      </div>
+      <div id="showInfo" class="container">
+        <div class="text-center">
+          <h1 class="playlistTitle mt-3 mb-3"><%= playlist.name %></h1>
+          <caption>playlist created by : <%= playlist.author.username %></caption>
+        </div>
 
-      <div class="row text-center pb-5">
-        <% if (playlist.image.length > 30) {%>
-        <img id="pic" src="<%= playlist.image %>" class="mx-auto d-block img-fluid">
-        <% }else { %>
-        <img id="pic" src="https://via.placeholder.com/200" class="mx-auto d-block img-fluid">
-        <%}%>  
+        <div class="row text-center pb-5">
+          <% if (playlist.image.length > 30) {%>
+          <img id="pic" src="<%= playlist.image %>" class="mx-auto d-block img-fluid">
+          <% }else { %>
+          <img id="pic" src="https://via.placeholder.com/200" class="mx-auto d-block img-fluid">
+          <%}%>  
       </div>
       </div>
     </div>
 
-    <div class="ui">
+    <div class="ui pl-2 pr-5">
       <div class="row mt-3">
         <div class="col-sm-1 col-md-1 col-lg-1 text-center">#</div>
-        <div class="col-sm-2 col-md-1 col-lg-1 text-center"></div>
-        <div class="col-sm-1 col-md-1 col-lg-1 text-center">Liked</div>
+        <div class="col-sm-1 col-md-1 col-lg-1 text-center"></div>
+        <div class="col-sm-2 col-md-1 col-lg-1 text-center">Liked</div>
         <div class="col-sm-3 col-md-3 col-lg-3">Title</div>
         <div class="col-sm-3 col-md-4 col-lg-4">Artist</div>
         <div class="col-sm-1 col-md-1 col-lg-1"><i class="far fa-clock" style="padding-left:0.5em;"></i></div>
@@ -42,31 +42,31 @@
       </div>
 
       <% playlist.songs.forEach(function(song, index) {%>
-        <div class="row songRow" style="border-top: 1px solid grey; border-bottom: 1px solid grey; padding: 0.5em 0">
-          <div class="col-sm-1 col-md-1 col-lg-1 text-center"><%=  index + 1 %></div>
-          <div class="col-sm-2 col-md-1 col-lg-1 text-center"><i id="play"
-              class="btn btn-md btn-success fas fa-play"></i>
+          <div class="row songRow" style="border-top: 1px solid grey; border-bottom: 1px solid grey; padding: 0.5em 0">
+            <div class="col-sm-1 col-md-1 col-lg-1 text-center"><%=  index + 1 %></div>
+            <div class="col-sm-2 col-md-1 col-lg-1 text-center"><i id="play"
+                class="btn btn-md btn-success fas fa-play"></i>
+            </div>
+            <div class="col-sm-1 col-md-1 col-lg-1 text-center"><i class="far fa-heart like"></i></div>
+            <div class="col-md-3 col-md-3 col-lg-3">song name </div>
+            <div class="col-md-3 col-md-4 col-lg-4">song artist </div>
+            <div class="col-sm-1 col-md-1 col-lg-1">song length</div>
+            <div class="col-sm-1 col-md-1 col-lg-1 text-center options">
+              <i class="fas fa-ellipsis-h meatball btn btn-xs" style="margin-left:-1.5em;" type="button"
+                data-toggle="modal" data-target="#optionsMenu"></i>
+            </div>
+
+
+
           </div>
-          <div class="col-sm-1 col-md-1 col-lg-1 text-center"><i class="far fa-heart like"></i></div>
-          <div class="col-md-3 col-md-3 col-lg-3">song name </div>
-          <div class="col-md-3 col-md-4 col-lg-4">song artist </div>
-          <div class="col-sm-1 col-md-1 col-lg-1">song length</div>
-          <div class="col-sm-1 col-md-1 col-lg-1 text-center options">
-            <i class="fas fa-ellipsis-h meatball btn btn-xs" style="margin-left:-1.5em;" type="button"
-              data-toggle="modal" data-target="#optionsMenu"></i>
-          </div>
-
-
-
+          <% }); %>
         </div>
-        <% }); %>
-      </div>
-      <br>
+        <br>
 
-      <% if (currentUser && playlist.author.equals(currentUser._id) && playlist.name !== "Liked Songs") { %>
-      <form action="/playlists/<%=playlist._id%>?_method=DELETE" method="POST">
-        <button class="ui button red right floated">Delete</button>
-      </form>
-      <%}%>
+        <% if (currentUser && playlist.author.equals(currentUser._id) && playlist.name !== "Liked Songs") { %>
+        <form action="/playlists/<%=playlist._id%>?_method=DELETE" method="POST">
+          <button class="ui button red right floated">Delete</button>
+        </form>
+        <%}%>
   </div>
 </div>

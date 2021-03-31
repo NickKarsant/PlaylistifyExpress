@@ -4,30 +4,29 @@
   <%- include('../partials/aside') %>
 
 
-  <div class="col-xs-10 col-sm-10 col-md-9 col-lg-10 mb-5 text-white">
-    <a class="btn mb-5 mt-2 backAndNext text-white" style="height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    background-color: green;
-    color: #fff;" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
-    <a class="btn mb-5 mx-3 mt-2 backAndNext" style="height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    background-color: green;
-    color: #fff;" onclick="goForward()"><i class="fas fa-chevron-right"></i></a>
+  <div class="col-sm-7 col-md-8 col-lg-10 mb-5 text-white">
+    <div id="gradient">
 
-    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-2 mt-2">
+          <a class="btn mx-2 backAndNext" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
+          <a id="forward" class="btn mx-2 backAndNext" onclick="goForward()"><i id="forward"
+              class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+      <div class="container">
       <div class="text-center">
         <h1 class="playlistTitle mt-3 mb-3"><%= playlist.name %></h1>
         <caption>playlist created by : <%= playlist.author.username %></caption>
       </div>
 
-      <div class="row text-center">
+      <div class="row text-center pb-5">
         <% if (playlist.image.length > 30) {%>
         <img id="pic" src="<%= playlist.image %>" class="mx-auto d-block img-fluid">
         <% }else { %>
         <img id="pic" src="https://via.placeholder.com/200" class="mx-auto d-block img-fluid">
         <%}%>  
+      </div>
       </div>
     </div>
 

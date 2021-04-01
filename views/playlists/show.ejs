@@ -14,6 +14,9 @@
               class="fas fa-chevron-right"></i></a>
         </div>
       </div>
+
+
+<!-- 
       <div id="showInfo" class="container">
         <div class="text-center">
           <h1 class="playlistTitle mt-3 mb-3"><%= playlist.name %></h1>
@@ -27,7 +30,27 @@
           <img id="pic" src="https://via.placeholder.com/200" class="mx-auto d-block img-fluid">
           <%}%>  
       </div>
-      </div>
+      </div> -->
+
+
+      <div id="showInfo" class="row mt-3 mb-5 col-sm-12 col-md-12 col-lg-12">
+          <img style="margin-left:1em;" src="<%= playlist.image %>" alt="">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 header">
+            <p style="display:flex; align-items: center;">Artist</p>
+            <h1 class="col-xs-6 col-sm-6 col-md-6 col-lg-6"
+              style="padding-left: 0; display:flex; font-size: 4em; align-items: center;">
+              <%= playlist.name%></h1>
+              <caption> <strong> <%= playlist.author.username %> </strong><span class="dot"></span> 0 songs, about 0 hr  0 min </caption>
+
+          </div>
+        </div>
+
+        <div>
+            <i id="play" class="btn btn-md btn-success fas fa-play"></i>
+
+            <i id="playlistOptions" class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button" data-toggle="modal"
+            data-target="#optionsMenu"></i>
+        </div>
     </div>
 
     <div class="ui pl-2 pr-5">
@@ -65,7 +88,7 @@
 
         <% if (currentUser && playlist.author.equals(currentUser._id) && playlist.name !== "Liked Songs") { %>
         <form action="/playlists/<%=playlist._id%>?_method=DELETE" method="POST">
-          <button class="ui button red right floated">Delete</button>
+          <button class="ui button red right floated mr-3">Delete</button>
         </form>
         <%}%>
   </div>

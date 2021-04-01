@@ -112,7 +112,24 @@ img.sideImage {
   color: green;
 }
 
-#play {
+#play{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 0.8em;
+  border-radius: 50%;
+}
+
+#playlistOptions{
+  font-size: 2em;
+}
+
+.play {
   background-color: green;
 }
 
@@ -250,8 +267,19 @@ a.card:visted {
   background-image: linear-gradient(rgb(36, 110, 6), rgb(19, 18, 18));
 }
 
-#showInfo{
-  margin-left: -2em;
+#artistGradient {
+  width: 120% !important;
+  background-image: linear-gradient(rgb(36, 110, 6), rgb(19, 18, 18));
+}
+
+
+.dot {
+  height: 5px;
+  width: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 2px 2px 2px;
 }
 
 .dropdown-container {

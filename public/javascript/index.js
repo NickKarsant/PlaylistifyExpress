@@ -36,6 +36,7 @@ $(document).ready(function() {
     if (this.classList.contains("far")) {
       this.classList.remove("far");
       this.classList.add("fas");
+      this.classList.add("mustShow");
       this.style.color = "green";
       this.style.padding = "0";
       this.style.display = "flex";
@@ -46,6 +47,7 @@ $(document).ready(function() {
     } else {
       this.classList.remove("fas");
       this.classList.add("far");
+      this.classList.remove("mustShow");
       this.style.color = "";
       var isLiked = false;
       this.style.padding = "0";
@@ -54,11 +56,6 @@ $(document).ready(function() {
 
     }
 
-    if (this.classList.contains("fas") && !isLiked){
-      this.style.display = "flex !important";
-      artistLike.style.visibility = "hidden !important";
-
-    } 
     return isLiked;
   }
 
@@ -82,9 +79,10 @@ $(document).ready(function() {
   }
 
   function hoverHideLike(song) {
-    var heart = song.getElementsByClassName("artistLike")[0];
+    var heart = song.getElementsByClassName("like")[0];
+    var heartDiv = song.getElementsByClassName("artistLike")[0];
     console.log(song);
-    heart.style.visibility = "hidden";
+    heartDiv.style.visibility = "hidden";
   }
 
   let songs = document.querySelectorAll(".songRow");

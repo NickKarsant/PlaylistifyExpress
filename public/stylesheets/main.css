@@ -295,9 +295,13 @@ input#searchBar {
 }
 
 
-.artistLike{
-  visibility: hidden;
+
+
+.mustShow {
+  visibility: visible !important;
 }
+
+
 
 .options {
   display: none;

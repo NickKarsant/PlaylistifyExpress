@@ -16,6 +16,8 @@ main.container {
   color: green;
 }
 
+
+
 #home {
   padding-top: 0.5em;
   margin-right: 1em;
@@ -290,6 +292,11 @@ input#searchBar {
 
 #results {
   margin-top: 1em;
+}
+
+
+.artistLike{
+  visibility: hidden;
 }
 
 .options {

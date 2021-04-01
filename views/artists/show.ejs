@@ -56,7 +56,7 @@
           <i id="play" class="btn btn-md btn-success fas fa-play"></i>
         </div>
         <%if (currentUser){ %>
-        <div class="col-sm-1 col-md-1 col-lg-1 text-center"><i class="far fa-heart like"></i></div>
+        <div class="col-sm-1 col-md-1 col-lg-1 text-center artistLike"><i class="far fa-heart like "></i></div>
         <% } %>
 
         <div class="col-sm-5 col-md-6 col-lg-7"><%= song.name %></div>
@@ -64,7 +64,7 @@
         <%if (currentUser){ %>
           <div class="col-sm-2 col-md-2 col-lg-1 text-center options">
             <span><%= song.json %></span>
-          <i  class="fas fa-ellipsis-h meatball btn btn-xs text-center" type="button" data-toggle="modal"
+          <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button" data-toggle="modal"
             data-target="#optionsMenu"></i>
         </div>
         <% } %>

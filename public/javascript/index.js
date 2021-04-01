@@ -21,7 +21,6 @@ $(document).ready(function() {
     });
   });
 
-
   function goBack() {
     window.history.back();
   }
@@ -30,95 +29,103 @@ $(document).ready(function() {
     window.history.forward();
   }
 
-
-
-
   // heart/like button toggle
-function toggleLiked() {
-  console.log("clicked");
-  if (this.classList.contains("far")) {
-    this.classList.remove("far");
-    this.classList.add("fas");
-    this.style.color = "green";
-    this.style.padding = "0";
-    var isLiked = true
-  } else {
-    this.classList.remove("fas");
-    this.classList.add("far");
-    this.style.color = "";
-    var isLiked= false
-    this.style.padding = "0";
+  function toggleLiked() {
+    var artistLike = document.getElementsByClassName(".artistLike");
+    console.log("clicked");
+    if (this.classList.contains("far")) {
+      this.classList.remove("far");
+      this.classList.add("fas");
+      this.style.color = "green";
+      this.style.padding = "0";
+      this.style.display = "flex";
+      this.style.justifyContent = "center";
+      artistLike.style.visibility = "visible !important";
 
+      var isLiked = true;
+    } else {
+      this.classList.remove("fas");
+      this.classList.add("far");
+      this.style.color = "";
+      var isLiked = false;
+      this.style.padding = "0";
+      this.style.display = "flex";
+      this.style.justifyContent = "center";
+
+    }
+
+    if (this.classList.contains("fas") && !isLiked){
+      this.style.display = "flex !important";
+      artistLike.style.visibility = "hidden !important";
+
+    } 
+    return isLiked;
   }
-  return isLiked;
-}
 
-$("i.like").on('click', toggleLiked);
+  $("i.like").on("click", toggleLiked);
 
+  function hoverShowOptions(song) {
+    var optionsIcon = song.getElementsByClassName("options")[0];
+    optionsIcon.style.display = "block";
+  }
 
-
-function hoverShowOptions(song) {  
-  var optionsIcon = song.getElementsByClassName("options")[0];
-  optionsIcon.style.display = "block";
-}
-
-function hoverHideOptions(song) {  
-  var optionsIcon = song.getElementsByClassName("options")[0];
+  function hoverHideOptions(song) {
+    var optionsIcon = song.getElementsByClassName("options")[0];
     optionsIcon.style.display = "none";
-}
+  }
 
-let songs = document.querySelectorAll('.songRow')
 
-songs.forEach(song => {
-  song.addEventListener('mouseover', e => {
-    hoverShowOptions(song);
+  
+  function hoverShowLike(song) {
+    var heart = song.getElementsByClassName("artistLike")[0];
+    heart.style.visibility = "visible";
+  }
+
+  function hoverHideLike(song) {
+    var heart = song.getElementsByClassName("artistLike")[0];
+    console.log(song);
+    heart.style.visibility = "hidden";
+  }
+
+  let songs = document.querySelectorAll(".songRow");
+
+  songs.forEach(song => {
+    song.addEventListener("mouseover", e => {
+      hoverShowOptions(song);
+      hoverShowLike(song);
+    });
   });
-})
 
-songs.forEach(song => {
-  song.addEventListener('mouseout', e => {
-    hoverHideOptions(song);
-  })
-})
+  songs.forEach(song => {
+    song.addEventListener("mouseout", e => {
+      hoverHideOptions(song);
+      hoverHideLike(song);
+    });
+  });
 
+  // add song to a playlist
+  var playlistChoices = document.querySelectorAll("li p.playlistChoice");
 
+  playlistChoices.forEach(choice => {
+    choice.addEventListener("click", e => {
+      console.log("clicked");
+    });
+  });
+  var meatballs = document.querySelectorAll(".meatball");
 
-// add song to a playlist
-var playlistChoices = document.querySelectorAll("li p.playlistChoice");
+  meatballs.forEach(menu => {
+    menu.addEventListener("click", e => {
+      console.log("clicked");
+    });
+  });
 
-playlistChoices.forEach(choice => {
-  choice.addEventListener('click', e => {
-  console.log("clicked")
-  })
-})
-var meatballs = document.querySelectorAll(".meatball");
+  searchBar = document.getElementById("searchBar");
 
-meatballs.forEach(menu => {
-  menu.addEventListener('click', e => {
-  console.log("clicked")
-  })
-})
+  $("#searchBar").submit(function(e) {
+    e.preventDefault();
+  });
 
-
-
-searchBar = document.getElementById('searchBar');
-
-
-$("#searchBar").submit(function(e){
-  e.preventDefault();
-});
-
-searchBar.addEventListener('keyup', (e) => {
-    console.log(e.target.value)
-})
-
-
-
-
-
-
-
-
-
-
+  searchBar.addEventListener("keyup", e => {
+    console.log(e.target.value);
+  });
 });

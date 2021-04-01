@@ -40,12 +40,15 @@ function toggleLiked() {
     this.classList.remove("far");
     this.classList.add("fas");
     this.style.color = "green";
+    this.style.padding = "0";
     var isLiked = true
   } else {
     this.classList.remove("fas");
     this.classList.add("far");
     this.style.color = "";
     var isLiked= false
+    this.style.padding = "0";
+
   }
   return isLiked;
 }

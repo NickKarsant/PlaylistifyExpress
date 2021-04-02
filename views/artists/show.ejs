@@ -8,16 +8,8 @@
     <div id="artistGradient">
       <div class="row align-items-center">
         <div class="col-md-2">
-          <a class="btn mb-3 mx-2 mt-2 backAndNext text-white" style="height: 32px;
-          width: 32px;
-          border-radius: 50%;
-          background-color: green;
-          color: #fff;" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
-          <a id="forward" class="btn mb-3 mt-2 backAndNext" style="height: 32px;
-          width: 32px;
-          border-radius: 50%;
-          background-color: green;
-          color: #fff;" onclick="goForward()"><i id="forward" class="fas fa-chevron-right"></i></a>
+          <a class="btn mb-3 mx-2 mt-2 backAndNext text-white"  onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
+          <a id="forward" class="btn mb-3 mt-2 backAndNext"  onclick="goForward()"><i id="forward" class="fas fa-chevron-right"></i></a>
         </div>
 
         <div class="col-md-10">
@@ -96,6 +88,8 @@
           <span><%= song.json %></span>
           <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button" data-toggle="modal"
             data-target="#optionsMenu"></i>
+
+            
         </div>
         <% } %>
 
@@ -104,7 +98,7 @@
     </div>
 
     <!-- optionsMenus modal -->
-    <div class="modal right fade" id="optionsMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <!-- <div class="modal right fade" id="optionsMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content" style="width: 50%;">
@@ -160,7 +154,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 

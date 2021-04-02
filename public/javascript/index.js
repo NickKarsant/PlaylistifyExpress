@@ -79,11 +79,7 @@ $(document).ready(function() {
     playButton.style.display = "block"
     number.style.visibility = "hidden"
     number.style.display = "none"
-
     playButton.style.position = "static"
-    playButton.style.left =  "0"
-
-
   }
 
   function hoverHidePlay(song) {

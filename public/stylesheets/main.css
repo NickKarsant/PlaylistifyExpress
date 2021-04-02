@@ -273,6 +273,7 @@ a.card:visted {
 #artistGradient {
   width: 120% !important;
   background-image: linear-gradient(rgb(36, 110, 6), rgb(19, 18, 18));
+  margin-left: -15px;
 }
 
 .listPlay {
@@ -348,6 +349,8 @@ input#searchBar {
 
 .songRow:hover {
   background-color: rgb(85, 76, 76);
+  /* margin: 0 !important; */
+
 }
 
 .modal {
@@ -365,6 +368,7 @@ input#searchBar {
 #optionsMenu {
   /* position:relative; */
 }
+
 
 
 .modal-header {

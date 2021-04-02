@@ -75,11 +75,9 @@ $(document).ready(function() {
   function hoverShowPlay(song) {
     var playButton = song.getElementsByClassName("artistPlay")[0];
     var number = song.getElementsByClassName("artistIndex")[0];
-    // playButton.style.visibility = "visible";
-    // number.style.visibility = "hidden"
-
-
-    playButton.style.visibility = "visible"
+    playButton.style.visibility = "visible";
+    playButton.style.display = "block"
+    number.style.visibility = "hidden"
     number.style.display = "none"
 
   }
@@ -90,7 +88,7 @@ $(document).ready(function() {
     number.style.visibility = "visible"
     number.style.display = "block"
     playButton.style.visibility = "hidden";
-    playButton.style.dispaly = "none";
+    playButton.style.display = "none";
   }
 
 

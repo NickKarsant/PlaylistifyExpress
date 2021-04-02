@@ -65,8 +65,7 @@
 
     <div id="list" class="ui">
       <div class="row" style="margin-right:1.1em;">
-        <div class="col-sm-1 col-md-1 col-lg-1 text-center">#</div>
-        <div class="col-sm-1 col-md-1 col-lg-1 text-center"></div>
+        <div class="col-sm-2 col-md-2 col-lg-1 text-center">#</div>
         <%if (currentUser){ %>
         <div class="col-sm-1 col-md-1 col-lg-1 text-center">Liked</div>
         <% } %>
@@ -81,9 +80,9 @@
 
       <% songs.forEach(function(song, index) { %>
       <div class="row songRow" style="border-top: 1px solid grey; padding: 0.5em 0; margin-right:1em;">
-        <div class="col-sm-1 col-md-1 col-lg-1 text-center">
+        <div class="col-sm-2 col-md-2 col-lg-1 text-center">
           <span class="artistIndex"><%= index + 1 %> </span>
-          <i class="btn btn-md btn-success fas fa-play play artistPlay"></i>
+          <i class="btn  btn-success fas fa-play play artistPlay"></i>
         </div>
 
         <%if (currentUser){ %>

@@ -6,28 +6,28 @@
 
 
   <div class="col-xs-10 col-sm-10 col-md-9 col-lg-10 mt-0 p-0">
-      <div class="row align-items-center">
-          <div class="col-md-2" >
-            <a class="btn mb-3 mt-2 backAndNext text-white" style="height: 32px;
+    <div class="row align-items-center">
+      <div class="col-md-2">
+        <a class="btn mb-3 mt-2 backAndNext text-white" style="height: 32px;
           width: 32px;
           border-radius: 50%;
           background-color: green;
           color: #fff;" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
-            <a id="forward" class="btn mb-3 mx-3 mt-2 backAndNext" style="height: 32px;
+        <a id="forward" class="btn mb-3 mx-3 mt-2 backAndNext" style="height: 32px;
           width: 32px;
           border-radius: 50%;
           background-color: green;
           color: #fff;" onclick="goForward()"><i id="forward" class="fas fa-chevron-right"></i></a>
-          </div>
-    
-          <div class="col-md-10">
-            <form action="/search?" id=searchBarForm >
-              <input id="searchBar" autofocus type="search" placeholder="Search for artists or songs"
-                aria-describedby="button-addon3" class="form-control bg-none border-1">
-            </form>
-          </div>
-        </div>
-  
+      </div>
+
+      <div class="col-md-10">
+        <form action="/search?" id=searchBarForm>
+          <input id="searchBar" autofocus type="search" placeholder="Search for artists or songs"
+            aria-describedby="button-addon3" class="form-control bg-none border-1">
+        </form>
+      </div>
+    </div>
+
     <div>
       <% if (!currentUser) {%>
       <header class="jumbotron text-white" style="  background-color: rgb(34, 33, 33);
@@ -41,35 +41,31 @@
     </div>
 
   
-    <!-- col-xs-6 col-sm-4 col-md-3 col-lg-3 -->
       <% if (currentUser) {%>
         <!-- show uniquely yours playlists and then below that ALL playlists -->
-        
+
         <div class="ui container mb-5">
-            <!-- <div class="row"> -->
-            <h1 class="text-white">Uniquely Yours</h1>
-            <!-- <a class="btn btn-lg btn-primary mb-5" href="/playlists/new">Create a New Playlist </a> -->
-      
-            <!-- </div> -->
-            <div id="uniqueGrid" class="ui grid mb-3 row text-center">
-              <% usersPlaylists.forEach(function(playlist) {%>
-              <a class="usersPlaylists bg-dark card col-xs-2 col-sm-3 col-md-3 col-lg-2 col-xl-2 my-3 mx-4 pt-2"
-                href="/playlists/<%= playlist._id %>">
-                <% if (playlist.image.length > 30) {%>
-                <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;" src="<%=playlist.image%>" alt="">
-                <% }else { %>
-                <img class="card-img-top img-thumbnail card-fluid glimpse" src="https://via.placeholder.com/100" alt="">
-                <%}%>
-                    <!-- </div> -->
+          <h1 class="text-white">Uniquely Yours</h1>
+
+          = <div id="uniqueGrid" class="ui grid mb-3 row text-center">
+            <% usersPlaylists.forEach(function(playlist) {%>
+            <a class="usersPlaylists bg-dark card col-xs-2 col-sm-3 col-md-3 col-lg-2 col-xl-2 my-3 mx-4 pt-2"
+              href="/playlists/<%= playlist._id %>">
+              <% if (playlist.image.length > 30) {%>
+              <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;"
+                src="<%=playlist.image%>" alt="">
+              <% }else { %>
+              <img class="card-img-top img-thumbnail card-fluid glimpse" src="https://via.placeholder.com/100" alt="">
+              <%}%>
                           <div class="card-body p-0 text-white">
                   <h4 class="card-title"></h4> <%= playlist.name %> </h4>
-            </div>
-      
-            </a>
-      
-            <%});%>
           </div>
+
+          </a>
+
+          <%});%>
         </div>
+    </div>
 
 
     <%}%>
@@ -84,13 +80,14 @@
       <h1 class="text-white mb-5">Playlists</h1>
       <div class="ui grid mb-3 row text-center">
           <% removedLiked.forEach(function(playlist) {%>
-            <a class="usersPlaylists bg-dark card col-xs-2 col-sm-3 col-md-3 col-lg-2 col-xl-2 my-3 mx-4 pt-2"
-              href="/playlists/<%= playlist._id %>">
-              <% if (playlist.image.length > 30) {%>
-              <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;" src="<%=playlist.image%>" alt="">
-              <% }else { %>
-              <img class="card-img-top img-thumbnail card-fluid glimpse" src="https://via.placeholder.com/100" alt="">
-              <%}%>
+    <a class="usersPlaylists bg-dark card col-xs-2 col-sm-3 col-md-3 col-lg-2 col-xl-2 my-3 mx-4 pt-2"
+      href="/playlists/<%= playlist._id %>">
+      <% if (playlist.image.length > 30) {%>
+      <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;" src="<%=playlist.image%>"
+        alt="">
+      <% }else { %>
+      <img class="card-img-top img-thumbnail card-fluid glimpse" src="https://via.placeholder.com/100" alt="">
+      <%}%>
           <div class="card-body p-0 text-white">
             <h4 class="card-title"> <%= playlist.name %> </h4>
   </div>
@@ -114,7 +111,8 @@
 
       <div class="text-center" style="overflow: hidden;" class="preview">
         <% if (song.image) {%>
-        <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;" src="<%=song.image%>" alt="">
+        <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;" src="<%=song.image%>"
+          alt="">
         <% } else {%>
         <img class="card-img-top img-thumbnail card-fluid" src="https://via.placeholder.com/75" alt="">
         <%}%>
@@ -146,13 +144,12 @@
           <p class="card-content"> <%= song.artist %></p>
         </div>
         <div class="playbtn text-center" style="margin-top: 9%;">
-          <i id="play" class="btn btn-md btn-success fas fa-play"></i>
+          <i id="songsPlay" class="btn btn-md btn-success fas fa-play"></i>
         </div>
         <% }%>
       </div>
     </div>
 
-    <!-- </div> thumbnail -->
   </div>
 
 
@@ -198,7 +195,8 @@
   <h1 class="text-white mb-5">Uniquely Yours</h1>
   <div class="ui grid mb-3 row text-center">
     <% allArtists.forEach(function(artist) {%>
-    <a class="bg-dark card col-xs-2 col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-2 mx-4 pt-2" href="/artist/<%= artist._id %>">
+    <a class="bg-dark card col-xs-2 col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-2 mx-4 pt-2"
+      href="/artist/<%= artist._id %>">
       <% if (artist.image.length > 30) {%>
       <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;" src="<%=artist.image%>"
         alt="">

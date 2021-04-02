@@ -44,7 +44,7 @@
 
     <div class="d-flex justify-content-start mb-3">
 
-        <i id="play" class="btn btn-md btn-success fas fa-play"></i>
+        <i id="playAll" class="btn btn-md btn-success fas fa-play"></i>
 
 
         <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -82,11 +82,11 @@
       <div class="row songRow" style="border-top: 1px solid grey; padding: 0.5em 0; margin-right:1em;">
         <div class="col-sm-2 col-md-2 col-lg-1 text-center">
           <span class="artistIndex"><%= index + 1 %> </span>
-          <i class="btn  btn-success fas fa-play play artistPlay"></i>
+          <i class="btn btn-success fas fa-play play artistPlay"></i>
         </div>
 
         <%if (currentUser){ %>
-        <div class="col-sm-1 col-md-1 col-lg-1 text-center artistLike"><i class="far fa-heart like "></i></div>
+        <div class="col-sm-1 col-md-1 col-lg-1 text-center artistLike"><i class="far fa-heart like"></i></div>
         <% } %>
 
         <div class="col-sm-5 col-md-6 col-lg-7"><%= song.name %></div>

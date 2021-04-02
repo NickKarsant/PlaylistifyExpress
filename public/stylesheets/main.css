@@ -112,7 +112,7 @@ img.sideImage {
   color: green;
 }
 
-#play{
+#playAll{
   background-color: #4CAF50;
   border: none;
   color: white;
@@ -272,6 +272,17 @@ a.card:visted {
   background-image: linear-gradient(rgb(36, 110, 6), rgb(19, 18, 18));
 }
 
+
+.artistPlay {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  left: -1000px;
+}
+
+.artistLike {
+  visibility: hidden;
+}
 
 
 .dot {

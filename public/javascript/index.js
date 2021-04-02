@@ -72,6 +72,28 @@ $(document).ready(function() {
   }
 
 
+  function hoverShowPlay(song) {
+    var playButton = song.getElementsByClassName("artistPlay")[0];
+    var number = song.getElementsByClassName("artistIndex")[0];
+    // playButton.style.visibility = "visible";
+    // number.style.visibility = "hidden"
+
+
+    playButton.style.visibility = "visible"
+    number.style.display = "none"
+
+  }
+
+  function hoverHidePlay(song) {
+    var number = song.getElementsByClassName("artistIndex")[0];
+    var playButton = song.getElementsByClassName("artistPlay")[0];
+    number.style.visibility = "visible"
+    number.style.display = "block"
+    playButton.style.visibility = "hidden";
+    playButton.style.dispaly = "none";
+  }
+
+
   
   function hoverShowLike(song) {
     var heart = song.getElementsByClassName("artistLike")[0];
@@ -91,6 +113,7 @@ $(document).ready(function() {
     song.addEventListener("mouseover", e => {
       hoverShowOptions(song);
       hoverShowLike(song);
+      hoverShowPlay(song);
     });
   });
 
@@ -98,6 +121,7 @@ $(document).ready(function() {
     song.addEventListener("mouseout", e => {
       hoverHideOptions(song);
       hoverHideLike(song);
+      hoverHidePlay(song);
     });
   });
 

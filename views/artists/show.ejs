@@ -81,10 +81,11 @@
 
       <% songs.forEach(function(song, index) { %>
       <div class="row songRow" style="border-top: 1px solid grey; padding: 0.5em 0; margin-right:1em;">
-        <div class="col-sm-1 col-md-1 col-lg-1 text-center"><%= index + 1 %></div>
         <div class="col-sm-1 col-md-1 col-lg-1 text-center">
-          <i class="btn btn-md btn-success fas fa-play play"></i>
+          <span class="artistIndex"><%= index + 1 %> </span>
+          <i class="btn btn-md btn-success fas fa-play play artistPlay"></i>
         </div>
+
         <%if (currentUser){ %>
         <div class="col-sm-1 col-md-1 col-lg-1 text-center artistLike"><i class="far fa-heart like "></i></div>
         <% } %>

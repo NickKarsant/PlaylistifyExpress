@@ -31,7 +31,7 @@ $(document).ready(function() {
 
   // heart/like button toggle
   function toggleLiked() {
-    var artistLike = document.getElementsByClassName(".artistLike");
+    var listLike = document.getElementsByClassName(".listLike");
     console.log("clicked");
     if (this.classList.contains("far")) {
       this.classList.remove("far");
@@ -41,7 +41,7 @@ $(document).ready(function() {
       this.style.padding = "0";
       this.style.display = "flex";
       this.style.justifyContent = "center";
-      artistLike.style.visibility = "visible !important";
+      listLike.style.visibility = "visible !important";
 
       var isLiked = true;
     } else {
@@ -73,8 +73,8 @@ $(document).ready(function() {
 
 
   function hoverShowPlay(song) {
-    var playButton = song.getElementsByClassName("artistPlay")[0];
-    var number = song.getElementsByClassName("artistIndex")[0];
+    var playButton = song.getElementsByClassName("listPlay")[0];
+    var number = song.getElementsByClassName("listIndex")[0];
     playButton.style.visibility = "visible";
     playButton.style.display = "block"
     number.style.visibility = "hidden"
@@ -83,8 +83,8 @@ $(document).ready(function() {
   }
 
   function hoverHidePlay(song) {
-    var number = song.getElementsByClassName("artistIndex")[0];
-    var playButton = song.getElementsByClassName("artistPlay")[0];
+    var number = song.getElementsByClassName("listIndex")[0];
+    var playButton = song.getElementsByClassName("listPlay")[0];
     number.style.visibility = "visible"
     number.style.display = "block"
     playButton.style.visibility = "hidden";
@@ -94,13 +94,13 @@ $(document).ready(function() {
 
   
   function hoverShowLike(song) {
-    var heart = song.getElementsByClassName("artistLike")[0];
+    var heart = song.getElementsByClassName("listLike")[0];
     heart.style.visibility = "visible";
   }
 
   function hoverHideLike(song) {
     var heart = song.getElementsByClassName("like")[0];
-    var heartDiv = song.getElementsByClassName("artistLike")[0];
+    var heartDiv = song.getElementsByClassName("listLike")[0];
     console.log(song);
     heartDiv.style.visibility = "hidden";
   }

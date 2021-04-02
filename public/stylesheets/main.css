@@ -275,14 +275,14 @@ a.card:visted {
   background-image: linear-gradient(rgb(36, 110, 6), rgb(19, 18, 18));
 }
 
-.artistPlay {
+.listPlay {
   display: none;
   visibility: hidden;
   position: absolute;
   left: -1000px;
 }
 
-.artistLike {
+.listLike {
   visibility: hidden;
 }
 

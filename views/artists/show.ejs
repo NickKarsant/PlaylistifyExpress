@@ -8,8 +8,10 @@
     <div id="artistGradient">
       <div class="row align-items-center">
         <div class="col-md-2">
-          <a class="btn mb-3 mx-2 mt-2 backAndNext text-white"  onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
-          <a id="forward" class="btn mb-3 mt-2 backAndNext"  onclick="goForward()"><i id="forward" class="fas fa-chevron-right"></i></a>
+          <a class="btn mb-3 mx-2 mt-2 backAndNext text-white" onclick="goBack()"><i
+              class="fas fa-chevron-left"></i></a>
+          <a id="forward" class="btn mb-3 mt-2 backAndNext" onclick="goForward()"><i id="forward"
+              class="fas fa-chevron-right"></i></a>
         </div>
 
         <div class="col-md-10">
@@ -23,36 +25,37 @@
       <div id="artistImage" class="row mt-3 mb-2 col-sm-12 col-md-12 col-lg-12">
         <img style="margin-left:1em;" src="<%= artist.image%>" alt="">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 header">
-          <p style="display:flex; align-items: center;"><i class="far fa-check-circle" style="background-color: rgb(52, 52, 238);" aria-hidden="true"></i> Verified Artist</p>
+          <p style="display:flex; align-items: center;"><i class="far fa-check-circle"
+              style="background-color: rgb(52, 52, 238);" aria-hidden="true"></i> Verified Artist</p>
           <h1 class="col-xs-6 col-sm-6 col-md-6 col-lg-6"
             style="padding-left: 0; display:flex; font-size: 4em; align-items: center;">
             <%= artist.name%></h1>
-            
-            <p class="mt-5"> 265,387 monthly listeners </p>
-          </div>
+
+          <p class="mt-5"> 265,387 monthly listeners </p>
+        </div>
       </div>
-      
+
     </div>
 
     <div class="d-flex justify-content-start mb-3">
 
-        <i id="playAll" class="btn btn-md btn-success fas fa-play"></i>
+      <i id="playAll" class="btn btn-md btn-success fas fa-play"></i>
 
 
-        <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-          <i id="playlistOptions" class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white"></i>
+      <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <i id="playlistOptions" class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white"></i>
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">Add to Playlist secondary dropdown menu</a>
+        <a class="dropdown-item" href="#">Another action</a>
+
+        <a class="dropdown-item" href="#">
+          yet another thing
         </a>
+      </div>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Add to Playlist secondary dropdown menu</a>
-          <a class="dropdown-item" href="#">Another action</a>
-
-          <a class="dropdown-item" href="#">
-            yet another thing
-          </a>
-        </div>
-      
     </div>
 
     <div id="list" class="ui">
@@ -78,7 +81,8 @@
         </div>
 
         <%if (currentUser){ %>
-        <div class="col-sm-1 col-md-1 col-lg-1 text-center listLike"><i class="far fa-heart like"></i></div>
+        <div class="col-sm-1 col-md-1 col-lg-1 text-center listLike">
+          <i class="far fa-heart like"></i></div>
         <% } %>
 
         <div class="col-sm-5 col-md-6 col-lg-7"><%= song.name %></div>
@@ -89,7 +93,7 @@
           <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button" data-toggle="modal"
             data-target="#optionsMenu"></i>
 
-            
+
         </div>
         <% } %>
 
@@ -97,8 +101,11 @@
       <% }) %>
     </div>
 
-    <!-- optionsMenus modal -->
-    <!-- <div class="modal right fade" id="optionsMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  </div>
+
+
+  <!-- optionsMenus modal -->
+  <!-- <div class="modal right fade" id="optionsMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content" style="width: 50%;">
@@ -127,8 +134,8 @@
       </div>
     </div> -->
 
-    <!-- playlistChoices modal -->
-    <!-- <div class="modal center fade" id="playlistChoices" tabindex="-1" role="dialog"
+  <!-- playlistChoices modal -->
+  <!-- <div class="modal center fade" id="playlistChoices" tabindex="-1" role="dialog"
       aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content" style="width: 50%;">

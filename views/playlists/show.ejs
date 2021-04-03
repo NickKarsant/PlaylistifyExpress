@@ -3,7 +3,7 @@
 <div class="row">
   <%- include('../partials/aside') %>
 
-  <div id="showWrapper"  class="col-xs-10 col-sm-10 col-md-9 col-lg-10 text-white">
+  <div id="showWrapper" class="col-xs-10 col-sm-10 col-md-9 col-lg-10 text-white">
     <div id="gradient">
 
       <div class="row align-items-center">
@@ -36,20 +36,29 @@
 
 
       <% if (currentUser && playlist.author.equals(currentUser._id) && playlist.name !== "Liked Songs") { %>
-      <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+      <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionMenu" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         <i id="playlistOptions" class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white"></i>
       </a>
 
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Add to Playlist secondary dropdown menu</a>
-        <a class="dropdown-item" href="#">Another action</a>
 
-        <a class="dropdown-item" href="#">
-          <form action="/playlists/<%=playlist._id%>?_method=DELETE" method="POST">
-            <button class="ui button red right">Delete</button>
-          </form>
+      <div class="dropdown-menu" aria-labelledby="dropdownOptionsMenu">
+        <a class="dropdown-item" href="#">Add to queue</a>
+        <a class="dropdown-item" href="#">Start playlist radio</a>
+        <a class="dropdown-item" href="#">Make public</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Edit details</a>
+        <form action="" method="POST">
+          <a class="dropdown-item" style="background-color: red;" href="#">
+            Delete
+          </a>
+        </form>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Share  
+          <i class="fas fa-chevron-right"></i>
         </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Open in Desktop app</a>
       </div>
       <%}%>
         
@@ -63,36 +72,63 @@
         <div class="row mb-2" >
           <div class="col-sm-2 col-md-2 col-lg-1 text-center">#</div>
           <%if (currentUser){ %>
-          <div class="col-sm-1 col-md-1 col-lg-1 text-center" style="margin-left:-2em;">Liked</div>
-          <% } %>
+      <div class="col-sm-1 col-md-1 col-lg-1 text-center" style="margin-left:-2em;">Liked</div>
+      <% } %>
 
-        <div class="col-sm-3 col-md-3 col-lg-3" >Title </div>
-        <div class="col-sm-3 col-md-3 col-lg-3" > Artist </div>
-        <div class="col-sm-1 col-md-1 col-lg-1 text-center"><i class="far fa-clock" ></i></div>
-        <%if (currentUser){ %>
-        <div class="col-sm-2 col-md-2 col-lg-2 text-center">Options</div>
-        <% } %>
-      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">Title </div>
+      <div class="col-sm-3 col-md-3 col-lg-3"> Artist </div>
+      <div class="col-sm-1 col-md-1 col-lg-1 text-center"><i class="far fa-clock"></i></div>
+      <%if (currentUser){ %>
+      <div class="col-sm-2 col-md-2 col-lg-2 text-center">Options</div>
+      <% } %>
+    </div>
 
 
     <div class="row songRow" style="border-top: 1px solid grey; padding: 0.5em 0;">
       <div class="col-sm-2 col-md-2 col-lg-1 text-center">
         <span class="listIndex">1 </span>
-        <i class="btn btn-success fas fa-play play listPlay" ></i>
+        <i class="btn btn-success fas fa-play play listPlay"></i>
       </div>
 
       <%if (currentUser){ %>
-      <div class="col-sm-1 col-md-1 col-lg-1 text-center listLike" >
+      <div class="col-sm-1 col-md-1 col-lg-1 text-center listLike">
         <i class="far fa-heart like"></i></div>
       <% } %>
 
-      <div class="col-sm-3 col-md-3 col-lg-3" >Name of Song </div>
-      <div class="col-sm-3 col-md-3 col-lg-3 overflow-hidden listArtistOverflow" >Placeholder that is very long and</div>
-      <div class="col-sm-1 col-md-1 col-lg-1 text-center" >3:00</div>
+      <div class="col-sm-3 col-md-3 col-lg-3">Name of Song </div>
+      <div class="col-sm-3 col-md-3 col-lg-3 overflow-hidden listArtistOverflow">Placeholder that is very long and</div>
+      <div class="col-sm-1 col-md-1 col-lg-1 text-center">3:00</div>
       <%if (currentUser){ %>
-      <div class="col-sm-2 col-md-2 col-lg-2 text-center options" >
-        <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button" data-toggle="modal"
-          data-target="#optionsMenu"></i>
+      <div class="col-sm-2 col-md-2 col-lg-2 text-center options">
+
+          <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionMenu" aria-haspopup="true"
+          aria-expanded="false" data-toggle="dropdown" id="dropdownSong" data-target="#songOptions">
+          <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button"></i>
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownSong">
+          <a class="dropdown-item" href="#">Add to queue</a>
+          <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" href="#">Go to song radio</a>
+          <a class="dropdown-item" href="#">Go to artist</a>
+          <a class="dropdown-item" href="#">Go to album</a>
+          <a class="dropdown-item" href="#">Show credits</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Save to your Liked Songs</a>
+          <a class="dropdown-item" href="#">Remove from this playlist</a>
+          <a class="dropdown-item" href="#">
+            Add to playlist  
+            <i class="fas fa-chevron-right"></i>
+          </a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Share  
+            <i class="fas fa-chevron-right"></i>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Open in Desktop app</a>
+        </div>
 
 
       </div>
@@ -102,21 +138,51 @@
     <div class="row songRow" style="border-top: 1px solid grey; padding: 0.5em 0;">
       <div class="col-sm-2 col-md-2 col-lg-1 text-center">
         <span class="listIndex">1 </span>
-        <i class="btn btn-success fas fa-play play listPlay" ></i>
+        <i class="btn btn-success fas fa-play play listPlay"></i>
       </div>
 
       <%if (currentUser){ %>
-      <div class="col-sm-1 col-md-1 col-lg-1 text-center listLike" >
+      <div class="col-sm-1 col-md-1 col-lg-1 text-center listLike">
         <i class="far fa-heart like"></i></div>
       <% } %>
 
-      <div class="col-sm-3 col-md-3 col-lg-3" >Name of Song </div>
-      <div class="col-sm-3 col-md-3 col-lg-3" >Placeholder that is very long and</div>
-      <div class="col-sm-1 col-md-1 col-lg-1 text-center" >3:00</div>
+      <div class="col-sm-3 col-md-3 col-lg-3">Name of Song </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">Placeholder that is very long and</div>
+      <div class="col-sm-1 col-md-1 col-lg-1 text-center">3:00</div>
       <%if (currentUser){ %>
-      <div class="col-sm-2 col-md-2 col-lg-2 text-center options" >
-        <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button" data-toggle="modal"
-          data-target="#optionsMenu"></i>
+      <div class="col-sm-2 col-md-2 col-lg-2 text-center options">
+
+
+
+          <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionMenu" aria-haspopup="true"
+          aria-expanded="false" data-toggle="dropdown" id="dropdownSong" data-target="#songOptions">
+          <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button"></i>
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownSong">
+          <a class="dropdown-item" href="#">Add to queue</a>
+          <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" href="#">Go to song radio</a>
+          <a class="dropdown-item" href="#">Go to artist</a>
+          <a class="dropdown-item" href="#">Go to album</a>
+          <a class="dropdown-item" href="#">Show credits</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Save to your Liked Songs</a>
+          <a class="dropdown-item" href="#">Remove from this playlist</a>
+          <a class="dropdown-item" href="#">
+            Add to playlist  
+            <i class="fas fa-chevron-right"></i>
+          </a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Share  
+            <i class="fas fa-chevron-right"></i>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Open in Desktop app</a>
+        </div>
+
 
 
       </div>
@@ -141,8 +207,39 @@
             <%if (currentUser){ %>
             <div class="col-sm-2 col-md-2 col-lg-1 text-center options">
               <span> song.json </span>
-              <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button" data-toggle="modal"
-                data-target="#optionsMenu"></i>
+                     
+              
+
+        <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionMenu" aria-haspopup="true"
+          aria-expanded="false" data-toggle="dropdown" id="dropdownSong" data-target="#songOptions">
+          <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button"></i>
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownSong">
+          <a class="dropdown-item" href="#">Add to queue</a>
+          <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" href="#">Go to song radio</a>
+          <a class="dropdown-item" href="#">Go to artist</a>
+          <a class="dropdown-item" href="#">Go to album</a>
+          <a class="dropdown-item" href="#">Show credits</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Save to your Liked Songs</a>
+          <a class="dropdown-item" href="#">Remove from this playlist</a>
+          <a class="dropdown-item" href="#">
+            Add to playlist  
+            <i class="fas fa-chevron-right"></i>
+          </a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Share  
+            <i class="fas fa-chevron-right"></i>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Open in Desktop app</a>
+        </div>
+
+
     
     
             </div>

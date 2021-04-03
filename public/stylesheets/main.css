@@ -134,7 +134,7 @@ padding: 0;
   border-radius: 50%;
 }
 
-#playlistOptions {
+#playlistOptions, #songOptions {
   font-size: 2em;
 }
 
@@ -328,9 +328,11 @@ a.card:visted {
   background-color: rgb(19, 18, 18) !important;
 }
 
-a.dropdown-menu::selection {
-  background-color: blue !important;
+div.dropdown-menu a.dropdown-item:hover {
+  background-color: green;
 }
+
+
 
 a.dropdown-item {
   color: white !important;

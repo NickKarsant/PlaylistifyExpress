@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function() {
   console.log("ready!");
 
@@ -131,13 +134,13 @@ $(document).ready(function() {
       console.log("clicked");
     });
   });
-  var meatballs = document.querySelectorAll(".meatball");
+  // var meatballs = document.querySelectorAll(".meatball");
 
-  meatballs.forEach(menu => {
-    menu.addEventListener("click", e => {
-      console.log("clicked");
-    });
-  });
+  // meatballs.forEach(menu => {
+  //   menu.addEventListener("click", e => {
+  //     console.log("clicked");
+  //   });
+  // });
 
   searchBar = document.getElementById("searchBar");
 

@@ -262,12 +262,14 @@ a.card:visted {
 }
 
 #showWrapper {
-  padding: 0 !important;
+  /* padding: 0 !important; */
 }
 
 #gradient {
   width: 120% !important;
   background-image: linear-gradient(rgb(36, 110, 6), rgb(19, 18, 18));
+  margin-left: -15px;
+
 }
 
 #artistGradient {

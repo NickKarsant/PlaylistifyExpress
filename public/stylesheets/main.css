@@ -36,6 +36,8 @@ h4#list {
 #aside {
   padding: 0;
   width: auto;
+  min-width: 170px !important;
+  max-width: 225px !important;
   background-color: black;
   height: auto;
   min-height: 100vh;
@@ -50,42 +52,56 @@ div.scrollable li {
 }
 
 i#sideAdd {
-  margin-top: 0;
-  font-size: 1.5em;
+  margin-left: 0;
+  font-size: 1.6em;
   /* border: 1px solid red; */
 }
 
 #sideAddWord {
-  font-size: 1.2em;
+  font-size: 1.4em;
   display: inline;
-  /* border: 1px solid red; */
+}
+
+#sideAddLink {
+padding: 0;
 }
 
 #createPlaylist {
   width: 200px;
   display: flex;
   align-items: start;
-  margin-left: 5%;
-  margin-top: 10px;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.sidePlaylist{
+  width: 200px;
+
 }
 
 .sidePlaylistLink {
-  font-size: 2em;
+  /* font-size: 2em; */
   width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-
+.sidePlaylist:hover{
+  background-color: rgb(59, 58, 58);
+}
 
 .sidePlaylistWord {
   display: flex;
-  justify-content: space-between;
-  font-size: 1.3em;
+  justify-content: start;
+  font-size: 1.2em;
   height: auto;
-  margin-top: 2px;
   padding: 0 1em;
+
+}
+
+#createPlaylist, .sidePlaylist {
+  margin-left: 10% !important;
 }
 
 .navigation {
@@ -287,7 +303,7 @@ a.card:visted {
 
 .listLike {
   visibility: hidden;
-  margin-left:-2em;
+  margin-left:-2em !important;
 }
 
 .dot {

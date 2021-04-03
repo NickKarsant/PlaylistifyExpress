@@ -287,6 +287,7 @@ a.card:visted {
 
 .listLike {
   visibility: hidden;
+  margin-left:-2em;
 }
 
 .dot {

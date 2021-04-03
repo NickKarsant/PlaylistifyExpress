@@ -60,22 +60,21 @@
 
 
       <div id="list" class="ui mt-3">
-        <div class="row mb-2" style="margin-right:1.1em;">
+        <div class="row mb-2" >
           <div class="col-sm-2 col-md-2 col-lg-1 text-center">#</div>
           <%if (currentUser){ %>
-          <div class="col-sm-1 col-md-1 col-lg-1 text-center" >Liked</div>
+          <div class="col-sm-1 col-md-1 col-lg-1 text-center" style="margin-left:-1em;">Liked</div>
           <% } %>
 
         <div class="col-sm-3 col-md-3 col-lg-3" >Title </div>
-        <div class="col-sm-3 col-md-4 col-lg-4" style=" margin: 0 0 0 0.5em"> Artist </div>
-        <div class="col-sm-1 col-md-1 col-lg-1 text-center"><i class="far fa-clock"  style="padding-left: 1em"></i></div>
+        <div class="col-sm-3 col-md-3 col-lg-3" > Artist </div>
+        <div class="col-sm-1 col-md-1 col-lg-1 text-center"><i class="far fa-clock" ></i></div>
         <%if (currentUser){ %>
-        <div class="col-sm-2 col-md-1 col-lg-1 text-center" style="margin-left:1em; ">Options</div>
+        <div class="col-sm-2 col-md-2 col-lg-2 text-center">Options</div>
         <% } %>
       </div>
 
 
-    <!-- <div class="row songRow" style="border-top: 1px solid grey; padding: 0.5em 0;"> -->
     <div class="row songRow" style="border-top: 1px solid grey; padding: 0.5em 0;">
       <div class="col-sm-2 col-md-2 col-lg-1 text-center">
         <span class="listIndex">1 </span>
@@ -88,10 +87,34 @@
       <% } %>
 
       <div class="col-sm-3 col-md-3 col-lg-3" >Name of Song </div>
-      <div class="col-sm-3 col-md-4 col-lg-4" >Placeholder</div>
+      <div class="col-sm-3 col-md-3 col-lg-3" >Placeholder that is very long and</div>
       <div class="col-sm-1 col-md-1 col-lg-1 text-center" >3:00</div>
       <%if (currentUser){ %>
-      <div class="col-sm-2 col-md-1 col-lg-1 text-center options" >
+      <div class="col-sm-2 col-md-2 col-lg-2 text-center options" >
+        <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button" data-toggle="modal"
+          data-target="#optionsMenu"></i>
+
+
+      </div>
+      <% } %>
+
+    </div>
+    <div class="row songRow" style="border-top: 1px solid grey; padding: 0.5em 0;">
+      <div class="col-sm-2 col-md-2 col-lg-1 text-center">
+        <span class="listIndex">1 </span>
+        <i class="btn btn-success fas fa-play play listPlay" ></i>
+      </div>
+
+      <%if (currentUser){ %>
+      <div class="col-sm-1 col-md-1 col-lg-1 text-center listLike" >
+        <i class="far fa-heart like"></i></div>
+      <% } %>
+
+      <div class="col-sm-3 col-md-3 col-lg-3" >Name of Song </div>
+      <div class="col-sm-3 col-md-3 col-lg-3" >Placeholder that is very long and</div>
+      <div class="col-sm-1 col-md-1 col-lg-1 text-center" >3:00</div>
+      <%if (currentUser){ %>
+      <div class="col-sm-2 col-md-2 col-lg-2 text-center options" >
         <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button" data-toggle="modal"
           data-target="#optionsMenu"></i>
 

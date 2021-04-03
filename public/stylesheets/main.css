@@ -277,19 +277,20 @@ a.card:visted {
   color: #fff !important;
 }
 
-#showWrapper {
-  /* padding: 0 !important; */
-}
 
 #gradient {
-  width: 120% !important;
+  width: 105% !important;
   background-image: linear-gradient(rgb(36, 110, 6), rgb(19, 18, 18));
   margin-left: -15px;
 
+}]
+
+#showWrapper{
+  max-width:500px !important;
 }
 
 #artistGradient {
-  width: 120% !important;
+  width: 105% !important;
   background-image: linear-gradient(rgb(36, 110, 6), rgb(19, 18, 18));
   margin-left: -15px;
 }

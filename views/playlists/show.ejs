@@ -30,6 +30,7 @@
       </div>
     </div>
 
+    <!-- whole playlist play and Options button -->
     <div class="d-flex justify-content-start">
 
       <i id="playAll" class="btn btn-md btn-success fas fa-play"></i>
@@ -63,12 +64,14 @@
       <%}%>
         
       </div>
+    <!-- END whole playlist play and Options button -->
 
 
 
 
 
-      <div id="list" class="ui mt-3">
+
+      <div id="list" class="mt-3">
         <div class="row"  style="padding-bottom: 1vh; border-bottom: 1px solid grey;">
           <div class="col-sm-2 col-md-2 col-lg-1 text-center">#</div>
           <%if (currentUser){ %>
@@ -85,11 +88,11 @@
 
 <!-- placeholder/example rows -->
 <% var row = 0; %>
-<% while (row <= 3){ %>
+<% while (row <= 10){ %>
     <div class="row songRow d-flex align-items-center">
-      <div class="col-sm-2 col-md-2 col-lg-1 text-center">
+      <div class="col-sm-2 col-md-2 col-lg-1 d-flex justify-content-center">
         <span class="listIndex"><%= row + 1%> </span>
-        <i class="btn btn-sm btn-success fas fa-play play text-center listPlay"></i>
+        <i class="btn btn-success fas fa-play play listPlay"></i>
       </div>
 
       <%if (currentUser){ %>

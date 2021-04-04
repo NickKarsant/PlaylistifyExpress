@@ -307,6 +307,9 @@ a.card:visted {
   margin: 0 2px 2px 2px;
 }
 
+
+
+
 .dropdown-container {
   position: relative;
 }
@@ -326,6 +329,9 @@ div.dropdown-menu a.dropdown-item:hover {
 a.dropdown-item {
   color: white !important;
 }
+
+
+
 
 input#searchBar {
   font-size: 14px;

@@ -69,25 +69,27 @@
 
 
       <div id="list" class="ui mt-3">
-        <div class="row mb-2" >
+        <div class="row"  style="padding-bottom: 1vh; border-bottom: 1px solid grey;">
           <div class="col-sm-2 col-md-2 col-lg-1 text-center">#</div>
           <%if (currentUser){ %>
-      <div class="col-sm-1 col-md-1 col-lg-1 text-center" style="margin-left:-2em;">Liked</div>
-      <% } %>
+          <div class="col-sm-1 col-md-1 col-lg-1 text-center" style="margin-left:-2em;">Liked</div>
+          <% } %>
 
-      <div class="col-sm-3 col-md-3 col-lg-3">Title </div>
-      <div class="col-sm-3 col-md-3 col-lg-3"> Artist </div>
-      <div class="col-sm-1 col-md-1 col-lg-1 text-center"><i class="far fa-clock"></i></div>
-      <%if (currentUser){ %>
-      <div class="col-sm-2 col-md-2 col-lg-2 text-center">Options</div>
-      <% } %>
-    </div>
+        <div class="col-sm-3 col-md-3 col-lg-3">Title </div>
+        <div class="col-sm-3 col-md-3 col-lg-3"> Artist </div>
+        <div class="col-sm-1 col-md-1 col-lg-1 text-center"><i class="far fa-clock"></i></div>
+        <%if (currentUser){ %>
+        <div class="col-sm-2 col-md-2 col-lg-2 text-center">Options</div>
+        <% } %>
+      </div>
 
-
-    <div class="row songRow" style="border-top: 1px solid grey; padding: 0.5em 0;">
+<!-- placeholder/example rows -->
+<% var row = 0; %>
+<% while (row <= 3){ %>
+    <div class="row songRow d-flex align-items-center">
       <div class="col-sm-2 col-md-2 col-lg-1 text-center">
-        <span class="listIndex">1 </span>
-        <i class="btn btn-success fas fa-play play listPlay"></i>
+        <span class="listIndex"><%= row + 1%> </span>
+        <i class="btn btn-sm btn-success fas fa-play play text-center listPlay"></i>
       </div>
 
       <%if (currentUser){ %>
@@ -96,12 +98,14 @@
       <% } %>
 
       <div class="col-sm-3 col-md-3 col-lg-3">Name of Song </div>
-      <div class="col-sm-3 col-md-3 col-lg-3 overflow-hidden listArtistOverflow">Placeholder that is very long and</div>
+      <div class="col-sm-3 col-md-3 col-lg-3 listArtistOverflow">
+        <p class="content"> Placeholder that is very long and far too long in fact that it like song remix artist that are too long </p>
+      </div>
       <div class="col-sm-1 col-md-1 col-lg-1 text-center">3:00</div>
       <%if (currentUser){ %>
       <div class="col-sm-2 col-md-2 col-lg-2 text-center options">
 
-          <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionMenu" aria-haspopup="true"
+        <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionMenu" aria-haspopup="true"
           aria-expanded="false" data-toggle="dropdown" id="dropdownSong" data-target="#songOptions">
           <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button"></i>
         </a>
@@ -135,66 +139,17 @@
       <% } %>
 
     </div>
-    <div class="row songRow" style="border-top: 1px solid grey; padding: 0.5em 0;">
-      <div class="col-sm-2 col-md-2 col-lg-1 text-center">
-        <span class="listIndex">1 </span>
-        <i class="btn btn-success fas fa-play play listPlay"></i>
-      </div>
+    <%    row += 1;
+  };%>
 
-      <%if (currentUser){ %>
-      <div class="col-sm-1 col-md-1 col-lg-1 text-center listLike">
-        <i class="far fa-heart like"></i></div>
-      <% } %>
+    <!-- end  example/placeholder rows-->
 
-      <div class="col-sm-3 col-md-3 col-lg-3">Name of Song </div>
-      <div class="col-sm-3 col-md-3 col-lg-3">Placeholder that is very long and</div>
-      <div class="col-sm-1 col-md-1 col-lg-1 text-center">3:00</div>
-      <%if (currentUser){ %>
-      <div class="col-sm-2 col-md-2 col-lg-2 text-center options">
-
-
-
-          <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionMenu" aria-haspopup="true"
-          aria-expanded="false" data-toggle="dropdown" id="dropdownSong" data-target="#songOptions">
-          <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button"></i>
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownSong">
-          <a class="dropdown-item" href="#">Add to queue</a>
-          <div class="dropdown-divider"></div>
-
-          <a class="dropdown-item" href="#">Go to song radio</a>
-          <a class="dropdown-item" href="#">Go to artist</a>
-          <a class="dropdown-item" href="#">Go to album</a>
-          <a class="dropdown-item" href="#">Show credits</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Save to your Liked Songs</a>
-          <a class="dropdown-item" href="#">Remove from this playlist</a>
-          <a class="dropdown-item" href="#">
-            Add to playlist  
-            <i class="fas fa-chevron-right"></i>
-          </a>
-
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Share  
-            <i class="fas fa-chevron-right"></i>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Open in Desktop app</a>
-        </div>
-
-
-
-      </div>
-      <% } %>
-
-    </div>
 
     <!-- <% playlist.songs.forEach(function(song, index) { %>
           <div class="row songRow" style="border-top: 1px solid grey; padding: 0.5em 0; margin-right:1em;">
             <div class="col-sm-2 col-md-2 col-lg-1 text-center">
               <span class="listIndex"><%= index + 1 %> </span>
-              <i class="btn btn-success fas fa-play play listPlay"></i>
+              <i class="btn btn-sm btn-success fas fa-play play listPlay"></i>
             </div>
     
             <%if (currentUser){ %>
@@ -255,36 +210,5 @@
 
 </div> <br>
 
-
-
-<!-- 
-<div class="modal right fade" id="optionsMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-    <div class="modal-content" style="width: 50%;">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" style="padding:0;">
-        <ul class="mb-0" style="list-style-type: none; padding:1em;">
-          <li type="button" class="optionsChoice btn d-flex justify-content-left" data-toggle="modal"
-            data-target="#playlistChoices" style="width:90%;">
-            <p><i class="fas fa-chevron-left"></i> Add song to
-              Playlist
-            </p>
-          </li>
-          <li class="optionsChoice btn d-flex justify-content-left" type="button" style="width:90%;">
-            <p>     Add to Liked Songs</p>
-          </li>
-        </ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div> -->
 
 </div>

@@ -63,7 +63,7 @@ i#sideAdd {
 }
 
 #sideAddLink {
-padding: 0;
+  padding: 0;
 }
 
 #createPlaylist {
@@ -74,9 +74,8 @@ padding: 0;
   margin-bottom: 0.5em;
 }
 
-.sidePlaylist{
+.sidePlaylist {
   width: 200px;
-
 }
 
 .sidePlaylistLink {
@@ -87,7 +86,7 @@ padding: 0;
   text-overflow: ellipsis;
 }
 
-.sidePlaylist:hover{
+.sidePlaylist:hover {
   background-color: rgb(59, 58, 58);
 }
 
@@ -97,10 +96,10 @@ padding: 0;
   font-size: 1.2em;
   height: auto;
   padding: 0 1em;
-
 }
 
-#createPlaylist, .sidePlaylist {
+#createPlaylist,
+.sidePlaylist {
   margin-left: 10% !important;
 }
 
@@ -134,7 +133,8 @@ padding: 0;
   border-radius: 50%;
 }
 
-#playlistOptions, #songOptions {
+#playlistOptions,
+#songOptions {
   font-size: 2em;
 }
 
@@ -170,15 +170,6 @@ main {
   margin: 0 0.5em;
 }
 
-.caption {
-  min-height: 50px;
-  margin-top: 0.5em;
-  width: inherit;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-/* media query when small play card-body for  Songs content centered */
 
 .playbtn::after {
   content: "";
@@ -217,13 +208,13 @@ a.card {
   justify-content: center;
 }
 
-div#artistImage img{
+div#artistImage img {
   max-height: 300px;
   max-width: 300px;
   min-width: 150px;
 }
 
-div#showInfo img#playlistImage{
+div#showInfo img#playlistImage {
   max-height: 300px;
   max-width: 300px;
   min-width: 200px;
@@ -277,16 +268,15 @@ a.card:visted {
   color: #fff !important;
 }
 
-
 #gradient {
   width: 105% !important;
   background-image: linear-gradient(rgb(36, 110, 6), rgb(19, 18, 18));
   margin-left: -15px;
+}
+]
 
-}]
-
-#showWrapper{
-  max-width:500px !important;
+#showWrapper {
+  max-width: 500px !important;
 }
 
 #artistGradient {
@@ -300,11 +290,14 @@ a.card:visted {
   visibility: hidden;
   position: absolute;
   left: -1000px;
+  padding: 0.3em !important;
+  border: 0 !important;
+  margin: 0 !important;
 }
 
 .listLike {
   visibility: hidden;
-  margin-left:-2em !important;
+  margin-left: -2em !important;
 }
 
 .dot {
@@ -331,8 +324,6 @@ a.card:visted {
 div.dropdown-menu a.dropdown-item:hover {
   background-color: green;
 }
-
-
 
 a.dropdown-item {
   color: white !important;
@@ -369,11 +360,65 @@ input#searchBar {
   margin-left: 0.5em;
 }
 
+.songRow {
+  max-height: 40px !important;
+  height: 40px !important;
+}
+
 .songRow:hover {
   background-color: rgb(85, 76, 76);
   /* margin: 0 !important; */
-
 }
+
+.card-title{
+  font-weight: bold;
+}
+
+.caption {
+  min-height: 50px;
+  margin-top: 0.5em;
+}
+/* media query when small play card-body for  Songs content centered */
+
+/* text-Overflow scrolling ellipsis */
+.listArtistOverflow, .caption {
+  overflow: hidden;
+
+  /* To make the width of the container exact. */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+
+.listArtistOverflow .content, .caption .content, .caption .card-title{
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;    /* Required to make ellipsis work */
+  text-overflow: ellipsis;
+
+  /* Starting transition */    
+  left: 0%;
+  width: 100%;
+  
+  /* Tweak 'till your heart's content */
+  -webkit-transition: left 5s, width 5s;
+  -moz-transition: left 5s, width 5s;
+  transition: left 5s, width 5s;
+}
+
+.listArtistOverflow:hover .content, .caption:hover .content, .caption:hover .card-title{
+  /* This is not completely accurate. It resizes to 2x the current width. */
+  left: -100%;
+  width: 200%;
+}
+/* END text-Overflow scrolling ellipsis */
+
+
+
+
 
 .modal {
   position: absolute !important;
@@ -390,8 +435,6 @@ input#searchBar {
 #optionsMenu {
   /* position:relative; */
 }
-
-
 
 .modal-header {
   cursor: move;

@@ -102,9 +102,7 @@ $(document).ready(function() {
   }
 
   function hoverHideLike(song) {
-    var heart = song.getElementsByClassName("like")[0];
     var heartDiv = song.getElementsByClassName("listLike")[0];
-    console.log(song);
     heartDiv.style.visibility = "hidden";
   }
 
@@ -112,16 +110,26 @@ $(document).ready(function() {
 
   songs.forEach(song => {
     song.addEventListener("mouseover", e => {
-      hoverShowOptions(song);
       hoverShowLike(song);
+      hoverShowOptions(song);
+    });
+  });
+
+  songs.forEach(song => {
+    song.addEventListener("mouseout", e => {
+      hoverHideLike(song);
+      hoverHideOptions(song);
+    });
+  });
+
+  songs.forEach(song => {
+    song.addEventListener("mouseover", e => {
       hoverShowPlay(song);
     });
   });
 
   songs.forEach(song => {
     song.addEventListener("mouseout", e => {
-      hoverHideOptions(song);
-      hoverHideLike(song);
       hoverHidePlay(song);
     });
   });
@@ -134,13 +142,7 @@ $(document).ready(function() {
       console.log("clicked");
     });
   });
-  // var meatballs = document.querySelectorAll(".meatball");
 
-  // meatballs.forEach(menu => {
-  //   menu.addEventListener("click", e => {
-  //     console.log("clicked");
-  //   });
-  // });
 
   searchBar = document.getElementById("searchBar");
 
@@ -152,3 +154,14 @@ $(document).ready(function() {
     console.log(e.target.value);
   });
 });
+
+
+
+$('.listArtistOverflow p').each(function() {
+  $(this)
+    .data('width', $(this).css('display','inline-block').width()+10)
+    .css('display','');
+});
+
+$('.listArtistOverflow').scroll();
+

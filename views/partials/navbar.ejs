@@ -8,7 +8,7 @@
   <% if (currentUser) {%>
 
   <!-- show only "signed in as..." all all media query levels -->
-  <div class="navbar ml-auto" id="navbarText">
+  <div class="navbar ml-auto py-0" id="navbarDropdown">
     <ul class="nav navbar-nav ml-auto float-right text-right pr-3">
 
       <li class="nav-item">
@@ -18,8 +18,8 @@
             Signed in as  <img class="avatar rounded-circle" src="http://via.placeholder.com/28"
               alt=""> <%= currentUser.username %> </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Account</a>
-            <a class="dropdown-item" href="#">Profle</a>
+            <a class="dropdown-item" href="">Account</a>
+            <a class="dropdown-item" href="">Profile</a>
             <a class="dropdown-item" href="/auth/logout">  <i class="fas fa-sign-out-alt"></i>Log Out </a>
           </div>
         </div>

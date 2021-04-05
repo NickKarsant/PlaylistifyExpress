@@ -5,32 +5,28 @@
 
 
 
-  <div class="col-xs-10 col-sm-10 col-md-9 col-lg-10 mt-0 p-0">
-    <div class="row align-items-center">
-      <div class="col-md-2">
-        <a class="btn mb-3 mt-2 backAndNext text-white" style="height: 32px;
-          width: 32px;
-          border-radius: 50%;
-          background-color: green;
-          color: #fff;" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
-        <a id="forward" class="btn mb-3 mx-3 mt-2 backAndNext" style="height: 32px;
-          width: 32px;
-          border-radius: 50%;
-          background-color: green;
-          color: #fff;" onclick="goForward()"><i id="forward" class="fas fa-chevron-right"></i></a>
-      </div>
+  <div class="col-xs-10 col-sm-10 col-md-9 col-lg-10 ">
+    
+  
 
-      <div class="col-md-10">
-        <form action="/search?" id=searchBarForm>
-          <input id="searchBar" autofocus type="search" placeholder="Search for artists or songs"
-            aria-describedby="button-addon3" class="form-control bg-none border-1">
-        </form>
+
+    <div class="row align-items-center">
+        <div class="col-md-2" >
+          <a class="btn mb-3 mt-2 backAndNext text-white" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
+          <a id="forward" class="btn mb-3 mx-3 mt-2 backAndNext" onclick="goForward()"><i id="forward" class="fas fa-chevron-right"></i></a>
+        </div>
+  
+        <div class="col-md-10">
+          <form action="/search?" id=searchBarForm >
+            <input id="searchBar" autofocus type="search" placeholder="Search for artists or songs"
+              aria-describedby="button-addon3" class="form-control bg-none border-1">
+          </form>
+        </div>
       </div>
-    </div>
 
     <div>
       <% if (!currentUser) {%>
-      <header class="jumbotron text-white" style="  background-color: rgb(34, 33, 33);
+      <header class="jumbotron text-white" style="margin-left: -15px !important; width: 104%; background-color: rgb(34, 33, 33);
       ">
         <h1><i class="fas fa-music"></i> Welcome to Playlist-ify</h1>
         <p>Search through our database of music for the right songs and artists and become a playlist god! <br>
@@ -111,17 +107,18 @@
 
       <div class="text-center" style="overflow: hidden;" class="preview">
         <% if (song.image) {%>
-        <img class="card-img-top img-thumbnail card-fluid glimpse"  src="<%=song.image%>"
-          alt="">
+        <img class="card-img-top img-thumbnail card-fluid glimpse" src="<%=song.image%>" alt="">
         <% } else {%>
-        <img class="card-img-top img-thumbnail card-fluid"  src="data:image/png;base64,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" alt="">
+        <img class="card-img-top img-thumbnail card-fluid"
+          src="data:image/png;base64,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"
+          alt="">
         <%}%>
     </div>
           
     <div class="card-body p-0 text-white">
       <div class="caption">
           <% if (currentUser) {%>
-          <!-- Logged in -->
+        <!-- Logged in -->
         <h8 class="card-title"><%= song.name %></h8>
         <p class="content"> <%= song.artist %></p>
       </div>
@@ -142,7 +139,7 @@
 
         <!-- NOT Logged in -->
         <%} else {%>
-          
+
         <div class="caption" style="width:65%; float:left;">
           <h8 class="card-title"><%= song.name %></h8>
           <p class="content"> <%= song.artist %></p>
@@ -196,7 +193,7 @@
 
 <!-- ARTISTS -->
 <div class="ui container mb-5">
-  <h1 class="text-white mb-5">Uniquely Yours</h1>
+  <h1 class="text-white mb-5">Artists</h1>
   <div class="ui grid mb-3 row text-center">
     <% allArtists.forEach(function(artist) {%>
     <a class="bg-dark card col-xs-2 col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-2 mx-4 pt-2"

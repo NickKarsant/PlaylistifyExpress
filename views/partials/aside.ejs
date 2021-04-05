@@ -1,4 +1,4 @@
-<div id="aside" class="col-xs-3 col-sm-3 col-md-3 col-lg-2">
+<div id="aside"   class="col-xs-3 col-sm-3 col-md-3 col-lg-2">
   <div>
     <ul class="asideList">
       <% if(currentUser) {%>
@@ -33,15 +33,16 @@
     <ul class="aside pt-3">
       <h4 id="list">PLAYLISTS</h4>
       
-      <div class="scrollable">
-        <li id="createPlaylist">
-          <a id="sideAddLink" class="btn btn-sm text-white" href="/playlists/new">
-            <i style="float: left;" id="sideAdd" class="far fa-plus-square"></i>
-            <p id="sideAddWord"> New Playlist</p>
+      <div id="createPlaylist">
+        <a id="sideAddLink" class="btn btn-sm text-white" href="/playlists/new">
+          <i style="float: left;" id="sideAdd" class="far fa-plus-square"></i>
+          <p id="sideAddWord"> New Playlist</p>
 
-          </a>
-        </li>
-        <% if(currentUser) {%>
+        </a>
+      </div>
+
+      <% if(currentUser) {%>
+        <div class="scrollable scrollbar thin">
           <% usersPlaylists.forEach(function(playlist) {%>
           <li class="sidePlaylist">
             <a class="sidePlaylistLink btn btn-sm text-white px-0 mx-0" href="/playlists/<%=playlist._id%>">

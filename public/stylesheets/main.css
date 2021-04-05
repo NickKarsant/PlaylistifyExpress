@@ -47,8 +47,22 @@ h4#list {
   margin-top: 1em;
 }
 
-div.scrollable li {
-  margin-left: 0.5%;
+.scrollable {
+  width: 130px;
+  height:310px;
+  /* overflow-y: scroll; */
+  overflow-y: visible;
+  overflow-x: hidden;
+  /* border: 1px solid red; */
+}
+
+
+#createPlaylist {
+  width: 200px;
+  display: flex;
+  align-items: start;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
 i#sideAdd {
@@ -66,13 +80,8 @@ i#sideAdd {
   padding: 0;
 }
 
-#createPlaylist {
-  width: 200px;
-  display: flex;
-  align-items: start;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-}
+
+
 
 .sidePlaylist {
   width: 200px;
@@ -98,10 +107,7 @@ i#sideAdd {
   padding: 0 1em;
 }
 
-#createPlaylist,
-.sidePlaylist {
-  margin-left: 10% !important;
-}
+
 
 .navigation {
   font-size: 1.5em;
@@ -146,11 +152,7 @@ i#sideAdd {
   padding-right: 0.3em;
 }
 
-.scrollable {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  margin-left: -10%;
-}
+
 
 a.usersPlaylists {
   margin: 0 0.25em;

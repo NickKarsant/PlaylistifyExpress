@@ -16,6 +16,24 @@ main.container {
   color: green;
 }
 
+.seeAll{
+  margin-bottom: 0.5em;
+  color: grey;
+  font-size: 0.9em;
+  font-weight:bold;
+}
+
+
+.seeAll a:visited{
+  color: grey;
+    font-size: 0.9em;
+}
+.seeAll:hover a{
+  color: grey;
+    font-weight:bold;
+  text-decoration: underline;
+}
+
 #home {
   padding-top: 0.5em;
   margin-right: 1em;
@@ -25,6 +43,12 @@ main.container {
 #search,
 #library {
   margin-top: 0.8em;
+}
+
+.jumbotron {
+  margin-left: -15px !important;
+  width: 104%;
+  background-color: rgb(34, 33, 33) !important;
 }
 
 h4#list {
@@ -49,13 +73,12 @@ h4#list {
 
 .scrollable {
   width: 130px;
-  height:310px;
+  height: 310px;
   /* overflow-y: scroll; */
   overflow-y: visible;
   overflow-x: hidden;
   /* border: 1px solid red; */
 }
-
 
 #createPlaylist {
   width: 200px;
@@ -80,8 +103,23 @@ i#sideAdd {
   padding: 0;
 }
 
+#uniqueGrid,
+#browsePlaylists,
+#browseSongs,
+#browseArtists {
+  margin-left: -2em;
+}
 
+.preview{
+  margin: auto 0;
+}
 
+.songCard{
+  max-width: 100px !important;
+  min-width: 160px !important;
+  width: 100px !important;
+  margin: 0 !important;
+}
 
 .sidePlaylist {
   width: 200px;
@@ -106,8 +144,6 @@ i#sideAdd {
   height: auto;
   padding: 0 1em;
 }
-
-
 
 .navigation {
   font-size: 1.5em;
@@ -152,8 +188,6 @@ i#sideAdd {
   padding-right: 0.3em;
 }
 
-
-
 a.usersPlaylists {
   margin: 0 0.25em;
   padding: 0;
@@ -172,7 +206,6 @@ main {
   margin: 0 0.5em;
 }
 
-
 .playbtn::after {
   content: "";
   clear: both;
@@ -183,7 +216,6 @@ main {
   /* height: 200px; */
   color: black;
 }
-
 
 #pic {
   width: 30%;
@@ -309,9 +341,6 @@ a.card:visted {
   margin: 0 2px 2px 2px;
 }
 
-
-
-
 .dropdown-container {
   position: relative;
 }
@@ -331,9 +360,6 @@ div.dropdown-menu a.dropdown-item:hover {
 a.dropdown-item {
   color: white !important;
 }
-
-
-
 
 input#searchBar {
   font-size: 14px;
@@ -376,12 +402,11 @@ input#searchBar {
   /* margin: 0 !important; */
 }
 
-.card-title{
+.card-title {
   font-weight: bold;
 }
 
-
-div#list{
+div#list {
   padding-bottom: 2em;
   margin-bottom: 4em;
 }
@@ -393,7 +418,8 @@ div#list{
 /* media query when small play card-body for  Songs content centered */
 
 /* text-Overflow scrolling ellipsis */
-.listArtistOverflow, .caption {
+.listArtistOverflow,
+.caption {
   overflow: hidden;
 
   /* To make the width of the container exact. */
@@ -402,35 +428,32 @@ div#list{
   box-sizing: border-box;
 }
 
-
-
-
-.listArtistOverflow .content, .caption .content, .caption .card-title{
+.listArtistOverflow .content,
+.caption .content,
+.caption .card-title {
   white-space: nowrap;
   position: relative;
-  overflow: hidden;    /* Required to make ellipsis work */
+  overflow: hidden; /* Required to make ellipsis work */
   text-overflow: ellipsis;
 
-  /* Starting transition */    
+  /* Starting transition */
   left: 0%;
   width: 100%;
-  
+
   /* Tweak 'till your heart's content */
   -webkit-transition: left 5s, width 5s;
   -moz-transition: left 5s, width 5s;
   transition: left 5s, width 5s;
 }
 
-.listArtistOverflow:hover .content, .caption:hover .content, .caption:hover .card-title{
+.listArtistOverflow:hover .content,
+.caption:hover .content,
+.caption:hover .card-title {
   /* This is not completely accurate. It resizes to 2x the current width. */
   left: -100%;
   width: 200%;
 }
 /* END text-Overflow scrolling ellipsis */
-
-
-
-
 
 .modal {
   position: absolute !important;

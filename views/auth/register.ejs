@@ -1,47 +1,53 @@
 <% layout('layouts/boilerplate')%>
 
 <div class="row">
-    <%- include('../partials/aside') %>
+	<%- include('../partials/aside') %>
 
 
-    <div class="col-xs-9 col-sm-8 col-md-8 col-lg-10 pb-3 mt-5" style="height:auto;"">
-        <div class="d-flex flex-column">
-            <div class="top ui one column stackable center aligned page grid">
-                <div class="column eight wide card shadow mt-3">
-                    <h1>Register</h1>
-                    <form action="auth/register" method="POST" class="validated-form" novalidate>
-                        <div class="mb-3">
-                            <label class="uncenter form-label" for="username">Username</label>
-                            <input class="form-control" type="text" id="username" name="username" required autofocus>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">Username required</div>
+	<div class="col-xs-9 col-sm-8 col-md-8 col-lg-10 pb-3 mt-5" style="height:auto;"">
+				
+		<div class=" d-flex flex-column">
+		<div class="top ui one column stackable center aligned page grid">
+			<div class="column eight wide card shadow mt-3">
+          <a href="/browse"> <button type="button" class="close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </a>
+				<h1>Register</h1>
+				
+				<form action="auth/register" method="POST" class="validated-form" novalidate>
+					<div class="mb-3">
+						<label class="uncenter form-label" for="username">Username</label>
+						<input class="form-control" type="text" id="username" name="username" required autofocus>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+						<div class="invalid-feedback">Username required</div>
 
-                        </div>
-                        <div class="mb-3">
-                            <label class="uncenter form-label" for="email">Email</label>
-                            <input class="form-control" type="email" id="email" name="email" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">Email required</div>
+					</div>
+					<div class="mb-3">
+						<label class="uncenter form-label" for="email">Email</label>
+						<input class="form-control" type="email" id="email" name="email" required>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+						<div class="invalid-feedback">Email required</div>
 
-                        </div>
-                        <div class="mb-3">
-                            <label class="uncenter form-label" for="password">Password</label>
-                            <input class="form-control" type="password" id="password" name="password" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">Password required</div>
+					</div>
+					<div class="mb-3">
+						<label class="uncenter form-label" for="password">Password</label>
+						<input class="form-control" type="password" id="password" name="password" required>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+						<div class="invalid-feedback">Password required</div>
 
-                        </div>
-                        <button class="btn btn-block btn-success">Register</button>
-                    </form>
-                </div>
-            </div>
-            <br>
-        </div>
-    </div>
+					</div>
+					<button class="btn btn-block btn-success">Register</button>
+				</form>
+			</div>
+		</div>
+		<br>
+	</div>
+</div>
 </div>

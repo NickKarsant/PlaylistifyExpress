@@ -38,8 +38,8 @@
       <i id="playAll" class="btn btn-md btn-success fas fa-play"></i>
 
 
-      <% if (currentUser && playlist.author.equals(currentUser._id) && playlist.name !== "Liked Songs") { %>
-      <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionMenu" data-toggle="dropdown"
+      <% if (playlist.name !== "Liked Songs" && currentUser) { %>
+      <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionsMenu" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         <i id="playlistOptions" class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white"></i>
       </a>
@@ -48,14 +48,17 @@
       <div class="dropdown-menu" aria-labelledby="dropdownOptionsMenu">
         <a class="dropdown-item" href="#">Add to queue</a>
         <a class="dropdown-item" href="#">Start playlist radio</a>
+        <% if (currentUser && playlist.author.equals(currentUser._id)) { %>           <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Make public</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Edit details</a>
+
         <form action="" method="POST">
           <a class="dropdown-item" style="color: red !important;" href="#">
             Delete
           </a>
         </form>
+        <% } %>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Share  
           <i class="fas fa-chevron-right"></i>

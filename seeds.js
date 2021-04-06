@@ -238,6 +238,27 @@ var songs = [
     artist: "Balkan Bump, Clozee",
     liked: false,
     length: "3:32"
+  },
+  {
+    _id: "17",
+    name: "Blank Panther - David Starfire Remix",
+    artist: "Clozee, David Starfire",
+    liked: false,
+    length: "4:00"
+  },
+  {
+    _id: "18",
+    name: "Blank Panther - PATH remix",
+    artist: "Clozee, PATH",
+    liked: false,
+    length: "4:10"
+  },
+  {
+    _id: "19",
+    name: "Varshaver",
+    artist: "Balkan Bump, Clozee",
+    liked: false,
+    length: "3:32"
   }
 ];
 

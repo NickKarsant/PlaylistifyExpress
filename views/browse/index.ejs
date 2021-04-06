@@ -50,7 +50,7 @@
 
           <div id="uniqueGrid" class="ui grid mb-3 row text-center">
             <% usersPlaylists.forEach(function(playlist) {%>
-            <a class="usersPlaylists bg-dark card col-xs-2 col-sm-3 col-md-3 col-lg-2 col-xl-2 my-3 mx-3 pt-2"
+            <a class="usersPlaylists  card col-xs-2 col-sm-3 col-md-3 col-lg-2 col-xl-2 my-3 mx-3 pt-2"
               href="/playlists/<%= playlist._id %>">
               <% if (playlist.image.length > 30) {%>
               <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;"
@@ -86,8 +86,10 @@
     </div>
       
     <div id="browsePlaylists" class="ui grid mb-3 row text-center">
-    <% removedLiked.forEach(function(playlist) {%>
-    <a class="usersPlaylists bg-dark card col-xs-2 col-sm-3 col-md-3 col-lg-2 col-xl-2 my-3 mx-3 pt-2"
+
+        <% var i; for (i = 0; i < 10; i++) { %>
+          <% var playlist = removedLiked[i] %>
+    <a class="usersPlaylists card col-xs-2 col-sm-3 col-md-3 col-lg-2 col-xl-2 my-3 mx-3 pt-2"
       href="/playlists/<%= playlist._id %>">
       <% if (playlist.image.length > 30) {%>
       <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;" src="<%=playlist.image%>"
@@ -99,7 +101,7 @@
             <h4 class="card-title"> <%= playlist.name %> </h4>
   </div>
   </a>
-  <%});%>
+  <%};%>
 </div>
 </div>
 
@@ -115,8 +117,9 @@
     </div>
 
   <div id="browseSongs" class="ui grid mb-3 row">
-    <% allSongs.forEach(function(song) {%>
-    <div id="songs" class="songCard bg-dark card  my-3 mx-2 pt-2">
+      <% var i; for (i = 0; i < 15; i++) { %>
+        <% var song = allSongs[i] %>
+    <div id="songs" class="songCard card  my-3 mx-2 pt-2">
 
 
       <!-- <div class="thumbnail"> -->
@@ -170,7 +173,7 @@
   </div>
 
 
-  <%});%>
+  <%};%>
 </div>
 </div>
 
@@ -218,7 +221,7 @@
 
   <div id="browseArtists" class="ui grid mb-3 row text-center">
     <% allArtists.forEach(function(artist) {%>
-    <a class="bg-dark card col-xs-2 col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-2 my-3 mx-2 pt-2"
+    <a class="browseArtist card col-xs-2 col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-2 my-3 mx-2 pt-2"
       href="/artist/<%= artist._id %>">
       <% if (artist.image.length > 30) {%>
       <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:100px;" src="<%=artist.image%>"

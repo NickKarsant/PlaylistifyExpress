@@ -36,6 +36,115 @@
   <main>
     <%- include('../partials/flash') %>
 
+
+
+
+
+    <div class="modal fade loginModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+
+
+
+          <div class="top ui stackable center aligned page grid">
+            <div class="column mt-3 mb-3">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h1>Login</h1>
+              <form action="auth/login" method="POST" class="validated-form" novalidate>
+                <div class="mb-3">
+                  <label class="uncenter form-label" for="username">Username</label>
+                  <input class="form-control" type="text" id="username" name="username" required autofocus>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">Required</div>
+
+                </div>
+
+                <div class="mb-3">
+                  <label class="uncenter form-label" for="password">Password</label>
+                  <input class="form-control" type="password" id="password" name="password" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">Required</div>
+
+
+                </div>
+                <button class="btn btn-block btn-success">Login</button>
+              </form>
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="modal fade registerModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+
+          <div class="top ui stackable center aligned page grid">
+
+            <div class="column mt-3 mb-3">
+              <a href="/browse"> <button type="button" class="close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </a>
+              <h1>Register</h1>
+
+              <form action="auth/register" method="POST" class="validated-form" novalidate>
+                <div class="mb-3">
+                  <label class="uncenter form-label" for="username">Username</label>
+                  <input class="form-control" type="text" id="username" name="username" required autofocus>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">Username required</div>
+
+                </div>
+                <div class="mb-3">
+                  <label class="uncenter form-label" for="email">Email</label>
+                  <input class="form-control" type="email" id="email" name="email" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">Email required</div>
+
+                </div>
+                <div class="mb-3">
+                  <label class="uncenter form-label" for="password">Password</label>
+                  <input class="form-control" type="password" id="password" name="password" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">Password required</div>
+
+                </div>
+                <button class="btn btn-block btn-success">Register</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+    </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"></script>

@@ -113,6 +113,7 @@ app.get(
     // restrict "Liked Songs" plsylists from being displayed
     // console.log(allPlaylists);
     const removedLiked = [];
+
     allPlaylists.forEach(function(playlist) {
       if (playlist.name !== 'Liked Songs') {
         removedLiked.push(playlist);
@@ -121,7 +122,8 @@ app.get(
 
 
     
-    var usersPlaylists
+    var usersPlaylists;
+    var userCreatedPlaylists = [];
     if (typeof req.user === 'undefined') {
       usersPlaylists = [];
     } else {
@@ -130,13 +132,31 @@ app.get(
       });
       const userObject = user[0];
       usersPlaylists = userObject.playlists;
+
+      usersPlaylists.forEach(function(playlist) {
+        if (playlist.name !== 'Liked Songs') {
+          userCreatedPlaylists.push(playlist);
+        }
+      });
     }
+
+
+    // var userCreatedPlaylists;
+    // usersPlaylists.forEach(function(playlist) {
+    //   if (playlist.name !== 'Liked Songs') {
+    //     userCreatedPlaylists.push(playlist);
+    //   }
+    // });
+
+  
+    console.log(usersPlaylists);
 
     res.render("browse/index", {
       removedLiked,
       allSongs,
       allArtists,
-      usersPlaylists
+      usersPlaylists,
+      userCreatedPlaylists
     });
   })
 );

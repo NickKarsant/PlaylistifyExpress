@@ -16,21 +16,20 @@ main.container {
   color: green;
 }
 
-.seeAll{
+.seeAll {
   margin-bottom: 0.5em;
   color: grey;
   font-size: 0.9em;
-  font-weight:bold;
+  font-weight: bold;
 }
 
-
-.seeAll a:visited{
+.seeAll a:visited {
   color: grey;
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
-.seeAll:hover a{
+.seeAll:hover a {
   color: grey;
-    font-weight:bold;
+  font-weight: bold;
   text-decoration: underline;
 }
 
@@ -110,21 +109,22 @@ i#sideAdd {
   margin-left: -2em;
 }
 
-.preview{
+.preview {
   margin: auto 0;
 }
 
-
-
-
-.songCard, .usersPlaylists, .browseArtist{
+.songCard,
+.usersPlaylists,
+.browseArtist {
   background-color: black !important;
 }
-.songCard:hover, .usersPlaylists:hover, .browseArtist:hover{
+.songCard:hover,
+.usersPlaylists:hover,
+.browseArtist:hover {
   background-color: rgb(37, 37, 37) !important;
 }
 
-.songCard{
+.songCard {
   max-width: 100px !important;
   min-width: 160px !important;
   width: 100px !important;
@@ -183,6 +183,56 @@ i#sideAdd {
   font-size: 16px;
   margin: 4px 0.8em;
   border-radius: 50%;
+}
+
+
+.extra{
+  content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.oftenName{
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.oftenPlayedLink{
+  color: white;
+}
+.oftenPlayedLink:hover{
+  text-decoration: none;
+  color: white;
+
+}
+.oftenPlayedLink:visited{
+  color: white;
+}
+
+.oftenPlayed:hover{
+  background-color: rgb(85, 81, 81) !important;
+}
+
+div.playOftenWrap i.playOftenButton {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0;
+  border-radius: 50%;
+  visibility: hidden;
 }
 
 #playlistOptions,
@@ -474,25 +524,53 @@ div#list {
   background-color: green;
 }
 
-.songDropdown{
+.songDropdown {
   position: relative !important;
-
 }
-.songDropdownMenu{
+.songDropdownMenu {
   position: absolute !important;
   top: 500px !important;
 }
 
+#greeting {
+  color: white;
+}
+
+#oftenPlayed {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--minimumColumnWidth), 1fr)
+  );
+  overflow-y: hidden;
+  grid-auto-rows: auto;
+  grid-template-rows: 1fr;
+}
 
 
-.dropdownPlaylistList{
+.imgHolder {
+  min-width: 80px;
+  min-height: 80px;
+}
+
+#oftenPlayed img {
+  /* display: block; */
+  height: 80px;
+  width: 80px;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+}
+
+.dropdownPlaylistList {
   color: white;
   padding: 0.5em 10px;
 }
-.dropdownPlaylistList:hover{
+.dropdownPlaylistList:hover {
   color: white;
 }
-.dropdownPlaylistList:visited{
+.dropdownPlaylistList:visited {
   color: white;
 }
 

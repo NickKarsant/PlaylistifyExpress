@@ -95,6 +95,9 @@ $(document).ready(function() {
   }
 
 
+
+
+
   
   function hoverShowLike(song) {
     var heart = song.getElementsByClassName("listLike")[0];
@@ -176,6 +179,43 @@ $(document).ready(function() {
   $(".registerModal").on('shown.bs.modal', '.modal', function() {
     $(this).find('[autofocus]').focus();
   });
+
+
+
+
+    // when mouse enter .oftenPLayed
+
+  // .playOftenWrap gets shown
+
+
+  var oftenPlayed = document.getElementsByClassName("oftenPlayed");
+console.log(oftenPlayed);
+
+  Array.from(oftenPlayed).forEach(playlist => {
+    playlist.addEventListener("mouseover", e => {
+      hoverShowPlay(playlist);
+    });
+  });
+
+  [...oftenPlayed].forEach(playlist => {
+    playlist.addEventListener("mouseout", e => {
+      hoverHidePlay(playlist);
+    });
+  });
+
+  function hoverShowPlay(playlist) {
+    var button = playlist.getElementsByClassName("playOftenButton")[0];
+    button.style.visibility = "visible";
+  }
+
+  function hoverHidePlay(playlist) {
+    var button = playlist.getElementsByClassName("playOftenButton")[0];
+    button.style.visibility = "hidden";
+  }
+
+
+
+  
 
 });
 

@@ -149,8 +149,6 @@ app.get(
     // });
 
   
-    console.log(usersPlaylists);
-
     res.render("browse/index", {
       removedLiked,
       allSongs,

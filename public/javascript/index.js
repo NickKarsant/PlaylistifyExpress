@@ -153,15 +153,31 @@ $(document).ready(function() {
   searchBar.addEventListener("keyup", e => {
     console.log(e.target.value);
   });
+
+
+
+
+
+
+  
+  $('.listArtistOverflow p').each(function() {
+    $(this)
+      .data('width', $(this).css('display','inline-block').width()+10)
+      .css('display','');
+  });
+  
+  $('.listArtistOverflow').scroll();
+  
+  
+  $(".loginModal").on('shown.bs.modal', '.modal', function() {
+    $(this).find('[autofocus]').focus();
+  });
+  
+  $(".registerModal").on('shown.bs.modal', '.modal', function() {
+    $(this).find('[autofocus]').focus();
+  });
+
 });
 
 
-
-$('.listArtistOverflow p').each(function() {
-  $(this)
-    .data('width', $(this).css('display','inline-block').width()+10)
-    .css('display','');
-});
-
-$('.listArtistOverflow').scroll();
 

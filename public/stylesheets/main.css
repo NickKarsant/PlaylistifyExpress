@@ -473,7 +473,30 @@ div#list {
 .optionsChoice:hover {
   background-color: green;
 }
-.modalPlaylistList:hover {
+
+.songDropdown{
+  position: relative !important;
+
+}
+.songDropdownMenu{
+  position: absolute !important;
+  top: 1180px !important;
+}
+
+
+
+.dropdownPlaylistList{
+  color: white;
+  padding: 0.5em 10px;
+}
+.dropdownPlaylistList:hover{
+  color: white;
+}
+.dropdownPlaylistList:visited{
+  color: white;
+}
+
+.dropdownPlaylistList:hover {
   background-color: green;
 }
 

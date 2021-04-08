@@ -46,7 +46,7 @@ main.container {
 
 .jumbotron {
   margin-left: -15px !important;
-  width: 104%;
+  width: 100%;
   background-color: rgb(34, 33, 33) !important;
 }
 
@@ -612,7 +612,7 @@ div#list {
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .jumbotron {
-    width: 116% !important;
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 991px) {

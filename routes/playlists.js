@@ -18,9 +18,18 @@ router.get(
 
     const userObject = user[0];
 
-    const usersPlaylists = userObject.playlists;
+    var usersPlaylists = userObject.playlists;
 
-    res.render("playlists/index", { usersPlaylists });
+
+    var userCreatedPlaylists = [];
+
+    usersPlaylists.forEach(function(playlist) {
+      if (playlist.name !== "Liked Songs") {
+        userCreatedPlaylists.push(playlist);
+      }
+    });
+
+    res.render("playlists/index", { usersPlaylists, userCreatedPlaylists, userObject });
   })
 );
 
@@ -42,7 +51,6 @@ router.post(
   catchAsync(async (req, res) => {
     const playlist = new Playlist(req.body);
     playlist.author = req.user._id;
-
 
     const savedPlaylist = await playlist.save();
 
@@ -75,7 +83,7 @@ router.get(
 
     var usersPlaylists = [];
     if (typeof req.user === "undefined") {
-      usersPlaylists
+      usersPlaylists;
     } else {
       const user = await User.find({
         _id: req.user._id

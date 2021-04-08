@@ -111,7 +111,7 @@
             <div class="extra"></div>
           </div>
         </div>
-        <div class="oftenPlayed text-white" style="background-color: rgb(49, 46, 46);">
+        <div class="oftenPlayed recentFourth text-white" style="background-color: rgb(49, 46, 46);">
           <div class="d-flex">
             <div>
               <div class="imgHolder">
@@ -130,7 +130,7 @@
             <div class="extra"></div>
           </div>
         </div>
-        <div class="oftenPlayed text-white" style="background-color: rgb(49, 46, 46);">
+        <div class="oftenPlayed recentFifth text-white" style="background-color: rgb(49, 46, 46);">
           <div class="d-flex">
             <div>
               <div class="imgHolder">
@@ -155,8 +155,10 @@
     <!-- END top 6 -->
 
 
+
+
     <!-- recently played -->
-    <div class="ui container mb-5">
+    <div id="recentlyWrapper" class="ui container mb-5">
       <div class="mb-3 d-flex justify-content-between align-items-end">
         <h2 class="text-white">Recently Played</h2>
         <span class="seeAll">
@@ -199,7 +201,7 @@
           </div>
 
         </a>
-        <a class="recentlyPlayed card pt-2" href="">
+        <a class="recentlyPlayed third card pt-2" href="">
 
           <img class="card-img-top img-thumbnail card-fluid glimpse"
             style="max-height:160px;min-height:160px;max-width:160px;" src="https://via.placeholder.com/176" alt="">
@@ -215,7 +217,7 @@
           </div>
 
         </a>
-        <a class="recentlyPlayed card pt-2" href="">
+        <a class="recentlyPlayed fourth card pt-2" href="">
 
           <img class="card-img-top img-thumbnail card-fluid glimpse"
             style="max-height:160px;min-height:160px;max-width:160px;" src="https://via.placeholder.com/176" alt="">
@@ -231,7 +233,7 @@
           </div>
 
         </a>
-        <a class="recentlyPlayed card pt-2" href="">
+        <a class="recentlyPlayed fifth card pt-2" href="">
 
           <img class="card-img-top img-thumbnail card-fluid glimpse"
             style="max-height:160px;min-height:160px;max-width:160px;" src="https://via.placeholder.com/176" alt="">
@@ -306,7 +308,7 @@
           </div>
 
         </a>
-        <a class="recentlyPlayed card pt-2" href="">
+        <a class="recentlyPlayed  third card pt-2" href="">
 
           <img class="card-img-top img-thumbnail card-fluid glimpse"
             style="max-height:160px;min-height:160px;max-width:160px;" src="https://via.placeholder.com/176" alt="">
@@ -322,7 +324,7 @@
           </div>
 
         </a>
-        <a class="recentlyPlayed card pt-2" href="">
+        <a class="recentlyPlayed fourth card pt-2" href="">
 
           <img class="card-img-top img-thumbnail card-fluid glimpse"
             style="max-height:160px;min-height:160px;max-width:160px;" src="https://via.placeholder.com/176" alt="">
@@ -338,7 +340,7 @@
           </div>
 
         </a>
-        <a class="recentlyPlayed card pt-2" href="">
+        <a class="recentlyPlayed fifth card pt-2" href="">
 
           <img class="card-img-top img-thumbnail card-fluid glimpse"
             style="max-height:160px;min-height:160px;max-width:160px;" src="https://via.placeholder.com/176" alt="">
@@ -405,7 +407,7 @@
           </div>
 
         </a>
-        <a class="recentlyPlayed card pt-2" href="">
+        <a class="recentlyPlayed third card pt-2" href="">
 
           <img class="card-img-top img-thumbnail card-fluid glimpse"
             style="max-height:160px;min-height:160px;max-width:160px;" src="https://via.placeholder.com/176" alt="">
@@ -421,7 +423,7 @@
           </div>
 
         </a>
-        <a class="recentlyPlayed card pt-2" href="">
+        <a class="recentlyPlayed fourth card pt-2" href="">
 
           <img class="card-img-top img-thumbnail card-fluid glimpse"
             style="max-height:160px;min-height:160px;max-width:160px;" src="https://via.placeholder.com/176" alt="">
@@ -437,7 +439,7 @@
           </div>
 
         </a>
-        <a class="recentlyPlayed card pt-2" href="">
+        <a class="recentlyPlayed fifth card pt-2" href="">
 
           <img class="card-img-top img-thumbnail card-fluid glimpse"
             style="max-height:160px;min-height:160px;max-width:160px;" src="https://via.placeholder.com/176" alt="">
@@ -475,6 +477,7 @@
         <%while (i<5) {%>
         <a class="recentlyPlayed card pt-2" href="">
 
+          
           <img class="card-img-top img-thumbnail card-fluid glimpse"
             style="max-height:160px;min-height:160px;max-width:160px; min-width: 160px;"
             src="<%=userCreatedPlaylists[i].image%>" alt="">

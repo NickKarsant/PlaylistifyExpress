@@ -90,7 +90,6 @@ h4#list {
 i#sideAdd {
   margin-left: 0;
   font-size: 1.6em;
-  /* border: 1px solid red; */
 }
 
 #sideAddWord {
@@ -139,7 +138,6 @@ i#sideAdd {
 }
 
 .sidePlaylistLink {
-  /* font-size: 2em; */
   width: 90%;
   white-space: nowrap;
   overflow: hidden;
@@ -619,4 +617,39 @@ div#list {
   #forward {
     display: none !important;
   }
+}
+@media screen and (max-width: 1325px) {
+  .fifth {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1062px) {
+  .fourth {
+    display: none !important;
+  }
+  .recentlyPlayed{
+    margin: 0 15px;
+  }
+}
+@media screen and (max-width: 890px) {
+  /* .third {
+    display: none !important;
+  } */
+  .recentlyPlayed{
+    margin: 0 2.5px;
+  }
+}
+@media screen and (max-width: 790px) {
+  .third {
+    display: none !important;
+  }
+  .recentlyPlayed{
+    margin: 5px 20px;
+  }
+}
+@media screen and (max-width: 1085px) {
+  .recentFourth, .recentFifth {
+    display: none !important;
+  }
+
 }

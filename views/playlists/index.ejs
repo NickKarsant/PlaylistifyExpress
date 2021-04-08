@@ -19,17 +19,18 @@
       </div>
     </div>
 
+    <!-- top 6 -->
     <div class="ui container mb-5">
 
       <%  var today = new Date() %>
       <% var curHr = today.getHours() %>
 
       <% if (curHr < 12) { %>
-      <h1 id="greeting">Good Moring</h1>
+      <h2 id="greeting">Good Moring</h2>
       <% } else if (curHr < 18) { %>
-      <h1 id="greeting">Good Afternoon</h1>
+      <h2 id="greeting">Good Afternoon</h2>
       <% } else { %>
-      <h1 id="greeting">Good Evening</h1>
+      <h2 id="greeting">Good Evening</h2>
       <% } %>
 
       <div id="oftenPlayed" style="--minimumColumnWidth: 270px; row-gap: 16px;">
@@ -46,10 +47,10 @@
                 <p class="oftenName ml-3">Clozee</p>
               </a>
             </div>
-              <div class="playOftenWrap text-center d-flex align-items-center justify-content-center"
-                style=" width: 60px; margin: 0; padding: 0; margin-left: 4em;">
-                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
-              </div>
+            <div class="playOftenWrap text-center d-flex align-items-center justify-content-center"
+              style=" width: 60px; margin: 0; padding: 0; margin-left: 4em;">
+              <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+            </div>
             <div class="extra"></div>
           </div>
         </div>
@@ -65,10 +66,10 @@
                 <p class="oftenName ml-3">Clozee</p>
               </a>
             </div>
-              <div class="playOftenWrap text-center d-flex align-items-center justify-content-center"
-                style=" width: 60px; margin: 0; padding: 0; margin-left: 4em;">
-                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
-              </div>
+            <div class="playOftenWrap text-center d-flex align-items-center justify-content-center"
+              style=" width: 60px; margin: 0; padding: 0; margin-left: 4em;">
+              <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+            </div>
             <div class="extra"></div>
           </div>
         </div>
@@ -84,10 +85,10 @@
                 <p class="oftenName ml-3">Clozee</p>
               </a>
             </div>
-              <div class="playOftenWrap text-center d-flex align-items-center justify-content-center"
-                style=" width: 60px; margin: 0; padding: 0; margin-left: 4em;">
-                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
-              </div>
+            <div class="playOftenWrap text-center d-flex align-items-center justify-content-center"
+              style=" width: 60px; margin: 0; padding: 0; margin-left: 4em;">
+              <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+            </div>
             <div class="extra"></div>
           </div>
         </div>
@@ -103,10 +104,10 @@
                 <p class="oftenName ml-3">Clozee</p>
               </a>
             </div>
-              <div class="playOftenWrap text-center d-flex align-items-center justify-content-center"
-                style=" width: 60px; margin: 0; padding: 0; margin-left: 4em;">
-                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
-              </div>
+            <div class="playOftenWrap text-center d-flex align-items-center justify-content-center"
+              style=" width: 60px; margin: 0; padding: 0; margin-left: 4em;">
+              <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+            </div>
             <div class="extra"></div>
           </div>
         </div>
@@ -122,10 +123,10 @@
                 <p class="oftenName ml-3">Clozee</p>
               </a>
             </div>
-              <div class="playOftenWrap text-center d-flex align-items-center justify-content-center"
-                style=" width: 60px; margin: 0; padding: 0; margin-left: 4em;">
-                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
-              </div>
+            <div class="playOftenWrap text-center d-flex align-items-center justify-content-center"
+              style=" width: 60px; margin: 0; padding: 0; margin-left: 4em;">
+              <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+            </div>
             <div class="extra"></div>
           </div>
         </div>
@@ -141,23 +142,287 @@
                 <p class="oftenName ml-3">Clozee</p>
               </a>
             </div>
-              <div class="playOftenWrap text-center d-flex align-items-center justify-content-center"
-                style=" width: 60px; margin: 0; padding: 0; margin-left: 4em;">
-                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
-              </div>
+            <div class="playOftenWrap text-center d-flex align-items-center justify-content-center"
+              style=" width: 60px; margin: 0; padding: 0; margin-left: 4em;">
+              <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+            </div>
             <div class="extra"></div>
           </div>
         </div>
 
       </div>
-
-
     </div>
+    <!-- END top 6 -->
+
+
+    <!-- recently played -->
+    <div class="ui container mb-5" >
+      <div class="mb-3 d-flex justify-content-between align-items-end" >
+        <h2 class="text-white">Recently Played</h2>
+        <span class="seeAll" >
+          <a href="">SEE ALL</a>
+        </span>
+      </div>
+
+      <div id="recentlyPlayed" class="ui grid mb-3 row d-flex justify content-start">
+
+
+        <a class="recentlyPlayed card pt-2" href="">
+
+          <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:200px;min-height:200px;max-width:200px;"
+            src="https://via.placeholder.com/176" alt="">
+            <div class="d-flex justify-content-end" style="margin: 0 !important;">
+            <div class="playOftenWrap d-flex justify-content-end"
+              style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+              <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+            </div>
+          </div>
+
+          <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+            <h8 class="card-title mb-1"> playlist.name</h8>
+            <p class="text-muted">By playlist.author</p>
+          </div>
+          
+        </a>
+        <a class="recentlyPlayed card pt-2" href="">
+
+          <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:200px;min-height:200px;max-width:200px;"
+            src="https://via.placeholder.com/176" alt="">
+            <div class="d-flex justify-content-end" style="margin: 0 !important;">
+            <div class="playOftenWrap d-flex justify-content-end"
+              style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+              <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+            </div>
+          </div>
+
+          <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+            <h8 class="card-title mb-1"> playlist.name</h8>
+            <p class="text-muted">By playlist.author</p>
+          </div>
+          
+        </a>
+        <a class="recentlyPlayed card pt-2" href="">
+
+          <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:200px;min-height:200px;max-width:200px;"
+            src="https://via.placeholder.com/176" alt="">
+            <div class="d-flex justify-content-end" style="margin: 0 !important;">
+            <div class="playOftenWrap d-flex justify-content-end"
+              style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+              <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+            </div>
+          </div>
+
+          <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+            <h8 class="card-title mb-1"> playlist.name</h8>
+            <p class="text-muted">By playlist.author</p>
+          </div>
+          
+        </a>
+        <a class="recentlyPlayed card pt-2" href="">
+
+          <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:180px;min-height:180px;max-width:180px;"
+            src="https://via.placeholder.com/176" alt="">
+            <div class="d-flex justify-content-end" style="margin: 0 !important;">
+            <div class="playOftenWrap d-flex justify-content-end"
+              style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+              <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+            </div>
+          </div>
+
+          <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+            <h8 class="card-title mb-1"> playlist.name</h8>
+            <p class="text-muted">By playlist.author</p>
+          </div>
+          
+        </a>
+
+
+      </div>
+    </div>
+    <!-- END recently played -->
+
+
+
+
+
+    <!-- More like "Clozee" -->
+    <div class="ui container mb-5" >
+        <div class="mb-3 d-flex justify-content-between align-items-end" >
+          <h2 class="text-white">More like Clozee</h2>
+          <span class="seeAll" >
+            <a href="">SEE ALL</a>
+          </span>
+        </div>
+  
+        <div id="recentlyPlayed" class="ui grid mb-3 row d-flex justify content-start">
+  
+  
+          <a class="recentlyPlayed card pt-2" href="">
+  
+            <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:200px;min-height:200px;max-width:200px;"
+              src="https://via.placeholder.com/176" alt="">
+              <div class="d-flex justify-content-end" style="margin: 0 !important;">
+              <div class="playOftenWrap d-flex justify-content-end"
+                style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+              </div>
+            </div>
+  
+            <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+              <h8 class="card-title mb-1"> playlist.name</h8>
+              <p class="text-muted">By playlist.author</p>
+            </div>
+            
+          </a>
+          <a class="recentlyPlayed card pt-2" href="">
+  
+            <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:200px;min-height:200px;max-width:200px;"
+              src="https://via.placeholder.com/176" alt="">
+              <div class="d-flex justify-content-end" style="margin: 0 !important;">
+              <div class="playOftenWrap d-flex justify-content-end"
+                style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+              </div>
+            </div>
+  
+            <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+              <h8 class="card-title mb-1"> playlist.name</h8>
+              <p class="text-muted">By playlist.author</p>
+            </div>
+            
+          </a>
+          <a class="recentlyPlayed card pt-2" href="">
+  
+            <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:200px;min-height:200px;max-width:200px;"
+              src="https://via.placeholder.com/176" alt="">
+              <div class="d-flex justify-content-end" style="margin: 0 !important;">
+              <div class="playOftenWrap d-flex justify-content-end"
+                style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+              </div>
+            </div>
+  
+            <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+              <h8 class="card-title mb-1"> playlist.name</h8>
+              <p class="text-muted">By playlist.author</p>
+            </div>
+            
+          </a>
+          <a class="recentlyPlayed card pt-2" href="">
+  
+            <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:180px;min-height:180px;max-width:180px;"
+              src="https://via.placeholder.com/176" alt="">
+              <div class="d-flex justify-content-end" style="margin: 0 !important;">
+              <div class="playOftenWrap d-flex justify-content-end"
+                style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+              </div>
+            </div>
+  
+            <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+              <h8 class="card-title mb-1"> playlist.name</h8>
+              <p class="text-muted">By playlist.author</p>
+            </div>
+            
+          </a>
+  
+  
+        </div>
+      </div>
+      <!-- END more like clozee -->
+
+
+
+      <!-- jump back in -->
+    <div class="ui container mb-5" >
+        <div class="mb-3 d-flex justify-content-between align-items-end" >
+          <h2 class="text-white">Jump back in</h2>
+          <span class="seeAll" >
+            <a href="">SEE ALL</a>
+          </span>
+        </div>
+  
+        <div id="recentlyPlayed" class="ui grid mb-3 row d-flex justify content-start">
+  
+  
+          <a class="recentlyPlayed card pt-2" href="">
+  
+            <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:200px;min-height:200px;max-width:200px;"
+              src="https://via.placeholder.com/176" alt="">
+              <div class="d-flex justify-content-end" style="margin: 0 !important;">
+              <div class="playOftenWrap d-flex justify-content-end"
+                style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+              </div>
+            </div>
+  
+            <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+              <h8 class="card-title mb-1"> playlist.name</h8>
+              <p class="text-muted">By playlist.author</p>
+            </div>
+            
+          </a>
+          <a class="recentlyPlayed card pt-2" href="">
+  
+            <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:200px;min-height:200px;max-width:200px;"
+              src="https://via.placeholder.com/176" alt="">
+              <div class="d-flex justify-content-end" style="margin: 0 !important;">
+              <div class="playOftenWrap d-flex justify-content-end"
+                style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+              </div>
+            </div>
+  
+            <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+              <h8 class="card-title mb-1"> playlist.name</h8>
+              <p class="text-muted">By playlist.author</p>
+            </div>
+            
+          </a>
+          <a class="recentlyPlayed card pt-2" href="">
+  
+            <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:200px;min-height:200px;max-width:200px;"
+              src="https://via.placeholder.com/176" alt="">
+              <div class="d-flex justify-content-end" style="margin: 0 !important;">
+              <div class="playOftenWrap d-flex justify-content-end"
+                style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+              </div>
+            </div>
+  
+            <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+              <h8 class="card-title mb-1"> playlist.name</h8>
+              <p class="text-muted">By playlist.author</p>
+            </div>
+            
+          </a>
+          
+          <a class="recentlyPlayed card pt-2" href="">
+  
+            <img class="card-img-top img-thumbnail card-fluid glimpse" style="max-height:180px;min-height:180px;max-width:180px;"
+              src="https://via.placeholder.com/176" alt="">
+              <div class="d-flex justify-content-end" style="margin: 0 !important;">
+              <div class="playOftenWrap d-flex justify-content-end"
+                style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+              </div>
+            </div>
+  
+            <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+              <h8 class="card-title mb-1"> playlist.name</h8>
+              <p class="text-muted">By playlist.author</p>
+            </div>
+            
+          </a>
+  
+  
+        </div>
+      </div>
+      <!-- END jump back in -->
+
 
     <div class="ui container mb-5">
-      <h1 class="text-white">Uniquely Yours</h1>
-      <a class="btn btn-lg btn-primary mb-5" href="/playlists/new">Create a New Playlist </a>
-
+      <h2 class="text-white">Uniquely Yours</h2>
       <div id="uniqueGrid" class="ui grid mb-3 row text-center">
         <% usersPlaylists.forEach(function(playlist) {%>
         <a class="usersPlaylists  card col-xs-2 col-sm-3 col-md-3 col-lg-2 col-xl-2 my-3 mx-3 pt-2"

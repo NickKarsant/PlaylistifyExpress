@@ -189,8 +189,20 @@ $(document).ready(function() {
 
 
   var oftenPlayed = document.getElementsByClassName("oftenPlayed");
-console.log(oftenPlayed);
+  var recentlyPlayed = document.getElementsByClassName("recentlyPlayed");
 
+
+  Array.from(recentlyPlayed).forEach(playlist => {
+    playlist.addEventListener("mouseover", e => {
+      hoverShowPlay(playlist);
+    });
+  });
+
+  [...recentlyPlayed].forEach(playlist => {
+    playlist.addEventListener("mouseout", e => {
+      hoverHidePlay(playlist);
+    });
+  });
   Array.from(oftenPlayed).forEach(playlist => {
     playlist.addEventListener("mouseover", e => {
       hoverShowPlay(playlist);

@@ -105,7 +105,8 @@ i#sideAdd {
 #uniqueGrid,
 #browsePlaylists,
 #browseSongs,
-#browseArtists {
+#browseArtists,
+#recentlyPlayed {
   margin-left: -2em;
 }
 
@@ -115,12 +116,14 @@ i#sideAdd {
 
 .songCard,
 .usersPlaylists,
-.browseArtist {
+.browseArtist,
+.recentlyPlayed {
   background-color: black !important;
 }
 .songCard:hover,
 .usersPlaylists:hover,
-.browseArtist:hover {
+.browseArtist:hover,
+.recentlyPlayed:hover {
   background-color: rgb(37, 37, 37) !important;
 }
 
@@ -211,8 +214,8 @@ i#sideAdd {
 .oftenPlayedLink:hover{
   text-decoration: none;
   color: white;
-
 }
+
 .oftenPlayedLink:visited{
   color: white;
 }
@@ -231,6 +234,7 @@ div.playOftenWrap i.playOftenButton {
   display: inline-block;
   font-size: 16px;
   margin: 0;
+  
   border-radius: 50%;
   visibility: hidden;
 }
@@ -246,6 +250,11 @@ div.playOftenWrap i.playOftenButton {
 
 .fas {
   padding-right: 0.3em;
+}
+
+
+.recentlyPlayed{
+  margin: 0 15px;
 }
 
 a.usersPlaylists {

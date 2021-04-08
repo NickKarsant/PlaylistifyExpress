@@ -28,9 +28,6 @@ $(document).ready(function() {
     window.history.back();
   }
 
-  function goForward() {
-    window.history.forward();
-  }
 
   // heart/like button toggle
   function toggleLiked() {

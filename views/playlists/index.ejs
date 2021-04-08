@@ -3,8 +3,8 @@
 <div class="row">
   <%- include('../partials/aside') %>
 
-  <div class="col-xs-10 col-sm-10 col-md-9 col-lg-10 pl-4 pr-4 mt-0">
-    <div class="row align-items-center">
+  <div class="main col-xs-10 col-sm-10 col-md-9 col-lg-10 pl-4 pr-4 mt-0">
+    <div class="row align-items-center" style="margin-top:4em;">
       <div class="col-md-2">
         <a class="btn mb-3 mt-2 backAndNext text-white" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
         <a id="forward" class="btn mb-3 mx-3 mt-2 backAndNext" onclick="goForward()"><i id="forward"
@@ -475,9 +475,9 @@
       <div id="uniqueGrid" class="ui grid mb-3 row d-flex justify content-start">
         <%var i=0%>
         <%while (i<5) {%>
-        <a class="recentlyPlayed card pt-2" href="">
+        <a class="recentlyPlayed card pt-2" href="/playlists/<%= userCreatedPlaylists[i]._id %>">
 
-          
+
           <img class="card-img-top img-thumbnail card-fluid glimpse"
             style="max-height:160px;min-height:160px;max-width:160px; min-width: 160px;"
             src="<%=userCreatedPlaylists[i].image%>" alt="">

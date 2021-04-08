@@ -45,7 +45,7 @@ main.container {
 }
 
 .jumbotron {
-  margin-left: -15px !important;
+  /* margin-left: -10px !important; */
   width: 100%;
   background-color: rgb(34, 33, 33) !important;
 }
@@ -56,7 +56,7 @@ h4#list {
   color: white;
 }
 
-#aside {
+/* #aside {
   padding: 0;
   width: auto;
   min-width: 170px !important;
@@ -64,7 +64,35 @@ h4#list {
   background-color: black;
   height: auto;
   min-height: 100vh;
+} */
+
+#aside{
+  background-color: black;
+
+  position: fixed;
+  left: -1%;
+  top: 40px; 
+  height: 100vh;
+  margin-left: -1.5em;
+  width: 190px !important;
+  min-width: 190px !important;
+  max-width: 190px !important;
 }
+
+.main{
+  height:100%;
+min-height:100%;
+overflow-x: hidden;
+overflow-y: auto;
+width: 80%;
+margin-left: 155px;
+}
+
+
+.aside{
+  width: 180px;
+}
+
 .asideList {
   list-style: none;
   margin-top: 1em;
@@ -541,6 +569,7 @@ div#list {
 
 #greeting {
   color: white;
+  margin-top:1em;
 }
 
 #oftenPlayed {
@@ -647,7 +676,7 @@ div#list {
     margin: 5px 20px;
   }
 }
-@media screen and (max-width: 1085px) {
+@media screen and (max-width: 1100px) {
   .recentFourth, .recentFifth {
     display: none !important;
   }

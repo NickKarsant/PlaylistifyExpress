@@ -253,9 +253,13 @@ div.playOftenWrap i.playOftenButton {
   display: inline-block;
   font-size: 16px;
   margin: 0;
-  
   border-radius: 50%;
   visibility: hidden;
+}
+
+div.playOftenWrap i.playOftenButton:hover{
+  padding:17px;
+  margin: -3px;
 }
 
 #playlistOptions,
@@ -657,7 +661,10 @@ div#list {
   }
 }
 @media screen and (max-width: 1100px) {
-
+  .lastTwo{
+    display: none !important;
+  }
+  
   .recentlyPlayed{
     margin: 0 7px !important;
   }
@@ -676,28 +683,21 @@ div#list {
     margin: 0 5px !important;
   }
 }
-@media screen and (max-width: 790px) {
-  .third {
-    display: none !important;
-  }
-  .recentlyPlayed{
-    margin: 5px 20px;
-  }
-}
-@media screen and (max-width: 835px) {
-  .third {
-    display: none !important;
-  }
-  .recentlyPlayed{
-    margin: 20px !important;
-  }
-}
-@media screen and (max-width: 1100px) {
-  .recentFourth, .recentFifth {
-    display: none !important;
-  }
+@media screen and (max-width: 930px) {
 
+  .recentlyPlayed{
+    margin: 0 5px !important;
+  }
 }
+@media screen and (max-width: 850px) {
+  .third {
+    display: none !important;
+  }
+  .recentlyPlayed{
+    margin: 0 20px !important;
+  }
+}
+
 @media screen and (max-width: 767px) {
   #searchBarWrapper{
     display: none !important;

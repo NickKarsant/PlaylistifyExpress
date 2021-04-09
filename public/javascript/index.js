@@ -180,10 +180,6 @@ $(document).ready(function() {
 
 
 
-    // when mouse enter .oftenPLayed
-
-  // .playOftenWrap gets shown
-
 
   var oftenPlayed = document.getElementsByClassName("oftenPlayed");
   var recentlyPlayed = document.getElementsByClassName("recentlyPlayed");
@@ -200,6 +196,7 @@ $(document).ready(function() {
       hoverHidePlay(playlist);
     });
   });
+  
   Array.from(oftenPlayed).forEach(playlist => {
     playlist.addEventListener("mouseover", e => {
       hoverShowPlay(playlist);
@@ -213,13 +210,17 @@ $(document).ready(function() {
   });
 
   function hoverShowPlay(playlist) {
-    var button = playlist.getElementsByClassName("playOftenButton")[0];
-    button.style.visibility = "visible";
+    var often = playlist.getElementsByClassName("playOftenButton")[0];
+    var topSix = playlist.getElementsByClassName("topSixButton")[0];
+    often.style.visibility = "visible";
+    topSix.style.visibility = "visible";
   }
 
   function hoverHidePlay(playlist) {
-    var button = playlist.getElementsByClassName("playOftenButton")[0];
-    button.style.visibility = "hidden";
+    var often = playlist.getElementsByClassName("playOftenButton")[0];
+    var topSix = playlist.getElementsByClassName("topSixButton")[0];
+    often.style.visibility = "hidden";
+    topSix.style.visibility = "hidden";
   }
 
 

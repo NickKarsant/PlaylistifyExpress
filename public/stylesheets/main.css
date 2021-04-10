@@ -720,13 +720,13 @@ div#list {
 
 }
 
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 1050px) {
   a.usersPlaylists {
     margin: 1rem 10px !important;
   }
 
 }
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 991px) {
   a.usersPlaylists {
     margin: 1rem 20px !important;
   }

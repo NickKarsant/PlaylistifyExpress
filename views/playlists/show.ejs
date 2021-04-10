@@ -4,7 +4,7 @@
   <%- include('../partials/aside') %>
 
   <div id="showWrapper" class="main col-xs-10 col-sm-10 col-md-9 col-lg-10 text-white">
-    <div id="gradient">
+    <div id="gradient" style="margin-top:4em; padding-bottom: 1em;">
 
       <div class="row align-items-center">
         <div class="col-md-2 mt-2">
@@ -18,7 +18,7 @@
 
 
 
-      <div id="showInfo" class="row mt-3 mb-5 col-sm-12 col-md-12 col-lg-12">
+      <div id="showInfo" class="row mt-3 mb-5 col-sm-12 col-md-12 col-lg-12" >
         <img id="playlistImage" style="margin-left:1em;" src="<%= playlist.image %>" alt="">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 header">
           <p style="display:flex; align-items: center;">Playlist</p>
@@ -32,8 +32,10 @@
       </div>
     </div>
 
+
+    <div style="margin-left: 1em;">
     <!-- whole playlist play and Options button -->
-    <div class="d-flex justify-content-start">
+    <div class="d-flex justify-content-start" >
 
       <i id="playAll" class="btn btn-md btn-success fas fa-play"></i>
 
@@ -76,12 +78,12 @@
 
 
 
-      <div id="list" class="mt-3">
-        <div class="row"  style="padding-bottom: 1vh; border-bottom: 1px solid grey;">
-          <div class="col-sm-2 col-md-2 col-lg-1 text-center">#</div>
-          <%if (currentUser){ %>
-          <div class="col-sm-1 col-md-1 col-lg-1 text-center" style="margin-left:-2em;">Liked</div>
-          <% } %>
+    <div id="list" class="mt-3" >
+      <div class="row"  style="padding-bottom: 1vh; border-bottom: 1px solid grey;">
+        <div class="col-sm-2 col-md-2 col-lg-1 text-center">#</div>
+        <%if (currentUser){ %>
+        <div class="col-sm-1 col-md-1 col-lg-1 text-center" style="margin-left:-2em;">Liked</div>
+        <% } %>
 
         <div class="col-sm-3 col-md-3 col-lg-3">Title </div>
         <div class="col-sm-3 col-md-3 col-lg-3"> Artist </div>
@@ -91,10 +93,10 @@
         <% } %>
       </div>
 
-<!-- placeholder/example rows -->
-<% var row = 0; %>
-<% while (row <= 10){ %>
-    <div class="row songRow d-flex align-items-center">
+    <!-- placeholder/example rows -->
+    <% var row = 0; %>
+    <% while (row <= 10){ %>
+    <div class="row songRow d-flex align-items-center" >
       <div class="col-sm-2 col-md-2 col-lg-1 d-flex justify-content-center">
         <span class="listIndex"><%= row + 1%> </span>
         <i class="btn btn-success fas fa-play play listPlay"></i>
@@ -220,6 +222,8 @@
           <% }) %> -->
 
   </div>
+
+</div>
 
 
 

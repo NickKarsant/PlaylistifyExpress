@@ -61,10 +61,9 @@ h4#list {
   background-color: black;
 
   position: fixed;
-  left: -1%;
+  left: -10px;
   top: 50px; 
   height: 100vh;
-  margin-left: -1.5em;
   width: 190px !important;
   min-width: 190px !important;
   max-width: 190px !important;
@@ -76,7 +75,7 @@ min-height:100%;
 overflow-x: hidden;
 overflow-y: auto;
 width: 80%;
-margin-left: 155px;
+margin-left: 190px;
 }
 
 
@@ -409,13 +408,16 @@ a.card:visted {
 
 #showWrapper {
   max-width: 500px !important;
+  padding: 0 !important;
 }
 
 #artistGradient {
   width: 105% !important;
   background-image: linear-gradient(rgb(36, 110, 6), rgb(19, 18, 18));
-  margin-left: -15px;
+  margin-left: 10px;
 }
+
+
 
 .listPlay {
   display: none;
@@ -512,6 +514,7 @@ input#searchBar {
 div#list {
   padding-bottom: 2em;
   margin-bottom: 4em;
+  margin-left: -0.6em;
 }
 
 .caption {
@@ -698,6 +701,7 @@ div#list {
     margin: 0 5px !important;
   }
 }
+
 @media screen and (max-width: 850px) {
   .third {
     display: none !important;

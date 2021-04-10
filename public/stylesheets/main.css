@@ -74,7 +74,6 @@ h4#list {
 min-height:100%;
 overflow-x: hidden;
 overflow-y: auto;
-width: 80%;
 margin-left: 190px;
 }
 
@@ -718,5 +717,25 @@ div#list {
   #searchBar{
     display: none !important;
   }
+
+}
+
+@media screen and (max-width: 1030px) {
+  a.usersPlaylists {
+    margin: 1rem 10px !important;
+  }
+
+}
+@media screen and (max-width: 990px) {
+  a.usersPlaylists {
+    margin: 1rem 20px !important;
+  }
+
+}
+@media screen and (max-width: 685px) {
+  a.usersPlaylists {
+    margin: 1rem 5px !important;
+    min-width: 110px !important;
+    }
 
 }

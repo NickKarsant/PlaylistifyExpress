@@ -56,29 +56,27 @@ h4#list {
   color: white;
 }
 
-
-#aside{
+#aside {
   background-color: black;
 
   position: fixed;
   left: -10px;
-  top: 50px; 
+  top: 50px;
   height: 100vh;
   width: 190px !important;
   min-width: 190px !important;
   max-width: 190px !important;
 }
 
-.main{
-  height:100%;
-min-height:100%;
-overflow-x: hidden;
-overflow-y: auto;
-margin-left: 190px;
+.main {
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-left: 190px;
 }
 
-
-.aside{
+.aside {
   width: 180px;
 }
 
@@ -118,9 +116,15 @@ i#sideAdd {
   padding: 0;
 }
 
-
 .preview {
   margin: auto 0;
+}
+
+#browsePlaylists,
+#usersPlaylists,
+#browseSongs,
+#browseArtists {
+  margin-left: 0.8em;
 }
 
 .songCard,
@@ -196,39 +200,38 @@ i#sideAdd {
   border-radius: 50%;
 }
 
-
-.extra{
+.extra {
   content: "";
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    text-indent: 100%;
-    white-space: nowrap;
-    cursor: pointer;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
-.oftenName{
+.oftenName {
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   letter-spacing: normal;
   text-transform: none;
 }
-.oftenPlayedLink{
+.oftenPlayedLink {
   color: white;
 }
-.oftenPlayedLink:hover{
+.oftenPlayedLink:hover {
   text-decoration: none;
   color: white;
 }
 
-.oftenPlayedLink:visited{
+.oftenPlayedLink:visited {
   color: white;
 }
 
-.oftenPlayed:hover{
+.oftenPlayed:hover {
   background-color: rgb(85, 81, 81) !important;
 }
 
@@ -246,8 +249,8 @@ div.playOftenWrap i.playOftenButton {
   visibility: hidden;
 }
 
-div.playOftenWrap i.playOftenButton:hover{
-  padding:17px;
+div.playOftenWrap i.playOftenButton:hover {
+  padding: 17px;
   margin: -3px;
 }
 div.topSixWrap i.topSixButton {
@@ -264,8 +267,8 @@ div.topSixWrap i.topSixButton {
   visibility: hidden;
 }
 
-div.topSixWrap i.topSixButton:hover{
-  padding:17px;
+div.topSixWrap i.topSixButton:hover {
+  padding: 17px;
   margin: -3px;
 }
 
@@ -282,8 +285,7 @@ div.topSixWrap i.topSixButton:hover{
   padding-right: 0.3em;
 }
 
-
-.recentlyPlayed{
+.recentlyPlayed {
   margin: 0 15px;
 }
 
@@ -416,8 +418,6 @@ a.card:visted {
   margin-left: 10px;
 }
 
-
-
 .listPlay {
   display: none;
   visibility: hidden;
@@ -462,8 +462,6 @@ div.dropdown-menu a.dropdown-item:hover {
 a.dropdown-item {
   color: white !important;
 }
-
-
 
 input#searchBar {
   font-size: 14px;
@@ -579,7 +577,7 @@ div#list {
 
 #greeting {
   color: white;
-  margin-top:1em;
+  margin-top: 1em;
 }
 
 #oftenPlayed {
@@ -593,7 +591,6 @@ div#list {
   grid-auto-rows: auto;
   grid-template-rows: 1fr;
 }
-
 
 .imgHolder {
   min-width: 80px;
@@ -658,8 +655,7 @@ div#list {
   }
 }
 @media screen and (max-width: 1360px) {
-
-  .recentlyPlayed{
+  .recentlyPlayed {
     margin: 0 5px !important;
   }
 }
@@ -668,19 +664,19 @@ div#list {
   .fifth {
     display: none !important;
   }
-  .recentlyPlayed{
+  .recentlyPlayed {
     margin: 0 15px !important;
   }
 }
 @media screen and (max-width: 1100px) {
-  .lastTwo{
+  .lastTwo {
     display: none !important;
   }
   .oftenPlayed {
     width: 90%;
   }
 
-  .recentlyPlayed{
+  .recentlyPlayed {
     margin: 0 7px !important;
   }
 }
@@ -688,7 +684,7 @@ div#list {
   .fourth {
     display: none !important;
   }
-  .recentlyPlayed{
+  .recentlyPlayed {
     margin: 0 15px !important;
   }
   .oftenPlayed {
@@ -696,14 +692,12 @@ div#list {
   }
 }
 @media screen and (max-width: 915px) {
-
-  .recentlyPlayed{
+  .recentlyPlayed {
     margin: 0 5px !important;
   }
 }
 @media screen and (max-width: 930px) {
-
-  .recentlyPlayed{
+  .recentlyPlayed {
     margin: 0 5px !important;
   }
 }
@@ -712,48 +706,51 @@ div#list {
   .third {
     display: none !important;
   }
-  .recentlyPlayed{
+  .recentlyPlayed {
     margin: 0 20px !important;
   }
-  .titleAll{
+  .titleAll {
     width: 80%;
   }
-
 }
 @media screen and (max-width: 820px) {
-
-  .oftenPlayed{
+  .oftenPlayed {
     width: 90%;
   }
 }
 
-
 @media screen and (max-width: 768px) {
-  #searchBarWrapper{
+  #searchBarWrapper {
     display: none !important;
   }
-  #searchBar{
+  #searchBar {
     display: none !important;
   }
-
 }
 
 @media screen and (max-width: 1050px) {
   a.usersPlaylists {
     margin: 1rem 10px !important;
   }
-
 }
 @media screen and (max-width: 991px) {
   a.usersPlaylists {
     margin: 1rem 20px !important;
   }
-
 }
 @media screen and (max-width: 685px) {
   a.usersPlaylists {
     margin: 1rem 5px !important;
     min-width: 110px !important;
-    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .row {
+    border: 1px solid red;
+  }
+
+  body{
+    /* background-color:purple; */
+  }
 
 }

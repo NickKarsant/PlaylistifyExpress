@@ -4,7 +4,7 @@
   <%- include('../partials/aside') %>
 
   <div id="showWrapper" class="main col-xs-10 col-sm-10 col-md-9 col-lg-10 text-white">
-    <div id="gradient" style="margin-top:4em; padding-bottom: 1em;">
+    <div id="gradient" >
 
       <div class="row align-items-center">
         <div class="col-md-2 mt-2">
@@ -78,7 +78,7 @@
 
 
 
-    <div id="list" class="mt-3" >
+    <div id="list" class="mt-3"  style="margin-left: -0.6em !important;">
       <div class="row"  style="padding-bottom: 1vh; border-bottom: 1px solid grey;">
         <div class="col-sm-2 col-md-2 col-lg-1 text-center">#</div>
         <%if (currentUser){ %>
@@ -99,7 +99,15 @@
     <div class="row songRow d-flex align-items-center" >
       <div class="col-sm-2 col-md-2 col-lg-1 d-flex justify-content-center">
         <span class="listIndex"><%= row + 1%> </span>
+
+
+
+          <!-- play button intended for hover -->
         <i class="btn btn-success fas fa-play play listPlay"></i>
+
+
+
+
       </div>
 
       <%if (currentUser){ %>

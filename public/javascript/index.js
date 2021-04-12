@@ -72,7 +72,7 @@ $(document).ready(function() {
   }
 
 
-  function hoverShowPlay(song) {
+  function hoverShowPlayRow(song) {
     var playButton = song.getElementsByClassName("listPlay")[0];
     var number = song.getElementsByClassName("listIndex")[0];
     playButton.style.visibility = "visible";
@@ -82,7 +82,7 @@ $(document).ready(function() {
     playButton.style.position = "static"
   }
 
-  function hoverHidePlay(song) {
+  function hoverHidePlayRow(song) {
     var number = song.getElementsByClassName("listIndex")[0];
     var playButton = song.getElementsByClassName("listPlay")[0];
     number.style.visibility = "visible"
@@ -106,31 +106,32 @@ $(document).ready(function() {
     heartDiv.style.visibility = "hidden";
   }
 
-  let songs = document.querySelectorAll(".songRow");
+  let allSongRows = document.querySelectorAll(".songRow");
 
-  songs.forEach(song => {
+  allSongRows.forEach(song => {
     song.addEventListener("mouseover", e => {
       hoverShowLike(song);
       hoverShowOptions(song);
     });
   });
 
-  songs.forEach(song => {
+  allSongRows.forEach(song => {
     song.addEventListener("mouseout", e => {
       hoverHideLike(song);
       hoverHideOptions(song);
     });
   });
 
-  songs.forEach(song => {
+  allSongRows.forEach(song => {
     song.addEventListener("mouseover", e => {
-      hoverShowPlay(song);
+      // console.log("hovered");
+      hoverShowPlayRow(song);
     });
   });
 
-  songs.forEach(song => {
+  allSongRows.forEach(song => {
     song.addEventListener("mouseout", e => {
-      hoverHidePlay(song);
+      hoverHidePlayRow(song);
     });
   });
 

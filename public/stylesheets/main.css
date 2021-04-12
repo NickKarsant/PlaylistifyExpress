@@ -9,6 +9,10 @@ main.container {
   clear: both;
 }
 
+.row{
+  width: 100%;
+}
+
 .like {
   font-size: 1.8em;
 }
@@ -285,9 +289,9 @@ div.topSixWrap i.topSixButton:hover {
   padding-right: 0.3em;
 }
 
-.recentlyPlayed {
+/* .recentlyPlayed {
   margin: 0 15px;
-}
+} */
 
 a.usersPlaylists {
   margin: 0 0.25em;
@@ -654,13 +658,13 @@ div#list {
     display: none !important;
   }
 }
-@media screen and (max-width: 1360px) {
+@media screen and (max-width: 2560px) {
   .recentlyPlayed {
     margin: 0 5px !important;
   }
 }
 
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: 1310px) {
   .fifth {
     display: none !important;
   }
@@ -680,34 +684,29 @@ div#list {
     margin: 0 7px !important;
   }
 }
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1200px) {
   .fourth {
     display: none !important;
   }
-  .recentlyPlayed {
-    margin: 0 15px !important;
-  }
+
   .oftenPlayed {
     width: 90%;
   }
 }
-@media screen and (max-width: 915px) {
-  .recentlyPlayed {
-    margin: 0 5px !important;
-  }
-}
+
 @media screen and (max-width: 930px) {
   .recentlyPlayed {
     margin: 0 5px !important;
   }
 }
 
-@media screen and (max-width: 850px) {
+
+@media screen and (max-width: 895px) {
   .third {
     display: none !important;
   }
   .recentlyPlayed {
-    margin: 0 20px !important;
+    margin: 0 5px !important;
   }
   .titleAll {
     width: 80%;
@@ -729,13 +728,18 @@ div#list {
 }
 
 @media screen and (max-width: 1050px) {
-  a.usersPlaylists {
+  a.usersPlaylists{
     margin: 1rem 10px !important;
   }
 }
 @media screen and (max-width: 991px) {
-  a.usersPlaylists {
+  a.usersPlaylists, a.browseArtist  {
     margin: 1rem 20px !important;
+  }
+}
+@media screen and (max-width: 975px) {
+  a.usersPlaylists, a.browseArtist  {
+    margin: 1rem 10px !important;
   }
 }
 @media screen and (max-width: 685px) {
@@ -744,13 +748,4 @@ div#list {
     min-width: 110px !important;
   }
 }
-@media screen and (min-width: 1440px) {
-  .row {
-    border: 1px solid red;
-  }
 
-  body{
-    /* background-color:purple; */
-  }
-
-}

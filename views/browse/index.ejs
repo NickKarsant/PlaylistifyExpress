@@ -14,7 +14,7 @@
             class="fas fa-chevron-right"></i></a>
       </div>
 
-      <div class="col-md-10">
+      <div class="col-md-10" style="padding-left: 2em;">
         <form action="/search?" id=searchBarForm>
           <input id="searchBar" autofocus type="search" placeholder="Search for artists or songs"
             aria-describedby="button-addon3" class="form-control bg-none border-1">
@@ -109,7 +109,7 @@
 
 
 
-  <div  id="browseSongs" class="ui grid mb-3 row">
+  <div  id="browseSongs" class="ui grid mb-3 row d-flex justify-content-around">
     <% var i; for (i = 0; i < 15; i++) { %>
     <% var song = allSongs[i] %>
     <div id="songs" class="songCard card  my-3 mx-2 pt-2">

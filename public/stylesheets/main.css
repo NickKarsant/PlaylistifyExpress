@@ -9,7 +9,7 @@ main.container {
   clear: both;
 }
 
-.row{
+.row {
   width: 100%;
 }
 
@@ -345,7 +345,7 @@ a.card {
 }
 
 #artistImage {
-  margin:0;
+  margin: 0;
 }
 
 div#artistImage img {
@@ -413,7 +413,6 @@ a.card:visted {
   background-image: linear-gradient(rgb(36, 110, 6), rgb(19, 18, 18));
   margin-left: -10px;
 }
-
 
 #artistGradient {
   width: 100% !important;
@@ -625,8 +624,6 @@ div#list {
   background-color: green;
 }
 
-
-
 .modal-header {
   cursor: move;
 }
@@ -651,7 +648,7 @@ div#list {
     width: 100% !important;
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1024px) {
   #forward {
     display: none !important;
   }
@@ -661,6 +658,12 @@ div#list {
     margin: 0 5px !important;
   }
 }
+@media screen and (max-width: 1075px) {
+  a.usersPlaylists {
+    margin: 1rem 10px !important;
+  }
+}
+
 
 @media screen and (max-width: 1310px) {
   .fifth {
@@ -679,7 +682,7 @@ div#list {
   }
 
   .recentlyPlayed {
-    margin: 0 7px !important;
+    margin: 0 10px !important;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -694,10 +697,9 @@ div#list {
 
 @media screen and (max-width: 930px) {
   .recentlyPlayed {
-    margin: 0 5px !important;
+    margin: 0 10px !important;
   }
 }
-
 
 @media screen and (max-width: 895px) {
   .third {
@@ -725,18 +727,20 @@ div#list {
   }
 }
 
-@media screen and (max-width: 1050px) {
-  a.usersPlaylists{
-    margin: 1rem 10px !important;
+@media screen and (max-width: 1060px) {
+  a.usersPlaylists {
+    margin: 1rem 5px !important;
   }
 }
 @media screen and (max-width: 991px) {
-  a.usersPlaylists, a.browseArtist  {
+  a.usersPlaylists,
+  a.browseArtist {
     margin: 1rem 20px !important;
   }
 }
 @media screen and (max-width: 975px) {
-  a.usersPlaylists, a.browseArtist  {
+  a.usersPlaylists,
+  a.browseArtist {
     margin: 1rem 10px !important;
   }
 }
@@ -746,4 +750,3 @@ div#list {
     min-width: 110px !important;
   }
 }
-

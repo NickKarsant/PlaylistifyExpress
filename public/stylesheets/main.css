@@ -476,6 +476,7 @@ input#searchBar {
   background-color: #fff;
   box-shadow: none;
   -webkit-appearance: none;
+  border-radius: 33px;
 }
 
 #searchBarForm {

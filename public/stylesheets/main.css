@@ -281,10 +281,6 @@ div.topSixWrap i.topSixButton:hover {
   font-size: 2em;
 }
 
-.play {
-  background-color: green;
-}
-
 .fas {
   padding-right: 0.3em;
 }
@@ -426,13 +422,13 @@ a.card:visted {
 
 }
 
-.listPlay {
+i.listPlay {
+  background-color: green;
   display: none;
   visibility: hidden;
   position: absolute;
   left: -1000px;
   width: 40px;
-  padding: 0.3em !important;
   border: 0 !important;
   margin: 0 !important;
 }
@@ -580,7 +576,8 @@ div#list {
 }
 .songDropdownMenu {
   position: absolute !important;
-  top: 500px !important;
+  top: 200px !important;
+  left: 150px !important;
 }
 
 #greeting {

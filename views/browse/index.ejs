@@ -109,7 +109,7 @@
 
 
 
-  <div  id="browseSongs" class="ui grid mb-3 row d-flex justify-content-around">
+  <div id="browseSongs" class="ui grid mb-3 row d-flex justify-content-around">
     <% var i; for (i = 0; i < 15; i++) { %>
     <% var song = allSongs[i] %>
     <div id="songs" class="songCard card  my-3 mx-2 pt-2">
@@ -138,24 +138,49 @@
           <form action="/playlists/<%= currentUser.playlists[0]._id %>" method="PATCH"></form>
         </i>
 
+
+
+
         <div class="dropdown songDropdown">
-          <i class="fas fa-plus-square add" type="button" id="dropdownMenuButton" data-toggle="dropdown"></i>
+          <i class="fas fa-plus-square add" type="button" id="addSongOptions" data-toggle="dropdown"></i>
 
-          <div class="dropdown-menu songDropdownMenu" aria-labelledby="dropdownMenuButton">
-            <h5 style="color: white; padding: 0 10px">Add to:</h5>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <a class="dropdown-item" type="button">Add to queue</a>
             <div class="dropdown-divider"></div>
-            <ul style="list-style-type: none; padding:0; margin:0 1em;">
+            <a class="dropdown-item" type="button">Go to song radio</a>
+            <a class="dropdown-item" type="button">Go to artist <i class="fas fa-chevron-right"></i></a>
+            <a class="dropdown-item" type="button">Go to album</a>
+            <a class="dropdown-item" type="button">Show credits</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" type="button">Save to Liked Songs</a>
+            <a class="dropdown-item" type="button">Go to album</a>
 
-              <% userCreatedPlaylists.forEach(function(playlist) {%>
-              <a class="dropdownPlaylistList row optionsChoice  d-flex justify-content-left" type="button"> 
-                <p>
-                  <%= playlist.name %>
-                </p>
-              </a>
-              <%});%>
-            </ul>
+            <a class="dropdown-item" id="dropdownMenu2" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Add to playlist <i class="fas fa-chevron-right"></i>
+          </a>
+
+            <div class="dropdown-menu songDropdownMenu" aria-labelledby="dropdownMenuButton">
+  
+              <ul style="list-style-type: none; padding:0; margin:0 1em;">
+
+                <% userCreatedPlaylists.forEach(function(playlist) {%>
+                <a class="dropdownPlaylistList row optionsChoice  d-flex justify-content-left" type="button">
+                  <p>
+                    <%= playlist.name %>
+                  </p>
+                </a>
+                <%});%>
+              </ul>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" type="button">Share <i class="fas fa-chevron-right"></i></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" type="button">Open in Dekstop</a>
           </div>
         </div>
+
+
 
         <div class="">
           <i id="play" class="btn btn-md btn-success fas fa-play"></i>
@@ -195,7 +220,7 @@
     </span>
   </div>
 
-  <div  id="browseArtists" class="ui grid mb-3 row text-center">
+  <div id="browseArtists" class="ui grid mb-3 row text-center">
     <% allArtists.forEach(function(artist) {%>
     <a class="browseArtist card col-xs-2 col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-2 my-3 mx-3 pt-2"
       href="/artist/<%= artist._id %>">

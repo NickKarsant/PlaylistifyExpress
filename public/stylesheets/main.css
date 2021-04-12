@@ -712,6 +712,11 @@ div#list {
     width: 80%;
   }
 }
+@media screen and (max-width: 950px) {
+  .third {
+    display: none !important;
+}
+
 @media screen and (max-width: 820px) {
   .oftenPlayed {
     width: 90%;

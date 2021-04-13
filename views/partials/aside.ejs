@@ -37,7 +37,6 @@
         <a id="sideAddLink" class="btn btn-sm text-white" href="/playlists/new">
           <i style="float: left;" id="sideAdd" class="far fa-plus-square"></i>
           <p id="sideAddWord"> New Playlist</p>
-
         </a>
       </div>
 
@@ -46,7 +45,7 @@
           <% usersPlaylists.forEach(function(playlist) {%>
           <li class="sidePlaylist">
             <a class="sidePlaylistLink btn btn-sm text-white px-0 mx-0" href="/playlists/<%=playlist._id%>">
-              <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9  px-0  mx-0 sidePlaylistWord">
+              <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9   sidePlaylistWord">
                 <%= playlist.name %>
               </div>
             </a>

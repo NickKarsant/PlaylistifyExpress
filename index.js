@@ -123,10 +123,11 @@ app.get(
 
     
     var usersPlaylists;
-    var userCreatedPlaylists = [];
+    var userCreatedPlaylists;
     if (typeof req.user === 'undefined') {
       usersPlaylists = [];
     } else {
+      userCreatedPlaylists = [];
       const user = await User.find({
         _id: req.user._id
       });

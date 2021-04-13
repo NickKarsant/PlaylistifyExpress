@@ -35,11 +35,11 @@
 
       <div id="oftenPlayed" style="--minimumColumnWidth: 270px; row-gap: 16px;">
 
-        <div class="oftenPlayed text-white" style="background-color: rgb(49, 46, 46);">
+        <div class="oftenPlayed text-white border-rounded" style="background-color: rgb(49, 46, 46);">
           <div class="d-flex">
             <div>
               <div class="imgHolder">
-                <img src="http://images.sk-static.com/images/media/img/col3/20131112-173549-075429.jpg" alt="">
+                <img class="oftenImg" src="http://images.sk-static.com/images/media/img/col3/20131112-173549-075429.jpg" alt="">
               </div>
             </div>
 
@@ -63,7 +63,7 @@
           <div class="d-flex">
             <div>
               <div class="imgHolder">
-                <img src="http://images.sk-static.com/images/media/img/col3/20131112-173549-075429.jpg" alt="">
+                <img class="oftenImg" src="http://images.sk-static.com/images/media/img/col3/20131112-173549-075429.jpg" alt="">
               </div>
             </div>
 
@@ -87,7 +87,7 @@
           <div class="d-flex">
             <div>
               <div class="imgHolder">
-                <img src="http://images.sk-static.com/images/media/img/col3/20131112-173549-075429.jpg" alt="">
+                <img class="oftenImg" src="http://images.sk-static.com/images/media/img/col3/20131112-173549-075429.jpg" alt="">
               </div>
             </div>
 
@@ -111,7 +111,7 @@
           <div class="d-flex">
             <div>
               <div class="imgHolder">
-                <img src="http://images.sk-static.com/images/media/img/col3/20131112-173549-075429.jpg" alt="">
+                <img class="oftenImg" src="http://images.sk-static.com/images/media/img/col3/20131112-173549-075429.jpg" alt="">
               </div>
             </div>
 
@@ -135,7 +135,7 @@
           <div class="d-flex">
             <div>
               <div class="imgHolder">
-                <img src="http://images.sk-static.com/images/media/img/col3/20131112-173549-075429.jpg" alt="">
+                <img class="oftenImg" src="http://images.sk-static.com/images/media/img/col3/20131112-173549-075429.jpg" alt="">
               </div>
             </div>
 
@@ -160,7 +160,7 @@
           <div class="d-flex">
             <div>
               <div class="imgHolder">
-                <img src="http://images.sk-static.com/images/media/img/col3/20131112-173549-075429.jpg" alt="">
+                <img class="oftenImg" src="http://images.sk-static.com/images/media/img/col3/20131112-173549-075429.jpg" alt="">
               </div>
             </div>
 
@@ -504,8 +504,11 @@
 
 
       <div id="uniqueGrid" class="ui grid mb-3 row d-flex justify-content-around">
-        <%var i=0%>
-        <%while (i<5) {%>
+          <%var i=0%>
+          <% var users = userCreatedPlaylists.length %>
+          <%if (users <= 5) {%>
+            <%while (i < users ) {%>
+
         <a class="recentlyPlayed card pt-2" href="/playlists/<%= userCreatedPlaylists[i]._id %>">
 
 
@@ -525,7 +528,32 @@
 
         </a>
 
-        <%i++%>
+          <%i++%>
+          <%}%>
+        <%} else {%>
+          <% var i = 0 %>
+          <% while (i <= 4) {%>
+          <a class="recentlyPlayed card pt-2" href="/playlists/<%= userCreatedPlaylists[i]._id %>">
+
+
+            <img class="card-img-top img-thumbnail card-fluid glimpse"
+              style="max-height:160px;min-height:160px;max-width:160px; min-width: 160px;"
+              src="<%=userCreatedPlaylists[i].image%>" alt="">
+            <div class="d-flex justify-content-end" style="margin: 0 !important;">
+              <div class="playOftenWrap d-flex justify-content-end" style="width: 60px;  margin: -3.5em 0.3em 3.5em 0;">
+                <i class="btn btn-md btn-success fas fa-play playOftenButton"></i>
+              </div>
+            </div>
+  
+            <div class="card-body text-white" style="margin-top: -3em; margin-left: -1em; font-size: 1em;">
+              <h8 class="card-title mb-1"> <%= userCreatedPlaylists[i].name %></h8>
+              <p class="text-muted">By <%= userObject.username %></p>
+            </div>
+  
+          </a>
+          <%}%>
+
+
         <%}%>
     </div>
   </div>

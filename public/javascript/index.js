@@ -211,9 +211,8 @@ $(document).ready(function() {
 
   $(window).on("scroll", function() {
     var wn = $(window).scrollTop();
-    console.log(wn)
-    if (wn < 300) {
-      $("#dynamicNav").css("background-color", "none");
+    if (wn < 180) {
+      $("#dynamicNav").css("background-color", "transparent");
     } else {
       $("#dynamicNav").css("background-color", "rgb(36, 110, 6)");
     }

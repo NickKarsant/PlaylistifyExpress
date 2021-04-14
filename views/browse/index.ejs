@@ -7,10 +7,11 @@
 
   <div class="main">
 
-      <div id="dynamicNav" class="row align-items-center fixed-top" style="margin-top:3.35em; margin-left: 179px; width: 100%;">
-          <div class="col-md-2 mt-3">
-        <a class="btn mb-3 ml-3 mt-2 backAndNext text-white" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
-        <a id="forward" class="btn mb-3 mx-3 mt-2 backAndNext" onclick="goForward()"><i id="forward"
+    <div id="dynamicNav" class="row align-items-center fixed-top"
+      style="margin-top:56px; margin-left: 179px; width: 100%;">
+      <div class="col-md-2">
+        <a class="btn mb-3 ml-3 mt-3 backAndNext text-white" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
+        <a id="forward" class="btn mb-3 mx-3 mt-3 backAndNext" onclick="goForward()"><i id="forward"
             class="fas fa-chevron-right"></i></a>
       </div>
 
@@ -24,7 +25,7 @@
 
     <div>
       <% if (!currentUser) {%>
-      <header class="jumbotron text-white" style="margin-top: 8em;">
+      <header class="jumbotron text-white" style="margin-top: 3em; padding-top:5em;">
         <h1><i class=" fas fa-music"></i> Welcome to Playlist-ify</h1>
         <p>Search through our database of music for the right songs and artists and become a playlist god! <br>
           Feel free to browse our database of music, playlists, and artists. <br>
@@ -163,15 +164,15 @@
 
             <!-- make given size and make scrollable -->
             <div class="scrollable dropdown-menu songDropdownMenu" aria-labelledby="dropdownMenuButton">
-                <ul style="list-style-type: none; padding:0; margin:0 1em;">
-                  <% userCreatedPlaylists.forEach(function(playlist) {%>
-                  <a class="dropdownPlaylistList row optionsChoice  d-flex justify-content-left" type="button">
-                    <p>
-                      <%= playlist.name %>
-                    </p>
-                  </a>
-                  <%});%>
-                </ul>
+              <ul style="list-style-type: none; padding:0; margin:0 1em;">
+                <% userCreatedPlaylists.forEach(function(playlist) {%>
+                <a class="dropdownPlaylistList row optionsChoice  d-flex justify-content-left" type="button">
+                  <p>
+                    <%= playlist.name %>
+                  </p>
+                </a>
+                <%});%>
+              </ul>
 
             </div>
 

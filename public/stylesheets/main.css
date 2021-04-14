@@ -91,7 +91,7 @@ h4#list {
 }
 
 .scrollable {
-  width: 150px;
+  width: 100px;
   height: 310px;
   /* overflow-y: scroll; */
   overflow-y: visible;

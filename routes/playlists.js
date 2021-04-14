@@ -83,7 +83,16 @@ router.get(
       return res.redirect("/playlists");
     }
 
+    const user = await User.find({
+      _id: req.user._id
+    });
+
+    const userObject = user[0];
+
+
+
     var usersPlaylists = [];
+    var userCreatedPlaylists = [];
     if (typeof req.user === "undefined") {
       usersPlaylists;
     } else {
@@ -92,10 +101,15 @@ router.get(
       });
       const userObject = user[0];
       usersPlaylists = userObject.playlists;
-      usersPlaylists;
+      usersPlaylists.forEach(function(playlist) {
+        if (playlist.name !== "Liked Songs") {
+          userCreatedPlaylists.push(playlist);
+        }
+      });
+
     }
 
-    res.render("playlists/show", { playlist, usersPlaylists });
+    res.render("playlists/show", { playlist, usersPlaylists, userCreatedPlaylists });
   })
 );
 
@@ -121,19 +135,18 @@ router.delete(
     const user = await User.find({
       _id: req.user._id
     });
-    
+
     // var playlist = await Playlist.findById(id);
 
-// console.log(user);
-//     // array of objects
-//     var userPlaylists = user.playlists
+    // console.log(user);
+    //     // array of objects
+    //     var userPlaylists = user.playlists
 
-//     await User.updateOne( 
-//       { "_id" : user._id} , 
-//       { "$pull" : { "playlists" : { "name" :  playlist.name } } } , 
-//       { "multi" : true }  
-//   )
-
+    //     await User.updateOne(
+    //       { "_id" : user._id} ,
+    //       { "$pull" : { "playlists" : { "name" :  playlist.name } } } ,
+    //       { "multi" : true }
+    //   )
 
     await Playlist.findByIdAndDelete(id);
 

@@ -349,6 +349,7 @@ a.card {
 
 #artistImage {
   margin: 0;
+  margin-top: 6em;
 }
 
 div#artistImage img {
@@ -532,8 +533,7 @@ input#searchBar {
 }
 
 div#list {
-  padding-bottom: 2em;
-  margin-bottom: 4em;
+  padding-bottom: 1em;
   margin-left: 0.4em;
 }
 

@@ -7,11 +7,11 @@
   <div class="main col-xs-10 col-sm-10 col-md-9 col-lg-10 mb-5 pb-5 text-white">
 
     <div id="artistGradient">
-      <div class="row align-items-center">
-        <div class="col-md-2">
-          <a class="btn mb-3 mx-2 mt-2 backAndNext text-white" onclick="goBack()">
+        <div id="dynamicNav" class="row align-items-center fixed-top"
+        style="margin-top:4em; margin-left: 179px; width: 100%;">        <div class="col-md-2">
+          <a class="btn mb-3 mx-2 mt-3 backAndNext text-white" onclick="goBack()">
             <i class="fas fa-chevron-left"></i></a>
-          <a id="forward" class="btn mb-3 mt-2 backAndNext" onclick="goForward()"><i id="forward"
+          <a id="forward" class="btn mb-3 mt-3 backAndNext" onclick="goForward()"><i id="forward"
               class="fas fa-chevron-right"></i></a>
         </div>
 
@@ -23,7 +23,7 @@
         </div>
       </div>
 
-      <div id="artistImage" class="row mt-3 mb-2 col-sm-12 col-md-12 col-lg-12">
+      <div id="artistImage" class="row mb-2 col-sm-12 col-md-12 col-lg-12">
         <img style="margin-left:1em;" src="<%= artist.image%>" alt="">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 header">
           <p style="display:flex; align-items: center;"><i class="far fa-check-circle"

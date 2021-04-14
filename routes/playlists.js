@@ -1,11 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const catchAsync = require("../utils/catchAsync");
-const ExpressError = require("../utils/ExpressError");
 const Playlist = require("../models/playlist");
 const User = require("../models/user");
 const { isLoggedIn } = require("../middleware.js");
-const mongoose = require("mongoose");
 
 // show users Home page, all playlists
 router.get(
@@ -20,7 +18,6 @@ router.get(
 
     var usersPlaylists = userObject.playlists;
 
-
     var userCreatedPlaylists = [];
 
     usersPlaylists.forEach(function(playlist) {
@@ -29,10 +26,15 @@ router.get(
       }
     });
 
-    res.render("playlists/index", { usersPlaylists, userCreatedPlaylists, userObject });
+    res.render("playlists/index", {
+      usersPlaylists,
+      userCreatedPlaylists,
+      userObject
+    });
   })
 );
 
+// new playlist page
 router.get("/new", isLoggedIn, async (req, res) => {
   const user = await User.find({
     _id: req.user._id
@@ -110,13 +112,31 @@ router.patch(
   })
 );
 
+// delete
 router.delete(
   "/:id",
   isLoggedIn,
   catchAsync(async (req, res) => {
     const { id } = req.params;
+    const user = await User.find({
+      _id: req.user._id
+    });
+    
+    // var playlist = await Playlist.findById(id);
+
+// console.log(user);
+//     // array of objects
+//     var userPlaylists = user.playlists
+
+//     await User.updateOne( 
+//       { "_id" : user._id} , 
+//       { "$pull" : { "playlists" : { "name" :  playlist.name } } } , 
+//       { "multi" : true }  
+//   )
+
+
     await Playlist.findByIdAndDelete(id);
-    req.user._id;
+
     req.flash("success", "Playlist deleted");
 
     res.redirect("/playlists");

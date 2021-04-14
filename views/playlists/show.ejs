@@ -24,7 +24,8 @@
     </div>
 
     <div id="gradient">
-
+      
+      
       <div id="showInfo" class="row mb-5 col-sm-12 col-md-12 col-lg-12">
         <img id="playlistImage" style="margin-left:1em;" src="<%= playlist.image %>" alt="">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 header">
@@ -62,10 +63,10 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Edit details</a>
 
-          <form action="" method="POST">
-            <a class="dropdown-item" style="color: red !important;" href="#">
+          <form action="/playlists/<%= playlist._id%>?_method=DELETE"" method="POST">
+            <button class="dropdown-item" type="submit" style="color: red !important;" href="#">
               Delete
-            </a>
+            </button>
           </form>
           <% } %>
           <div class="dropdown-divider"></div>

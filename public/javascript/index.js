@@ -211,10 +211,11 @@ $(document).ready(function() {
 
   $(window).on("scroll", function() {
     var wn = $(window).scrollTop();
-    if (wn > 50) {
+    console.log(wn)
+    if (wn < 300) {
       $("#dynamicNav").css("background-color", "none");
     } else {
-      $("#dynamicNav").css("background-color", "green");
+      $("#dynamicNav").css("background-color", "rgb(36, 110, 6)");
     }
   });
 });

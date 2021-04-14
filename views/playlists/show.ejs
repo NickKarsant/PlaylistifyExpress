@@ -5,18 +5,27 @@
 
   <div id="showWrapper" class="main col-xs-10 col-sm-10 col-md-9 col-lg-10 text-white">
 
-    <div id="dynamicNav" class="pb-1 row align-items-center fixed-top"
+    <div id="dynamicNav" class="p-2 row align-items-center fixed-top"
       style="margin-top:3.3em; margin-left: 180px; width: 100%;">
       <div class="col-md-2 mt-2">
         <a class="btn mx-2 backAndNext" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
         <a id="forward" class="btn mx-2 backAndNext" onclick="goForward()"><i id="forward"
             class="fas fa-chevron-right"></i></a>
       </div>
+
+
+      <div class="col-md-10" style="padding-left: 2em; float: left;">
+        <form action="/search?" id=searchBarForm>
+          <input id="searchBar" autofocus type="search" placeholder="Search for artists or songs"
+            aria-describedby="button-addon3" class="form-control bg-none border-1">
+        </form>
+      </div>
+
     </div>
 
     <div id="gradient">
 
-      <div id="showInfo" class="row mt-3 mb-5 col-sm-12 col-md-12 col-lg-12 mt-5">
+      <div id="showInfo" class="row mb-5 col-sm-12 col-md-12 col-lg-12">
         <img id="playlistImage" style="margin-left:1em;" src="<%= playlist.image %>" alt="">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 header">
           <p style="display:flex; align-items: center;">Playlist</p>
@@ -243,3 +252,14 @@
 
 
 </div>
+
+<script>
+  $(window).on("scroll", function () {
+    var wn = $(window).scrollTop();
+    console.log(wn)
+    if (wn < 100) {
+      $("#dynamicNav").css("background-color", "none");
+    } else {
+      $("#dynamicNav").css("background-color", "green");
+    }
+  });</script>

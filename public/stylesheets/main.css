@@ -356,6 +356,10 @@ div#artistImage img {
   min-width: 150px;
 }
 
+#showInfo {
+  margin-top: 5em;
+}
+
 div#showInfo img#playlistImage {
   max-height: 300px;
   max-width: 300px;

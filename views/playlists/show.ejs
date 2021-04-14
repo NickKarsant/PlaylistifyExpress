@@ -4,21 +4,19 @@
   <%- include('../partials/aside') %>
 
   <div id="showWrapper" class="main col-xs-10 col-sm-10 col-md-9 col-lg-10 text-white">
-    <div id="gradient" >
 
-      <div class="row align-items-center">
-        <div class="col-md-2 mt-2">
-          <a class="btn mx-2 backAndNext" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
-          <a id="forward" class="btn mx-2 backAndNext" onclick="goForward()"><i id="forward"
-              class="fas fa-chevron-right"></i></a>
-        </div>
+    <div id="dynamicNav" class="pb-1 row align-items-center fixed-top"
+      style="margin-top:3.3em; margin-left: 180px; width: 100%;">
+      <div class="col-md-2 mt-2">
+        <a class="btn mx-2 backAndNext" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>
+        <a id="forward" class="btn mx-2 backAndNext" onclick="goForward()"><i id="forward"
+            class="fas fa-chevron-right"></i></a>
       </div>
+    </div>
 
-      
+    <div id="gradient">
 
-
-
-      <div id="showInfo" class="row mt-3 mb-5 col-sm-12 col-md-12 col-lg-12" >
+      <div id="showInfo" class="row mt-3 mb-5 col-sm-12 col-md-12 col-lg-12 mt-5">
         <img id="playlistImage" style="margin-left:1em;" src="<%= playlist.image %>" alt="">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 header">
           <p style="display:flex; align-items: center;">Playlist</p>
@@ -34,41 +32,41 @@
 
 
     <div style="margin-left: 1em;">
-    <!-- whole playlist play and Options button -->
-    <div class="d-flex justify-content-start" >
+      <!-- whole playlist play and Options button -->
+      <div class="d-flex justify-content-start">
 
-      <i id="playAll" class="btn btn-md btn-success fas fa-play"></i>
-
-
-      <% if (playlist.name !== "Liked Songs" && currentUser) { %>
-      <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionsMenu" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        <i id="playlistOptions" class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white"></i>
-      </a>
+        <i id="playAll" class="btn btn-md btn-success fas fa-play"></i>
 
 
-      <div class="dropdown-menu" aria-labelledby="dropdownOptionsMenu">
-        <a class="dropdown-item" href="#">Add to queue</a>
-        <a class="dropdown-item" href="#">Start playlist radio</a>
-        <% if (currentUser && playlist.author.equals(currentUser._id)) { %>           
-        <a class="dropdown-item" href="#">Make public</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Edit details</a>
-
-        <form action="" method="POST">
-          <a class="dropdown-item" style="color: red !important;" href="#">
-            Delete
-          </a>
-        </form>
-        <% } %>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Share  
-          <i class="fas fa-chevron-right"></i>
+        <% if (playlist.name !== "Liked Songs" && currentUser) { %>
+        <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionsMenu" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i id="playlistOptions" class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white"></i>
         </a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Open in Desktop app</a>
-      </div>
-      <%}%>
+
+
+        <div class="dropdown-menu" aria-labelledby="dropdownOptionsMenu">
+          <a class="dropdown-item" href="#">Add to queue</a>
+          <a class="dropdown-item" href="#">Start playlist radio</a>
+          <% if (currentUser && playlist.author.equals(currentUser._id)) { %>
+          <a class="dropdown-item" href="#">Make public</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Edit details</a>
+
+          <form action="" method="POST">
+            <a class="dropdown-item" style="color: red !important;" href="#">
+              Delete
+            </a>
+          </form>
+          <% } %>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Share  
+            <i class="fas fa-chevron-right"></i>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Open in Desktop app</a>
+        </div>
+        <%}%>
         
       </div>
     <!-- END whole playlist play and Options button -->
@@ -93,85 +91,86 @@
         <% } %>
       </div>
 
-    <!-- placeholder/example rows -->
-    <% var row = 0; %>
-    <% while (row <= 10){ %>
-    <div class="row songRow d-flex align-items-center" >
-      <div class="col-sm-2 col-md-2 col-lg-1 d-flex justify-content-center">
-        <span class="listIndex"><%= row + 1%> </span>
+      <!-- placeholder/example rows -->
+      <% var row = 0; %>
+      <% while (row <= 10){ %>
+      <div class="row songRow d-flex align-items-center">
+        <div class="col-sm-2 col-md-2 col-lg-1 d-flex justify-content-center">
+          <span class="listIndex"><%= row + 1%> </span>
 
 
 
           <!-- play button intended for hover -->
-        <i class="btn btn-success fas fa-play play listPlay"></i>
+          <i class="btn btn-success fas fa-play play listPlay"></i>
 
 
 
 
-      </div>
-
-      <%if (currentUser){ %>
-      <div class="col-sm-1 col-md-1 col-lg-1 text-center listLike">
-        <i class="far fa-heart like"></i></div>
-      <% } %>
-
-      <div class="col-sm-3 col-md-3 col-lg-3">Name of Song </div>
-      <div class="col-sm-3 col-md-3 col-lg-3 listArtistOverflow">
-        <p class="content"> Placeholder that is very long and far too long in fact that it like song remix artist that are too long </p>
-      </div>
-      <div class="col-sm-1 col-md-1 col-lg-1 text-center">3:00</div>
-      <%if (currentUser){ %>
-      <div class="col-sm-2 col-md-2 col-lg-2 text-center options">
-
-        <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionMenu" aria-haspopup="true"
-          aria-expanded="false" data-toggle="dropdown" id="dropdownSong" data-target="#songOptions">
-          <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button"></i>
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownSong">
-          <a class="dropdown-item" href="#">Add to queue</a>
-          <div class="dropdown-divider"></div>
-
-          <a class="dropdown-item" href="#">Go to song radio</a>
-          <a class="dropdown-item" href="#">Go to artist</a>
-          <a class="dropdown-item" href="#">Go to album</a>
-          <a class="dropdown-item" href="#">Show credits</a>
-          <% if (currentUser && playlist.author.equals(currentUser._id)) { %>           <div class="dropdown-divider"></div>
-            <form action="" method="POST">
-                <a class="dropdown-item" style="color: red !important;" href="#">
-                  Remove from this playlist
-                </a>
-              </form>
-            <% } %>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Save to your Liked Songs</a>
-          <a class="dropdown-item" href="#">
-            Add to playlist  
-            <i class="fas fa-chevron-right"></i>
-          </a>
-          
-
-          <div class="dropdown-divider"></div>
-
-          <a class="dropdown-item" href="#">Share  
-            <i class="fas fa-chevron-right"></i>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Open in Desktop app</a>
         </div>
 
+        <%if (currentUser){ %>
+        <div class="col-sm-1 col-md-1 col-lg-1 text-center listLike">
+          <i class="far fa-heart like"></i></div>
+        <% } %>
+
+        <div class="col-sm-3 col-md-3 col-lg-3">Name of Song </div>
+        <div class="col-sm-3 col-md-3 col-lg-3 listArtistOverflow">
+          <p class="content"> Placeholder that is very long and far too long in fact that it like song remix artist that
+            are too long </p>
+        </div>
+        <div class="col-sm-1 col-md-1 col-lg-1 text-center">3:00</div>
+        <%if (currentUser){ %>
+        <div class="col-sm-2 col-md-2 col-lg-2 text-center options">
+
+          <a class="" href="#" style=" margin-top: 1em;" role="button" id="dropdownOptionMenu" aria-haspopup="true"
+            aria-expanded="false" data-toggle="dropdown" id="dropdownSong" data-target="#songOptions">
+            <i class="fas fa-ellipsis-h meatball btn btn-xs text-center text-white" type="button"></i>
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownSong">
+            <a class="dropdown-item" href="#">Add to queue</a>
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item" href="#">Go to song radio</a>
+            <a class="dropdown-item" href="#">Go to artist</a>
+            <a class="dropdown-item" href="#">Go to album</a>
+            <a class="dropdown-item" href="#">Show credits</a>
+            <% if (currentUser && playlist.author.equals(currentUser._id)) { %> <div class="dropdown-divider"></div>
+            <form action="" method="POST">
+              <a class="dropdown-item" style="color: red !important;" href="#">
+                Remove from this playlist
+              </a>
+            </form>
+            <% } %>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Save to your Liked Songs</a>
+            <a class="dropdown-item" href="#">
+              Add to playlist  
+              <i class="fas fa-chevron-right"></i>
+            </a>
+
+
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item" href="#">Share  
+              <i class="fas fa-chevron-right"></i>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Open in Desktop app</a>
+          </div>
+
+
+        </div>
+        <% } %>
 
       </div>
-      <% } %>
-
-    </div>
-    <%    row += 1;
+      <%    row += 1;
   };%>
 
-    <!-- end  example/placeholder rows-->
+      <!-- end  example/placeholder rows-->
 
 
-    <!-- <% playlist.songs.forEach(function(song, index) { %>
+      <!-- <% playlist.songs.forEach(function(song, index) { %>
           <div class="row songRow" style="border-top: 1px solid grey; padding: 0.5em 0; margin-right:1em;">
             <div class="col-sm-2 col-md-2 col-lg-1 text-center">
               <span class="listIndex"><%= index + 1 %> </span>
@@ -229,9 +228,9 @@
           </div>
           <% }) %> -->
 
-  </div>
+    </div>
 
-</div>
+  </div>
 
 
 

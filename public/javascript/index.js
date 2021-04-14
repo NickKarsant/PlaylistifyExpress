@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function() {
   console.log("ready!");
 
@@ -28,7 +25,6 @@ $(document).ready(function() {
     window.history.back();
   }
 
-
   // heart/like button toggle
   function toggleLiked() {
     var listLike = document.getElementsByClassName(".listLike");
@@ -53,7 +49,6 @@ $(document).ready(function() {
       this.style.padding = "0";
       this.style.display = "flex";
       this.style.justifyContent = "center";
-
     }
 
     return isLiked;
@@ -71,31 +66,25 @@ $(document).ready(function() {
     optionsIcon.style.display = "none";
   }
 
-
   function hoverShowPlayRow(song) {
     var playButton = song.getElementsByClassName("listPlay")[0];
     var number = song.getElementsByClassName("listIndex")[0];
     playButton.style.visibility = "visible";
-    playButton.style.display = "block"
-    number.style.visibility = "hidden"
-    number.style.display = "none"
-    playButton.style.position = "static"
+    playButton.style.display = "block";
+    number.style.visibility = "hidden";
+    number.style.display = "none";
+    playButton.style.position = "static";
   }
 
   function hoverHidePlayRow(song) {
     var number = song.getElementsByClassName("listIndex")[0];
     var playButton = song.getElementsByClassName("listPlay")[0];
-    number.style.visibility = "visible"
-    number.style.display = "block"
+    number.style.visibility = "visible";
+    number.style.display = "block";
     playButton.style.visibility = "hidden";
     playButton.style.display = "none";
   }
 
-
-
-
-
-  
   function hoverShowLike(song) {
     var heart = song.getElementsByClassName("listLike")[0];
     heart.style.visibility = "visible";
@@ -144,7 +133,6 @@ $(document).ready(function() {
     });
   });
 
-
   searchBar = document.getElementById("searchBar");
 
   $("#searchBar").submit(function(e) {
@@ -155,36 +143,33 @@ $(document).ready(function() {
     console.log(e.target.value);
   });
 
-
-
-
-
-
-  
-  $('.listArtistOverflow p').each(function() {
+  $(".listArtistOverflow p").each(function() {
     $(this)
-      .data('width', $(this).css('display','inline-block').width()+10)
-      .css('display','');
-  });
-  
-  $('.listArtistOverflow').scroll();
-  
-  
-  $(".loginModal").on('shown.bs.modal', '.modal', function() {
-    $(this).find('[autofocus]').focus();
-  });
-  
-  $(".registerModal").on('shown.bs.modal', '.modal', function() {
-    $(this).find('[autofocus]').focus();
+      .data(
+        "width",
+        $(this)
+          .css("display", "inline-block")
+          .width() + 10
+      )
+      .css("display", "");
   });
 
+  $(".listArtistOverflow").scroll();
 
+  $(".loginModal").on("shown.bs.modal", ".modal", function() {
+    $(this)
+      .find("[autofocus]")
+      .focus();
+  });
 
-
+  $(".registerModal").on("shown.bs.modal", ".modal", function() {
+    $(this)
+      .find("[autofocus]")
+      .focus();
+  });
 
   var oftenPlayed = document.getElementsByClassName("oftenPlayed");
   var recentlyPlayed = document.getElementsByClassName("recentlyPlayed");
-
 
   Array.from(recentlyPlayed).forEach(playlist => {
     playlist.addEventListener("mouseover", e => {
@@ -197,7 +182,7 @@ $(document).ready(function() {
       hoverHidePlay(playlist);
     });
   });
-  
+
   Array.from(oftenPlayed).forEach(playlist => {
     playlist.addEventListener("mouseover", e => {
       hoverShowPlay(playlist);
@@ -224,11 +209,13 @@ $(document).ready(function() {
     topSix.style.visibility = "hidden";
   }
 
-
-
-  
-
+ 
+  $(window).on("scroll", function() {
+    var wn = $(window).scrollTop();
+    if (wn > 50) {
+      $("#dynamicNav").css("background", "green !important");
+    } else {
+      $("#dynamicNav").css("background", "rgba(1,1,1,1)");
+    }
+  });
 });
-
-
-

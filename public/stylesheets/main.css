@@ -593,6 +593,9 @@ div#list {
   left: 160px !important;
 }
 
+#dynamicNav {
+}
+
 #greeting {
   color: white;
   margin-top: 1em;

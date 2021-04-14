@@ -209,13 +209,12 @@ $(document).ready(function() {
     topSix.style.visibility = "hidden";
   }
 
- 
   $(window).on("scroll", function() {
     var wn = $(window).scrollTop();
     if (wn > 50) {
-      $("#dynamicNav").css("background", "green !important");
+      $("#dynamicNav").css("background-color", "none");
     } else {
-      $("#dynamicNav").css("background", "rgba(1,1,1,1)");
+      $("#dynamicNav").css("background-color", "green");
     }
   });
 });

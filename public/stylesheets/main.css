@@ -410,6 +410,10 @@ a.card:visted {
   color: #fff !important;
 }
 
+/* #dynamicNav {
+  background-color: red;
+} */
+
 #gradient {
   width: 100% !important;
   background-image: linear-gradient(rgb(36, 110, 6), rgb(19, 18, 18));

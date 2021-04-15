@@ -83,11 +83,9 @@ router.get(
       return res.redirect("/playlists");
     }
 
-    const user = await User.find({
-      _id: req.user._id
-    });
 
-    const userObject = user[0];
+
+    // const userObject = user[0];
 
 
 

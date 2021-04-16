@@ -84,6 +84,8 @@
       </div>
     </div>
     <%}%>
+
+
   <!-- PLAYLISTS -->
 
   <!-- ALL Playlists -->
@@ -96,8 +98,7 @@
     </div>
       
     <div id="browsePlaylists" class="ui grid mb-3 row text-center">
-        <% var i; for (i = 0; i < 10; i++) { %>
-    <% var playlist = removedLiked[i] %>
+    <% removedLiked.forEach( (playlist) => { %>
     <a class="usersPlaylists card col-xs-2 col-sm-3 col-md-3 col-lg-2 col-xl-2 my-3 mx-3 pt-2"
       href="/playlists/<%= playlist._id %>">
       <% if (playlist.image.length > 30) {%>
@@ -111,7 +112,7 @@
             <h4 class="card-title"> <%= playlist.name %> </h4>
   </div>
   </a>
-  <%};%>
+  <%});%>
 </div>
 </div>
 

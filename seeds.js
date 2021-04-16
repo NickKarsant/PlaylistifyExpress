@@ -7,7 +7,7 @@ var User = require("./models/user");
 
 
 // process.env.MONGODB_URI || 
-mongoose.connect("mongodb://localhost:27017/playlistify", {
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost:27017/playlistify", {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true
@@ -361,6 +361,7 @@ const seedDB = async ( ) => {
   });
   console.log("seedDB finished");
 }
+
 
 module.exports = seedDB;
 

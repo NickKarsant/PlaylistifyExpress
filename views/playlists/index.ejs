@@ -22,11 +22,11 @@
       </div>
     </div>
 
-    
-    
+
+
     <!-- top 6 -->
     <div class="ui container mb-5" style="margin-top: 9em;">
-        <%- include('../partials/flash') %>
+      <%- include('../partials/flash') %>
 
       <%  var today = new Date() %>
       <% var curHr = today.getHours() %>
@@ -517,9 +517,19 @@
 
       <div id="uniqueGrid" class="ui grid mb-3 row d-flex justify-content-around">
         <%var i=0%>
-        <% var users = userCreatedPlaylists.length %>
-        <%if (users <= 5) {%>
-        <%while (i < users ) {%>
+        <% var playlistslength = userCreatedPlaylists.length %>
+        <%if (playlistslength < 2) {%>
+        <div class="text-white">
+          <h1>No playlists created yet</h1>  
+          <a id="sideAddLink" class="btn btn-sm text-white" href="/playlists/new">
+            <!-- <i style="float: left;" id="sideAdd" class="far fa-plus-square"></i> -->
+            <!-- <p id="sideAddWord"> Create New Playlist</p> -->
+          </a>
+        </div>
+
+
+        <% } else if (playlistslength >= 2 && playlistslength <= 5) {%>
+        <%while (i < playlistslength ) {%>
 
         <a class="recentlyPlayed card pt-2" href="/playlists/<%= userCreatedPlaylists[i]._id %>">
 
@@ -542,7 +552,7 @@
 
         <%i++%>
         <%}%>
-        <%} else if (users > 5){%>
+        <%} else if (playlistslength > 5){%>
         <% var i = 0 %>
         <% while (i <= 4) {%>
         <a class="recentlyPlayed card pt-2" href="/playlists/<%= userCreatedPlaylists[i]._id %>">
@@ -572,4 +582,4 @@
     </div>
 
   </div>
-  </div>
+</div>

@@ -18,6 +18,7 @@ const session = require("express-session");
 const playlistRoutes = require("./routes/playlists");
 const userRoutes = require("./routes/users");
 require('dotenv').config();
+require('./public/javascript/shuffle');
 
 const seedDB = require("./seeds");
 seedDB();
@@ -112,13 +113,30 @@ app.get(
 
     // restrict "Liked Songs" plsylists from being displayed
     // console.log(allPlaylists);
-    const removedLiked = [];
+    var stepOne = [];
 
     allPlaylists.forEach(function(playlist) {
       if (playlist.name !== 'Liked Songs') {
-        removedLiked.push(playlist);
+        stepOne.push(playlist);
       }
     });
+
+
+
+    function arrayShuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+    }
+
+    var removedLiked = arrayShuffle(stepOne);
+
 
 
     

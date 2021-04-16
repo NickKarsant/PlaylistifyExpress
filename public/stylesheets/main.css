@@ -62,7 +62,6 @@ h4#list {
 
 #aside {
   background-color: black;
-
   position: fixed;
   left: -10px;
   top: 47px;
@@ -90,8 +89,12 @@ h4#list {
   margin-top: 1em;
 }
 
+.sidePlaylist {
+  width: 140px;
+}
+
 .scrollable {
-  width: 100px;
+  width: 140px;
   height: 310px;
   /* overflow-y: scroll; */
   overflow-y: visible;
@@ -152,9 +155,7 @@ i#sideAdd {
   margin: 0 !important;
 }
 
-.sidePlaylist {
-  width: 140px;
-}
+
 
 .sidePlaylistLink {
   width: 90%;
@@ -163,7 +164,7 @@ i#sideAdd {
   text-overflow: ellipsis;
 }
 
-.sidePlaylist:hover a.sidePlaylistLink {
+.sidePlaylist:hover p.word {
   background-color: rgb(59, 58, 58);
   border-radius: 5px;
 }
@@ -546,7 +547,7 @@ div#list {
 
 /* text-Overflow scrolling ellipsis */
 .listArtistOverflow,
-.caption {
+.caption{
   overflow: hidden;
 
   /* To make the width of the container exact. */
@@ -576,11 +577,12 @@ div#list {
 .listArtistOverflow:hover .content,
 .caption:hover .content,
 .caption:hover .card-title {
-  /* This is not completely accurate. It resizes to 2x the current width. */
   left: -100%;
   width: 200%;
 }
 /* END text-Overflow scrolling ellipsis */
+
+
 
 .modal {
   position: absolute !important;

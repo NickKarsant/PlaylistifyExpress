@@ -41,17 +41,17 @@
       </div>
 
       <% if(currentUser) {%>
-        <div class="scrollable scrollbar thin">
-          <% usersPlaylists.forEach(function(playlist) {%>
-          <li class="sidePlaylist">
-            <a class="sidePlaylistLink btn btn-sm text-white px-0 mx-0" href="/playlists/<%=playlist._id%>">
-              <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9   sidePlaylistWord">
-                <%= playlist.name %>
-              </div>
-            </a>
-          </li>
-          <%})%>
-        </div>
-        <%}%>
+      <div class="scrollable scrollbar thin">
+        <% usersPlaylists.forEach(function(playlist) {%>
+        <li class="sidePlaylist">
+          <a class="sidePlaylistLink btn btn-sm text-white px-0 mx-0" href="/playlists/<%=playlist._id%>">
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9   sidePlaylistWord">
+              <p class="word px-2"><%= playlist.name %></p>
+            </div>
+          </a>
+        </li>
+        <%})%>
+      </div>
+      <%}%>
     </ul>
   </div>

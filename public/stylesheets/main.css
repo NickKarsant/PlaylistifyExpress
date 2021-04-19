@@ -90,11 +90,11 @@ h4#list {
 }
 
 .sidePlaylist {
-  width: 140px;
+  width: 150px;
 }
 
 .scrollable {
-  width: 140px;
+  width: 150px;
   height: 310px;
   /* overflow-y: scroll; */
   overflow-y: visible;

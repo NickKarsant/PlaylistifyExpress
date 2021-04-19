@@ -18,7 +18,6 @@ const session = require("express-session");
 const playlistRoutes = require("./routes/playlists");
 const userRoutes = require("./routes/users");
 require('dotenv').config();
-require('./public/javascript/shuffle');
 
 const seedDB = require("./seeds");
 seedDB();

@@ -417,9 +417,12 @@ a.card:visted {
   color: #fff !important;
 }
 
-/* #dynamicNav {
-  background-color: red;
-} */
+div#dynamicNav.fixedtop{
+}
+
+#dropdown{
+  z-index: 9999 !important;
+}
 
 #gradient {
   width: 100% !important;

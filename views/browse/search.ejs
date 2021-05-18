@@ -7,7 +7,11 @@
 
   <div class="main col-xs-10 col-sm-10 col-md-9 col-lg-10 text-white">
 
+    <% if (currentUser) { %>
     <div id="dynamicNav" class="row align-items-center fixed-top" style="margin-top:4em; margin-left: 180px; width: 100%;">
+    <% } else { %>
+    <div id="dynamicNav" class="row align-items-center fixed-top" style="margin-top:3.39em; margin-left: 180px; width: 100%;">
+    <% } %>
 
         <div class="col-md-2">
           <a class="btn mb-3 mt-3 backAndNext text-white" onclick="goBack()"><i class="fas fa-chevron-left"></i></a>

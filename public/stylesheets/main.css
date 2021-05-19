@@ -417,7 +417,8 @@ a.card:visted {
   color: #fff !important;
 }
 
-div#dynamicNav.fixedtop{
+#nav{
+  z-index: 1031;
 }
 
 #dropdown{

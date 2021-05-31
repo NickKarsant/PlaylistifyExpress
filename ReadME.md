@@ -1,15 +1,15 @@
 # Playlistify
 
 <div style="display: flex; justify-content: flex-start;">
-<img src="images/landingpage.jpg" alt="home page, a picture of a man on a seer wheel and another picture of a timelapse of fire dancing" width="150" height="300"/>
+<img src="images/landingpage.jpg" alt="home page, a picture of a man on a seer wheel and another picture of a timelapse of fire dancing" width="200" height="300"/>
 
-<img src="images/homepage.jpg" alt="screenshot of classes offered, partial list" width="150" height="300"/>
+<img src="images/homepage.jpg" alt="screenshot of classes offered, partial list" width="200" height="300"/>
 
-<img src="images/loggedin.jpg" alt="about page,lots of text, a black and white picture of a man riding a cyr wheel facing the camera with large windows close in the background" width="150" height="300"/>
+<img src="images/loggedIn.jpg" alt="about page,lots of text, a black and white picture of a man riding a cyr wheel facing the camera with large windows close in the background" width="200" height="300"/>
 
-<img src="images/playlist.jpg" alt="booking form page" width="150" height="300"/>
+<img src="images/playlist.jpg" alt="booking form page" width="200" height="300"/>
 
-<img src="images/example4.jpg" alt="contact page/form" width="150" height="300"/>
+<img src="images/example4.jpg" alt="contact page/form" width="200" height="300"/>
 </div>
 
 A simple static multi-page website for a small business offering acrobatic and prop manipulation classes.  

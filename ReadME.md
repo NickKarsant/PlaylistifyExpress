@@ -42,7 +42,7 @@ Direct link to app: https://playlistify-express.herokuapp.com/
 
 -MEN stack
 
--MongoDB ((Database))
+-MongoDB (Database)
 
 -Express.js (Server framework)
 
@@ -50,8 +50,8 @@ Direct link to app: https://playlistify-express.herokuapp.com/
 
 -Bootstrap 4 (Front-end framework)
 
--Heroku (Cloud platform)
-
+-Heroku (Hosting platform)
+˜
 -HTML
 
 -CSS
@@ -63,8 +63,6 @@ Direct link to app: https://playlistify-express.herokuapp.com/
 
 
 ### Installing
-If you would like the view the site from a user's point of view, you have the option of viewing the site on Heroku. It is located at <"coming soon">.
- 
 If you would like to run the application locally, please ensure that you have the prerequisites installed, then take the following steps:
 - Clone this repository to your local machine with `git clone <repo-url>`.
 - Install NPM dependencies by running `npm install` in the project directory.

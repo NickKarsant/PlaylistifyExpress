@@ -9,13 +9,13 @@
 
 
   <div>
-    <h5>Browse(not logged in)</h5>
+    <h5 style="width:200px; background: red;">Browse(not logged in)</h5>
     <img src="images/homepage.jpg" alt="screenshot of classes offered, partial list" width="200" height="300"/>
   </div>
 
 
   <div>
-    <h5>UserProfile homepage</h5>
+    <h5 style="background: red;">UserProfile homepage</h5>
     <img src="images/loggedIn.jpg" alt="about page,lots of text, a black and white picture of a man riding a cyr wheel facing the camera with large windows close in the background" width="200" height="300"/>
   </div>
 

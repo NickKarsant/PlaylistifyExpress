@@ -1,21 +1,21 @@
 # Playlistify
 
-<div style="display: flex; justify-content: flex-start;">
+<div style="display: flex; justify-content: fspace-between;">
 
   <div>
-    <h5>Landing Page</h5>
+    <h5 style="width:200px;">Landing Page</h5>
     <img src="images/landingpage.jpg" alt="home page, a picture of a man on a seer wheel and another picture of a timelapse of fire dancing" width="200" height="300"/>
   </div>
 
 
   <div>
-    <h5>Browsing Homepage (not logged in)</h5>
+    <h5>Browse(not logged in)</h5>
     <img src="images/homepage.jpg" alt="screenshot of classes offered, partial list" width="200" height="300"/>
   </div>
 
 
   <div>
-    <h5>User Profile homepage</h5>
+    <h5>UserProfile homepage</h5>
     <img src="images/loggedIn.jpg" alt="about page,lots of text, a black and white picture of a man riding a cyr wheel facing the camera with large windows close in the background" width="200" height="300"/>
   </div>
 
